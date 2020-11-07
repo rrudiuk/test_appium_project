@@ -9,13 +9,21 @@ from .locators import BasePageLocators
 
 class BasePage:
 
-    def __init__(self, driver, timeout=5):
+    def __init__(self, driver, timeout=6):
         self.driver = driver
         self.driver.implicitly_wait(timeout)
 
     def click_element(self, how, what):
         try:
             self.driver.find_element(how, what).click()
+        except NoSuchElementException:
+            return False
+        return True
+
+    def click_element_10_times(self, how, what):
+        try:
+            for i in range(10):
+                self.driver.find_element(how, what).click()
         except NoSuchElementException:
             return False
         return True
@@ -69,3 +77,6 @@ class BasePage:
         except NoSuchElementException:
             return False
         return text.encode(encoding) if encoding else text
+
+    def background_app_for_10_seconds(self):
+        self.driver.background_app(10)
