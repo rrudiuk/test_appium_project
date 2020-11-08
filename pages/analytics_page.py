@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import AnalyticsPageLocators
+from .locators import BasePageLocators
 
 
 class AnalyticsPage(BasePage):
@@ -8,13 +9,13 @@ class AnalyticsPage(BasePage):
 
     def should_be_analytics_title(self):
         expected_result = "Help Us Improve Our Products"
-        actual_result = self.get_text(*AnalyticsPageLocators.ANALYTICS_PAGE_TITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def should_be_correct_analytics_subtitle(self):
         expected_result = "Help Ultimate Ears improve its products and services by automatically sending diagnostic " \
                           "and usage data."
-        actual_result = self.get_text(*AnalyticsPageLocators.ANALYTICS_SCREEN_SUBTITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def tap_back_arrow(self):

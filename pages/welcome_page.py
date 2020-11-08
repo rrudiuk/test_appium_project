@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import WelcomePageLocators
+from .locators import BasePageLocators
 
 import time
 
@@ -7,13 +8,13 @@ import time
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
         expected_result = "Welcome to Your Perfect Fit"
-        actual_result = self.get_text(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def should_be_correct_welcome_subtitle(self):
         expected_result = "In just a few minutes, you'll have a pair of perfectly fitting, incredibly comfortable " \
                           "earbuds."
-        actual_result = self.get_text(*WelcomePageLocators.WELCOME_SCREEN_SUBTITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def should_be_welcome_screen_button(self):
@@ -28,12 +29,12 @@ class WelcomePage(BasePage):
         self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
 
     def tap_welcome_screen_10_times(self):
-        self.click_element_10_times(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
+        self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
 
     def should_be_welcome_code_screen_title(self):
-        self.click_element_10_times(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
+        self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
         expected_result = "WELCOME"
-        actual_result = self.get_text(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def should_be_welcome_edit_text_input(self):
@@ -65,7 +66,7 @@ class WelcomePage(BasePage):
 
     def should_be_correct_setup_code_title(self):
         expected_result = "SETUP CODE"
-        actual_result = self.get_text(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def should_be_correct_welcome_setup_code_text(self):
