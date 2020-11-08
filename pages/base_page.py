@@ -13,6 +13,9 @@ class BasePage:
         self.driver = driver
         self.driver.implicitly_wait(timeout)
 
+    def background_app_for_10_seconds(self):
+        self.driver.background_app(10)
+
     def click_element(self, how, what):
         try:
             self.driver.find_element(how, what).click()
@@ -78,5 +81,8 @@ class BasePage:
             return False
         return text.encode(encoding) if encoding else text
 
-    def background_app_for_10_seconds(self):
-        self.driver.background_app(10)
+    def should_be_back_arrow(self):
+        assert self.is_element_present(*BasePageLocators.BACK_ARROW)
+
+    def tap_back_arrow(self):
+        self.click_element(*BasePageLocators.BACK_ARROW)
