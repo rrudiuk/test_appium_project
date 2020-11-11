@@ -82,6 +82,8 @@ class DemoSendCommandsPage(BasePage):
 
         self.tap_send_command_button()
 
+        time.sleep(3)
+
         self.click_element(*DemoPageLocators.DEMO_FIRST_RESPONSE)
         self.click_element(*DemoPageLocators.DEMO_SECOND_RESPONSE)
 
