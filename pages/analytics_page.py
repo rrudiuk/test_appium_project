@@ -4,8 +4,6 @@ from .locators import BasePageLocators
 
 
 class AnalyticsPage(BasePage):
-    # def should_be_back_arrow(self):
-    #     assert self.is_element_present(*BasePageLocators.BACK_ARROW)
 
     def should_be_analytics_title(self):
         expected_result = "Help Us Improve Our Products"
@@ -17,9 +15,6 @@ class AnalyticsPage(BasePage):
                           "and usage data."
         actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
-
-    # def tap_back_arrow(self):
-    #     self.click_element(*BasePageLocators.BACK_ARROW)
 
     def should_be_correct_share_analytics_button_text(self):
         expected_result = "Yes, Share Analytics Data"

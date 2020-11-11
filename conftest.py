@@ -9,7 +9,7 @@ def driver(request):
     driver = None
 
     # This is the Application and ‘app’ desired capability to specify a path to Appium
-    dc['app'] = "c://ohboy-app-debug.apk"
+    dc['app'] = "C://app/app-debug.apk"
     # appPackage and appActivity desired capability specify app details to Appium
     dc['appPackage'] = "com.logitech.uefits"
     # dc['appActivity'] = ".MainActivity"
@@ -17,7 +17,7 @@ def driver(request):
     dc['platformName'] = 'Android'
     # deviceName desired capability specify the device id detail to Appium
     # device id is got from running adb devices command in PC
-    dc['deviceName'] = 'cd8a681b'
+    dc['deviceName'] = 'RF8N8376WMV'
     # accept alerts and grant permissions
     dc['autoAcceptAlerts'] = 'true'
     dc['autoGrantPermissions'] = 'true'

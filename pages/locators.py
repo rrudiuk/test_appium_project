@@ -49,7 +49,10 @@ class DemoPageLocators:
     DEMO_VENDOR_ID_LABEL = (By.ID, "com.logitech.uefits:id/vendor_id_label")
     DEMO_VENDOR_ID = (By.ID, "com.logitech.uefits:id/vendor_id")
     DEMO_COMMAND_LABEL = (By.ID, "com.logitech.uefits:id/command_id_label")
-    DEMO_COMMAND = (By.ID, "com.logitech.uefits:id/command_id")
+    # DEMO_COMMAND = (By.ID, "com.logitech.uefits:id/command_id")
+    DEMO_COMMAND = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                              ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                              ".FrameLayout/android.view.ViewGroup/android.widget.EditText[2]")
     DEMO_PAYLOAD_LABEL = (By.ID, "com.logitech.uefits:id/payload_label")
     DEMO_PAYLOAD = (By.ID, "com.logitech.uefits:id/payload")
     DEMO_SEND_COMMAND_BUTTON = (By.ID, "com.logitech.uefits:id/send")
@@ -62,4 +65,22 @@ class DemoPageLocators:
                                       ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
                                       "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
                                       ".widget.RecyclerView/android.view.ViewGroup[2]")
+    DEMO_SENT_COMMAND_FIRST = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                         ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                         "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                         ".widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView[4]")
+    DEMO_SENT_COMMAND_FIRST_STATUS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+                                                "/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                                ".widget.FrameLayout/android.widget.FrameLayout/android.view"
+                                                ".ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                                                ".ViewGroup[1]/android.widget.TextView[7]")
+    DEMO_SENT_COMMAND_SECOND = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                          ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                          "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                          ".widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[4]")
+    DEMO_SENT_COMMAND_SECOND_STATUS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+                                                 "/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                                 ".widget.FrameLayout/android.widget.FrameLayout/android.view"
+                                                 ".ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                                                 ".ViewGroup[2]/android.widget.TextView[7]")
     # DEMO_EL = (By.ID, "")
