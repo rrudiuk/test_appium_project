@@ -46,11 +46,11 @@ class WelcomePage(BasePage):
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def should_be_welcome_send_code_button(self):
-        assert self.is_element_present(*WelcomePageLocators.WELCOME_SCREEN_BUTTON_SEND_CODE)
+        assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
 
     def should_be_welcome_code_get_started_button_text(self):
         expected_result = "GET STARTED"
-        actual_result = self.get_text(*WelcomePageLocators.WELCOME_SCREEN_BUTTON_SEND_CODE)
+        actual_result = self.get_text(*BasePageLocators.BUTTON_MAIN)
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be '{expected_result}'"
 
     def should_be_welcome_where_is_my_code(self):
@@ -86,5 +86,5 @@ class WelcomePage(BasePage):
         text_input.send_keys("002")
 
     def tap_screen_code_get_started(self):
-        self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON_SEND_CODE)
+        self.click_element(*BasePageLocators.BUTTON_MAIN)
         time.sleep(5)

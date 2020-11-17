@@ -7,12 +7,13 @@ class BasePageLocators:
     SCREEN_TITLE = (By.ID, "com.logitech.uefits:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, "com.logitech.uefits:id/text_view_subtitle")
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
+    BUTTON_MAIN = (By.ID, "com.logitech.uefits:id/button")
 
 
 class WelcomePageLocators:
     WELCOME_SCREEN_BUTTON = (By.ID, "com.logitech.uefits:id/button_next")
     WELCOME_SCREEN_EDIT_TEXT_CODE = (By.ID, "com.logitech.uefits:id/edit_text_code")
-    WELCOME_SCREEN_BUTTON_SEND_CODE = (By.ID, "com.logitech.uefits:id/button")
+    # WELCOME_SCREEN_BUTTON_SEND_CODE = (By.ID, "com.logitech.uefits:id/button")
     WELCOME_SCREEN_WHERE_IS_MY_CODE = (By.ID, "com.logitech.uefits:id/text_view_help")
     WELCOME_SETUP_CODE_TEXT = (By.ID, "com.logitech.uefits:id/text_view_msg")
     WELCOME_SETUP_SCREEN_CLOSE = (By.ID, "com.logitech.uefits:id/image_view_close")
@@ -103,4 +104,8 @@ class DemoPageLocators:
 
 
 class LandingPageLocators:
+    pass
+
+
+class MoldingPageLocators:
     pass
