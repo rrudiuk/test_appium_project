@@ -100,3 +100,7 @@ class DemoPageLocators:
                                                   ".ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
                                                   ".ViewGroup[2]/android.widget.TextView[6]")
     # DEMO_EL = (By.ID, "")
+
+
+class LandingPageLocators:
+    pass
