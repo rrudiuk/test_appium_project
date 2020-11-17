@@ -17,7 +17,7 @@ def driver(request):
     dc['platformName'] = 'Android'
     # deviceName desired capability specify the device id detail to Appium
     # device id is got from running adb devices command in PC
-    dc['deviceName'] = 'RF8N8376WMV'
+    dc['deviceName'] = 'cd8a681b'
     # accept alerts and grant permissions
     dc['autoAcceptAlerts'] = 'true'
     dc['autoGrantPermissions'] = 'true'
