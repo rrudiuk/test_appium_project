@@ -108,4 +108,10 @@ class LandingPageLocators:
 
 
 class MoldingPageLocators:
-    pass
+    MOLDING_TEXT_VIEW_MSG_TITLE1 = (By.ID, "com.logitech.uefits:id/text_view_msg_title_1")
+    MOLDING_TEXT_VIEW_MSG_TITLE2 = (By.ID, "com.logitech.uefits:id/text_view_msg_title_2")
+    MOLDING_TEXT_VIEW_MSG_TITLE3 = (By.ID, "com.logitech.uefits:id/text_view_msg_title_3")
+    MOLDING_TEXT_VIEW_MSG1 = (By.ID, "com.logitech.uefits:id/text_view_msg_1")
+    MOLDING_TEXT_VIEW_MSG2 = (By.ID, "com.logitech.uefits:id/text_view_msg_2")
+    MOLDING_TEXT_VIEW_MSG3 = (By.ID, "com.logitech.uefits:id/text_view_msg_3")
+    MOLDING_SMILE_IMAGE = (By.ID, "com.logitech.uefits:id/image_view_smile")
