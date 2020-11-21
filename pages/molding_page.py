@@ -62,3 +62,72 @@ class MoldingPage(BasePage):
         expected_result = "Try standing by a mirror for this part"
         actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
         assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
+
+    def should_be_how_is_bass_title(self):
+        expected_result = "How’s the Bass?"
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+
+    def should_be_correct_how_is_bass_subtitle(self):
+        expected_result = "Gently adjust your earbuds until you find the position that maximizes the bass."
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+
+    def should_be_cancel_button(self):
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
+
+    def should_be_cancel_button_text(self):
+        expected_result = "CANCEL"
+        actual_result = self.get_text(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_cancel_button(self):
+        self.click_element(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
+
+    def should_be_image_volume(self):
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_IMAGE_VOLUME)
+
+    def should_be_adjust_volume_bar(self):
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_BAR_ADJUST_VOLUME)
+
+    def should_be_starting_soon_title(self):
+        expected_result = "Starting Soon"
+        actual_result = self.get_text(*MoldingPageLocators.MOLDING_START_TITLE)
+        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+
+    def should_be_starting_soon_subtitle1(self):
+        expected_result = "During the molding process,\n" \
+                          " the tips will feel warm\n" \
+                          " as they mold to your ears."
+        actual_result = self.get_text(*MoldingPageLocators.MOLDING_START_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+
+    def should_be_starting_soon_subtitle2(self):
+        expected_result = "Gently hold your earbuds in place the entire time."
+        actual_result = self.get_text(*MoldingPageLocators.MOLDING_START_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+
+    def should_congratulations_title(self):
+        expected_result = "Congratulations!"
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+
+    def should_congratulations_subtitle(self):
+        expected_result = "You now have perfectly fitting earbuds. Throw on your " \
+                          "favorite song and take them for a spin."
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+
+    def should_finish_button(self):
+        assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
+
+    def should_finish_button_text(self):
+        expected_result = "Finish"
+        actual_result = self.get_text(*BasePageLocators.BUTTON_MAIN)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_finish_button(self):
+        self.click_element(*BasePageLocators.BUTTON_MAIN)
+
+    def should_be_progress_bar(self):
+        self.is_element_present(*MoldingPageLocators.MOLDING_PROGRESS_BAR)
