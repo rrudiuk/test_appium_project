@@ -1,11 +1,11 @@
-from pages.welcome_page import WelcomePage
-from pages.demo_page import DemoPage
-from pages.demo_page import DemoSendCommandsPage
+from .pages.welcome_page import WelcomePage
+from .pages.demo_page import DemoPage
+from .pages.demo_page import DemoSendCommandsPage
 
 import time
 
 
-class TestDemoPage:
+# class TestDemoPage:
     # def test_can_access_demo_screen(self, driver):
     #     welcome_page = WelcomePage(driver)
     #     demo_page = DemoPage(driver)
@@ -58,19 +58,19 @@ class TestDemoPage:
     #     demo_commands_page.tap_first_commands_list_item()
     #     demo_commands_page.tap_second_commands_list_item()
 
-    def test_curring_mode_activation(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(5)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.activate_curring_mode()
-        time.sleep(2)
+    # def test_curring_mode_activation(self, driver):
+    #     welcome_page = WelcomePage(driver)
+    #     demo_commands_page = DemoSendCommandsPage(driver)
+    #     welcome_page.should_be_correct_welcome_title()
+    #     welcome_page.tap_welcome_screen_10_times()
+    #     welcome_page.should_be_welcome_code_screen_title()
+    #     welcome_page.go_to_demo_screen_code()
+    #     welcome_page.tap_screen_code_get_started()
+    #     time.sleep(5)
+    #     demo_commands_page.should_be_demo_molding_screen()
+    #     demo_commands_page.tap_debug_button()
+    #     demo_commands_page.activate_curring_mode()
+    #     time.sleep(2)
 
     # def test_tap_feature_deactivation(self, driver):
     #     welcome_page = WelcomePage(driver)

@@ -1,12 +1,12 @@
-from pages.landing_page import LandingPage
-from pages.analytics_page import AnalyticsPage
-from pages.welcome_page import WelcomePage
-from pages.molding_page import MoldingPage
+# from .pages.landing_page import LandingPage
+# from .pages.analytics_page import AnalyticsPage
+# from .pages.welcome_page import WelcomePage
+# from .pages.molding_page import MoldingPage
+#
+# import time
 
-import time
 
-
-class TestLandingPage:
+# class TestLandingPage:
     # def test_should_be_try_them_page(self, driver):
     #     analytics_page = AnalyticsPage(driver)
     #     welcome_page = WelcomePage(driver)
@@ -139,32 +139,32 @@ class TestLandingPage:
     #     time.sleep(5)
     #     molding_page.tap_cancel_button()
 
-    def test_molding_complete(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
-        landing_page = LandingPage(driver)
-        molding_page = MoldingPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.should_be_analytics_title()
-        analytics_page.tap_share_analytics_button()
-        landing_page.should_be_landing_page_title()
-        time.sleep(10)
-        molding_page.should_be_try_them_page_title()
-        molding_page.tap_main_button()
-        molding_page.should_be_get_ready_page_title()
-        molding_page.tap_main_button()
-        molding_page.should_be_how_is_bass_title()
-        time.sleep(19)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(45)
-        molding_page.should_be_progress_bar()
-        time.sleep(40)
-        molding_page.should_congratulations_title()
-        molding_page.should_congratulations_subtitle()
-        molding_page.should_finish_button()
-        molding_page.should_finish_button_text()
+    # def test_molding_complete(self, driver):
+    #     analytics_page = AnalyticsPage(driver)
+    #     welcome_page = WelcomePage(driver)
+    #     landing_page = LandingPage(driver)
+    #     molding_page = MoldingPage(driver)
+    #     welcome_page.should_be_correct_welcome_title()
+    #     welcome_page.tap_welcome_screen_get_started()
+    #     analytics_page.should_be_analytics_title()
+    #     analytics_page.tap_share_analytics_button()
+    #     landing_page.should_be_landing_page_title()
+    #     time.sleep(10)
+    #     molding_page.should_be_try_them_page_title()
+    #     molding_page.tap_main_button()
+    #     molding_page.should_be_get_ready_page_title()
+    #     molding_page.tap_main_button()
+    #     molding_page.should_be_how_is_bass_title()
+    #     time.sleep(19)
+    #     molding_page.should_be_starting_soon_title()
+    #     molding_page.should_be_starting_soon_subtitle1()
+    #     time.sleep(6)
+    #     molding_page.should_be_starting_soon_title()
+    #     molding_page.should_be_starting_soon_subtitle2()
+    #     time.sleep(45)
+    #     molding_page.should_be_progress_bar()
+    #     time.sleep(40)
+    #     molding_page.should_congratulations_title()
+    #     molding_page.should_congratulations_subtitle()
+    #     molding_page.should_finish_button()
+    #     molding_page.should_finish_button_text()

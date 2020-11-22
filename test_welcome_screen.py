@@ -1,4 +1,4 @@
-# from pages.welcome_page import WelcomePage
+# from .pages.welcome_page import WelcomePage
 #
 #
 # class TestWelcomePage:
