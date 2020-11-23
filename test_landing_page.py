@@ -1,9 +1,12 @@
+import pytest
+
 from .pages.landing_page import LandingPage
 from .pages.analytics_page import AnalyticsPage
 from .pages.welcome_page import WelcomePage
 
 
 class TestLandingPage:
+    @pytest.mark.no_ble
     def test_should_be_landing_page(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
