@@ -122,3 +122,10 @@ class MoldingPageLocators:
     MOLDING_START_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_title")
     MOLDING_START_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_subtitle")
     MOLDING_PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
+
+
+class PairYourEarbudsLocators:
+    PAIR_YOUR_EARBUDS_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
+    BLUETOOTH_SETTINGS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                    ".FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget"
+                                    ".TextView")

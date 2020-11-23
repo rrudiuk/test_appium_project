@@ -7,8 +7,6 @@ from .pages.demo_page import DemoSendCommandsPage
 import time
 
 
-@pytest.mark.ble_connected
-@pytest.mark.bt_connected
 @pytest.mark.demo
 class TestDemoPage:
     def test_can_access_demo_screen(self, driver):
