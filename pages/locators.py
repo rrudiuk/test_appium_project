@@ -129,3 +129,9 @@ class PairYourEarbudsLocators:
     BLUETOOTH_SETTINGS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                     ".FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget"
                                     ".TextView")
+
+
+class DialogPageLocators:
+    DIALOG_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
+    DIALOG_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_action")
+    DIALOG_ADDITIONAL_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_additional_action")

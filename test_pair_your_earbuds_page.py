@@ -9,7 +9,7 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
+@pytest.mark.pair_earbuds_carousel
 class TestPairYourEarbudsPage:
     def test_pair_your_earbuds_carousel_first_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
