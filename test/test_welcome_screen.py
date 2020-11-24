@@ -1,6 +1,6 @@
 import pytest
 
-from .pages.welcome_page import WelcomePage
+from ..pages.welcome_page import WelcomePage
 
 
 @pytest.mark.no_ble

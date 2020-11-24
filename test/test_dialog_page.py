@@ -1,9 +1,9 @@
 import pytest
 
-from .pages.dialogs_page import DialogPage
-from .pages.landing_page import LandingPage
-from .pages.analytics_page import AnalyticsPage
-from .pages.welcome_page import WelcomePage
+from ..pages.dialogs_page import DialogPage
+from ..pages.landing_page import LandingPage
+from ..pages.analytics_page import AnalyticsPage
+from ..pages.welcome_page import WelcomePage
 
 import time
 

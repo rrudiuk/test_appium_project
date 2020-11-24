@@ -1,9 +1,9 @@
 import pytest
 
-from .pages.landing_page import LandingPage
-from .pages.analytics_page import AnalyticsPage
-from .pages.welcome_page import WelcomePage
-from .pages.molding_page import MoldingPage
+from ..pages.landing_page import LandingPage
+from ..pages.analytics_page import AnalyticsPage
+from ..pages.welcome_page import WelcomePage
+from ..pages.molding_page import MoldingPage
 
 import time
 

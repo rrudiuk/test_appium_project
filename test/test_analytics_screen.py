@@ -1,7 +1,7 @@
 import pytest
 
-from .pages.analytics_page import AnalyticsPage
-from .pages.welcome_page import WelcomePage
+from ..pages.analytics_page import AnalyticsPage
+from ..pages.welcome_page import WelcomePage
 
 
 @pytest.mark.no_ble
