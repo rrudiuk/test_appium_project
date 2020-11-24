@@ -7,15 +7,11 @@ import time
 
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
-        expected_result = "Welcome to Your Perfect Fit"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Welcome to Your Perfect Fit")
 
     def should_be_correct_welcome_subtitle(self):
-        expected_result = "In just a few minutes, you'll have a pair of perfectly fitting, incredibly comfortable " \
-                          "earbuds."
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("In just a few minutes, you'll have a pair of perfectly fitting, incredibly "
+                                   "comfortable earbuds.")
 
     def should_be_welcome_screen_button(self):
         assert self.is_element_present(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
@@ -32,10 +28,11 @@ class WelcomePage(BasePage):
         self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
 
     def should_be_welcome_code_screen_title(self):
-        self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
-        expected_result = "WELCOME"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        # self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
+        # expected_result = "WELCOME"
+        # actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+        # assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("WELCOME")
 
     def should_be_welcome_edit_text_input(self):
         assert self.is_element_present(*WelcomePageLocators.WELCOME_SCREEN_EDIT_TEXT_CODE)
@@ -65,9 +62,7 @@ class WelcomePage(BasePage):
         self.click_element(*WelcomePageLocators.WELCOME_SCREEN_WHERE_IS_MY_CODE)
 
     def should_be_correct_setup_code_title(self):
-        expected_result = "SETUP CODE"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("SETUP CODE")
 
     def should_be_correct_welcome_setup_code_text(self):
         expected_result = "Your setup code is the number written on the inside lid of your box."

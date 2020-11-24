@@ -4,10 +4,9 @@ from .locators import DialogPageLocators
 
 
 class DialogPage(BasePage):
+
     def should_be_welcome_dialog_title(self):
-        expected_result = "Welcome!"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Welcome!")
 
     def should_be_welcome_dialog_message(self):
         expected_result = "If you've got a sec, we have some pretty cool features we'd like to share with you."

@@ -6,15 +6,11 @@ from .locators import BasePageLocators
 class AnalyticsPage(BasePage):
 
     def should_be_analytics_title(self):
-        expected_result = "Help Us Improve Our Products"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Help Us Improve Our Products")
 
     def should_be_correct_analytics_subtitle(self):
-        expected_result = "Help Ultimate Ears improve its products and services by automatically sending diagnostic " \
-                          "and usage data."
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("Help Ultimate Ears improve its products and services by automatically sending "
+                                   "diagnostic and usage data.")
 
     def should_be_correct_share_analytics_button_text(self):
         expected_result = "Yes, Share Analytics Data"

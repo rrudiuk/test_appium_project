@@ -88,3 +88,11 @@ class BasePage:
 
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
+
+    def check_screen_title(self, expected_result):
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+
+    def check_screen_subtitle(self, expected_result):
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"

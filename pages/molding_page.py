@@ -5,14 +5,11 @@ from .locators import MoldingPageLocators
 
 class MoldingPage(BasePage):
     def should_be_try_them_page_title(self):
-        expected_result = "Try Them On"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Try Them On")
 
     def should_be_correct_try_them_page_subtitle(self):
-        expected_result = "Pop your earbuds into your ears. Gently adjust them until they feel comfortable and secure."
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("Pop your earbuds into your ears. Gently adjust them until they feel comfortable "
+                                   "and secure.")
 
     def should_be_main_button(self):
         assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
@@ -21,9 +18,7 @@ class MoldingPage(BasePage):
         self.click_element(*BasePageLocators.BUTTON_MAIN)
 
     def should_be_get_ready_page_title(self):
-        expected_result = "Get Ready"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Get Ready")
 
     def should_be_message_title1(self):
         expected_result = "1"
@@ -59,19 +54,13 @@ class MoldingPage(BasePage):
         assert self.is_element_present(*MoldingPageLocators.MOLDING_SMILE_IMAGE)
 
     def should_be_stand_by_mirror_text(self):
-        expected_result = "Try standing by a mirror for this part"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("Try standing by a mirror for this part")
 
     def should_be_how_is_bass_title(self):
-        expected_result = "How’s the Bass?"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("How’s the Bass?")
 
     def should_be_correct_how_is_bass_subtitle(self):
-        expected_result = "Gently adjust your earbuds until you find the position that maximizes the bass."
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("Gently adjust your earbuds until you find the position that maximizes the bass.")
 
     def should_be_cancel_button(self):
         assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
@@ -108,15 +97,11 @@ class MoldingPage(BasePage):
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def should_congratulations_title(self):
-        expected_result = "Congratulations!"
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        self.check_screen_title("Congratulations!")
 
     def should_congratulations_subtitle(self):
-        expected_result = "You now have perfectly fitting earbuds. Throw on your " \
-                          "favorite song and take them for a spin."
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+        self.check_screen_subtitle("You now have perfectly fitting earbuds. Throw on your favorite song and take them "
+                                   "for a spin.")
 
     def should_finish_button(self):
         assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
