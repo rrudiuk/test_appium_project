@@ -11,7 +11,7 @@ def driver(request):
     # This is the Application and ‘app’ desired capability to specify a path to Appium
     dc['app'] = "C://app/app-debug.apk"
     # appPackage and appActivity desired capability specify app details to Appium
-    dc['appPackage'] = "com.logitech.uefits"
+    dc['appPackage'] = ""
     # dc['appActivity'] = ".MainActivity"
     # platformName desired capability specify platform detail to Appium
     dc['platformName'] = 'Android'

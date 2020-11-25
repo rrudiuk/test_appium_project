@@ -9,7 +9,7 @@ from ..pages.welcome_page import WelcomePage
 import time
 
 
-# @pytest.mark.test
+@pytest.mark.test
 class TestHomePage:
     def test_home_screen(self, driver):
         analytics_page = AnalyticsPage(driver)

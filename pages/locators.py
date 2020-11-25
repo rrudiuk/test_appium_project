@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 # Add your locators below
 
-APP_PACKAGE_NAME = "com.logitech.uefits"
+APP_PACKAGE_NAME = ""
 
 
 class BasePageLocators:

@@ -15,17 +15,18 @@ class TestWelcomePage:
         welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button_text()
 
-    # def test_should_be_welcome_screen_after_background(self, driver):
-    #     welcome_page = WelcomePage(driver)
-    #     welcome_page.should_be_correct_welcome_title()
-    #     welcome_page.should_be_correct_welcome_subtitle()
-    #     welcome_page.should_be_welcome_screen_button()
-    #     welcome_page.should_be_welcome_get_started_button_text()
-    #     welcome_page.background_app_for_10_seconds()
-    #     welcome_page.should_be_correct_welcome_title()
-    #     welcome_page.should_be_correct_welcome_subtitle()
-    #     welcome_page.should_be_welcome_screen_button()
-    #     welcome_page.should_be_welcome_get_started_button_text()
+    @pytest.mark.xfail
+    def test_should_be_welcome_screen_after_background(self, driver):
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.should_be_correct_welcome_subtitle()
+        welcome_page.should_be_welcome_screen_button()
+        welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.background_app_for_10_seconds()
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.should_be_correct_welcome_subtitle()
+        welcome_page.should_be_welcome_screen_button()
+        welcome_page.should_be_welcome_get_started_button_text()
 
     def test_should_be_welcome_code_screen(self, driver):
         welcome_page = WelcomePage(driver)
