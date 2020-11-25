@@ -8,7 +8,7 @@ from ..pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
+@pytest.mark.molded_earbuds
 class TestDialogPage:
     def test_welcome_dialog_pops_up(self, driver):
         analytics_page = AnalyticsPage(driver)

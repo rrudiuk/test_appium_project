@@ -6,6 +6,7 @@ from ..pages.welcome_page import WelcomePage
 @pytest.mark.no_ble
 @pytest.mark.ble_connected
 @pytest.mark.bt_connected
+@pytest.mark.smoke_test_not_molded
 class TestWelcomePage:
     def test_should_be_welcome_screen(self, driver):
         welcome_page = WelcomePage(driver)

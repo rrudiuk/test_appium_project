@@ -1,14 +1,17 @@
 import pytest
 
-from ..pages.landing_page import LandingPage
 from ..pages.analytics_page import AnalyticsPage
-from ..pages.welcome_page import WelcomePage
+from ..pages.dialogs_page import DialogPage
+from ..pages.landing_page import LandingPage
 from ..pages.molding_page import MoldingPage
+from ..pages.home_page import HomePage
+from ..pages.welcome_page import WelcomePage
 
 import time
 
 
 @pytest.mark.bt_connected
+@pytest.mark.smoke_test_not_molded
 class TestMoldingPage:
     def test_should_be_try_them_page(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -145,15 +148,17 @@ class TestMoldingPage:
     @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        dialog_page = DialogPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        home_page = HomePage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -172,3 +177,24 @@ class TestMoldingPage:
         molding_page.should_congratulations_subtitle()
         molding_page.should_finish_button()
         molding_page.should_finish_button_text()
+        molding_page.tap_finish_button()
+        dialog_page.should_be_welcome_dialog_title()
+        dialog_page.should_be_welcome_dialog_message()
+        dialog_page.tap_no_thanks_button()
+        home_page.should_be_earbuds_name()
+        home_page.should_be_connected_state()
+        home_page.should_be_hamburger_menu()
+        home_page.should_be_settings_icon()
+        home_page.should_be_left_earbud_image()
+        home_page.should_be_left_battery_image()
+        home_page.should_be_left_battery_percents()
+        home_page.should_be_right_earbud_image()
+        home_page.should_be_right_battery_image()
+        home_page.should_be_right_battery_percents()
+        home_page.should_be_case_image()
+        home_page.should_be_case_battery_image()
+        home_page.should_be_case_battery_percents()
+        home_page.should_be_eq_expand_icon()
+        home_page.should_be_eq_name()
+        home_page.should_be_ue_signature_eq_selected()
+        home_page.should_be_eq_curve_image()

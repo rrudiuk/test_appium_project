@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 # Add your locators below
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 
 
 class BasePageLocators:
@@ -140,6 +140,7 @@ class DialogPageLocators:
 class HomePageLocators:
     EARBUDS_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name")
     EARBUDS_STATUS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_status")
+    CONNECT_EARBUDS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_connect")
     HOME_SCREEN_LEFT_MENU = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
                                        ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
                                        "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout"
@@ -156,5 +157,5 @@ class HomePageLocators:
     RIGHT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_percents")
     CASE_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_case_percents")
     EXPAND_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_expand")
-    CHOSEN_PRESET = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
-    EQ_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
+    CHOSEN_PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
+    EQ_CURVE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
