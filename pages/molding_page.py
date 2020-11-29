@@ -36,7 +36,7 @@ class MoldingPage(BasePage):
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def should_be_message1(self):
-        expected_result = "We'll do a quick sound test to ensure a sound-isolating fit before we mold."
+        expected_result = "We'll do a quick sound tests to ensure a sound-isolating fit before we mold."
         actual_result = self.get_text(*MoldingPageLocators.MOLDING_TEXT_VIEW_MSG1)
         assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
 

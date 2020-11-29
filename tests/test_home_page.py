@@ -9,9 +9,9 @@ from ..pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
 class TestHomePage:
-    def test_home_screen(self, driver):
+    @pytest.mark.smoke_test_molded
+    def test_home_screen_connected(self, driver):
         analytics_page = AnalyticsPage(driver)
         dialog_page = DialogPage(driver)
         landing_page = LandingPage(driver)
@@ -43,3 +43,29 @@ class TestHomePage:
         home_page.should_be_eq_name()
         home_page.should_be_ue_signature_eq_selected()
         home_page.should_be_eq_curve_image()
+
+    @pytest.mark.test
+    def test_home_screen_not_connected(self, driver):
+        dialog_page = DialogPage(driver)
+        home_page = HomePage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_10_times()
+        welcome_page.should_be_welcome_code_screen_title()
+        welcome_page.go_to_home_screen_code()
+        welcome_page.tap_screen_code_get_started()
+        dialog_page.should_be_welcome_dialog_title()
+        dialog_page.should_be_welcome_dialog_message()
+        dialog_page.tap_no_thanks_button()
+        home_page.should_be_earbuds_name()
+        home_page.should_be_scanning_state()
+        home_page.should_be_hamburger_menu()
+        home_page.should_be_settings_icon()
+        home_page.should_be_left_earbud_image()
+        home_page.should_be_right_earbud_image()
+        home_page.should_be_case_image()
+        home_page.should_be_eq_expand_icon()
+        home_page.should_be_eq_name()
+        home_page.should_be_ue_signature_eq_selected()
+        home_page.should_be_eq_curve_image()
+        assert not home_page.should_be_left_battery_image()
