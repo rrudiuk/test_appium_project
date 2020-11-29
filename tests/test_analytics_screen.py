@@ -1,13 +1,14 @@
 import pytest
 
-from ..pages.analytics_page import AnalyticsPage
-from ..pages.welcome_page import WelcomePage
+from .pages.analytics_page import AnalyticsPage
+from .pages.welcome_page import WelcomePage
 
 
 @pytest.mark.no_ble
 @pytest.mark.ble_connected
 @pytest.mark.bt_connected
 @pytest.mark.smoke_test_not_molded
+@pytest.mark.test
 class TestAnalyticsPage:
     def test_should_be_analytics_screen(self, driver):
         analytics_page = AnalyticsPage(driver)

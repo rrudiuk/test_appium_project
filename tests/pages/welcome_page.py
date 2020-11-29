@@ -14,7 +14,7 @@ class WelcomePage(BasePage):
                                    "comfortable earbuds.")
 
     def should_be_welcome_screen_button(self):
-        assert self.is_element_present(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
+        assert self.is_element_present(*WelcomePageLocators.WELCOME_SCREEN_BUTTON), "Get started button doesn't appear"
 
     def should_be_welcome_get_started_button_text(self):
         expected_result = "Get Started"
@@ -22,7 +22,7 @@ class WelcomePage(BasePage):
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be '{expected_result}'"
 
     def tap_welcome_screen_get_started(self):
-        self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
+        self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON), "Get started button not found"
 
     def tap_welcome_screen_10_times(self):
         self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)

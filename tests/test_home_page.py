@@ -1,10 +1,10 @@
 import pytest
 
-from ..pages.analytics_page import AnalyticsPage
-from ..pages.dialogs_page import DialogPage
-from ..pages.landing_page import LandingPage
-from ..pages.home_page import HomePage
-from ..pages.welcome_page import WelcomePage
+from .pages.analytics_page import AnalyticsPage
+from .pages.dialogs_page import DialogPage
+from .pages.landing_page import LandingPage
+from .pages.home_page import HomePage
+from .pages.welcome_page import WelcomePage
 
 import time
 

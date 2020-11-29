@@ -1,10 +1,10 @@
 import pytest
 from appium.webdriver.common.touch_action import TouchAction
 
-from ..pages.pair_your_earbuds_page import PairYourEarbudsPage
-from ..pages.landing_page import LandingPage
-from ..pages.analytics_page import AnalyticsPage
-from ..pages.welcome_page import WelcomePage
+from .pages.pair_your_earbuds_page import PairYourEarbudsPage
+from .pages.landing_page import LandingPage
+from .pages.analytics_page import AnalyticsPage
+from .pages.welcome_page import WelcomePage
 
 import time
 

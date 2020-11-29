@@ -1,8 +1,8 @@
 import pytest
 
-from ..pages.landing_page import LandingPage
-from ..pages.analytics_page import AnalyticsPage
-from ..pages.welcome_page import WelcomePage
+from .pages.landing_page import LandingPage
+from .pages.analytics_page import AnalyticsPage
+from .pages.welcome_page import WelcomePage
 
 
 @pytest.mark.no_ble

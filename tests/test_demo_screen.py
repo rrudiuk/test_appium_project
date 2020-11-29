@@ -1,8 +1,8 @@
 import pytest
 
-from ..pages.welcome_page import WelcomePage
-from ..pages.demo_page import DemoPage
-from ..pages.demo_page import DemoSendCommandsPage
+from .pages.welcome_page import WelcomePage
+from .pages.demo_page import DemoPage
+from .pages.demo_page import DemoSendCommandsPage
 
 import time
 

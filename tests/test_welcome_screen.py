@@ -1,6 +1,6 @@
 import pytest
 
-from ..pages.welcome_page import WelcomePage
+from .pages.welcome_page import WelcomePage
 
 
 @pytest.mark.no_ble
@@ -8,7 +8,6 @@ from ..pages.welcome_page import WelcomePage
 @pytest.mark.bt_connected
 @pytest.mark.smoke_test_not_molded
 class TestWelcomePage:
-    @pytest.mark.test
     def test_should_be_welcome_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
