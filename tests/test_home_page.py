@@ -44,7 +44,6 @@ class TestHomePage:
         home_page.should_be_ue_signature_eq_selected()
         home_page.should_be_eq_curve_image()
 
-    @pytest.mark.test
     def test_home_screen_not_connected(self, driver):
         dialog_page = DialogPage(driver)
         home_page = HomePage(driver)
@@ -69,3 +68,7 @@ class TestHomePage:
         home_page.should_be_ue_signature_eq_selected()
         home_page.should_be_eq_curve_image()
         assert not home_page.should_be_left_battery_image()
+
+# run with
+# pytest -v --reruns 2 --tb=line -m test --html=report.html
+# pytest -v --reruns 2 --tb=line -m test --html=C:\app\test_report\report.html
