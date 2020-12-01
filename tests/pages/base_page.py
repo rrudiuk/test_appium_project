@@ -1,3 +1,4 @@
+from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
@@ -15,6 +16,14 @@ class BasePage:
 
     def background_app_for_10_seconds(self):
         self.driver.background_app(10)
+
+    def check_screen_title(self, expected_result):
+        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+
+    def check_screen_subtitle(self, expected_result):
+        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
+        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def click_element(self, how, what):
         try:
@@ -36,6 +45,14 @@ class BasePage:
             return len(self.driver.find_elements(how, what))
         except NoSuchElementException:
             return 0
+
+    def get_text(self, how, what, encoding=None):
+
+        try:
+            text = self.driver.find_element(how, what).text
+        except NoSuchElementException:
+            return False
+        return text.encode(encoding) if encoding else text
 
     def locate_element(self, how, what):
         try:
@@ -73,24 +90,14 @@ class BasePage:
 
         return False
 
-    def get_text(self, how, what, encoding=None):
-
-        try:
-            text = self.driver.find_element(how, what).text
-        except NoSuchElementException:
-            return False
-        return text.encode(encoding) if encoding else text
-
     def should_be_back_arrow(self):
         assert self.is_element_present(*BasePageLocators.BACK_ARROW)
 
+    def swipe_left(self):
+        TouchAction(self.driver).press(x=855, y=1215).move_to(x=268, y=1222).release().perform()
+
+    def swipe_right(self):
+        TouchAction(self.driver).press(x=218, y=1176).move_to(x=829, y=1176).release().perform()
+
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
-
-    def check_screen_title(self, expected_result):
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
-
-    def check_screen_subtitle(self, expected_result):
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
-        assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
