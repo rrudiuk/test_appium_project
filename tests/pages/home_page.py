@@ -26,49 +26,57 @@ class HomePage(BasePage):
         self.click_element(*HomePageLocators.CONNECT_EARBUDS_BUTTON)
 
     def should_be_hamburger_menu(self):
-        self.is_element_present(*HomePageLocators.HOME_SCREEN_LEFT_MENU)
+        assert self.is_element_present(*HomePageLocators.HOME_SCREEN_LEFT_MENU), "Left menu doesn't appear on Home " \
+                                                                                 "screen"
 
     def tap_hamburger_menu_icon(self):
         self.click_element(*HomePageLocators.HOME_SCREEN_LEFT_MENU)
 
     def should_be_settings_icon(self):
-        self.is_element_present(*HomePageLocators.HOME_SCREEN_SETTINGS)
+        assert self.is_element_present(*HomePageLocators.HOME_SCREEN_SETTINGS), "Settings icon doesn't appear"
 
     def tap_settings_icon(self):
         self.click_element(*HomePageLocators.HOME_SCREEN_SETTINGS)
 
     def should_be_left_earbud_image(self):
-        self.is_element_present(*HomePageLocators.LEFT_EARBUD_IMAGE)
+        assert self.is_element_present(*HomePageLocators.LEFT_EARBUD_IMAGE), "Left earbud image doesn't appear"
 
     def should_be_right_earbud_image(self):
-        self.is_element_present(*HomePageLocators.RIGHT_EARBUD_IMAGE)
+        assert self.is_element_present(*HomePageLocators.RIGHT_EARBUD_IMAGE), "Right earbud image doesn't appear"
 
     def should_be_case_image(self):
-        self.is_element_present(*HomePageLocators.CASE_IMAGE)
+        assert self.is_element_present(*HomePageLocators.CASE_IMAGE), "Case image doesn't appear"
 
     def should_be_left_battery_image(self):
-        self.is_element_present(*HomePageLocators.LEFT_BATTERY_IMAGE)
+        assert self.is_element_present(*HomePageLocators.LEFT_BATTERY_IMAGE), "Left earbud battery image doesn't appear"
 
     def should_be_right_battery_image(self):
-        self.is_element_present(*HomePageLocators.RIGHT_BATTERY_IMAGE)
+        assert self.is_element_present(*HomePageLocators.RIGHT_BATTERY_IMAGE), "Right earbud battery image doesn't " \
+                                                                               "appear"
 
     def should_be_case_battery_image(self):
-        self.is_element_present(*HomePageLocators.CASE_BATTERY_IMAGE)
+        assert self.is_element_present(*HomePageLocators.CASE_BATTERY_IMAGE), "Case battery image doesn't appear"
 
     def should_be_left_battery_percents(self):
-        self.is_element_present(*HomePageLocators.LEFT_BATTERY_PERCENTS)
+        assert self.is_element_present(*HomePageLocators.LEFT_BATTERY_PERCENTS), "Left earbud battery percentage " \
+                                                                                 "doesn't appear"
 
     def should_be_right_battery_percents(self):
-        self.is_element_present(*HomePageLocators.RIGHT_BATTERY_PERCENTS)
+        assert self.is_element_present(*HomePageLocators.RIGHT_BATTERY_PERCENTS), "Right earbud battery percentage " \
+                                                                                  "doesn't appear"
 
     def should_be_case_battery_percents(self):
-        self.is_element_present(*HomePageLocators.CASE_BATTERY_PERCENTS)
+        assert self.is_element_present(*HomePageLocators.CASE_BATTERY_PERCENTS), "Case battery percentage doesn't " \
+                                                                                 "appear"
 
     def should_be_eq_expand_icon(self):
-        self.is_element_present(*HomePageLocators.EXPAND_IMAGE)
+        assert self.is_element_present(*HomePageLocators.EXPAND_IMAGE), "Expand arrow doesn't appear"
+
+    def tap_eq_expand_icon(self):
+        self.click_element(*HomePageLocators.EXPAND_IMAGE)
 
     def should_be_eq_name(self):
-        self.is_element_present(*HomePageLocators.CHOSEN_PRESET_NAME)
+        assert self.is_element_present(*HomePageLocators.CHOSEN_PRESET_NAME), "EQ name doesn't appear on Home screen"
 
     def should_be_ue_signature_eq_selected(self):
         expected_result = "UE Signature"
@@ -76,4 +84,4 @@ class HomePage(BasePage):
         assert actual_result == expected_result, f"Preset {actual_result} is selected, should be {expected_result}"
 
     def should_be_eq_curve_image(self):
-        self.is_element_present(*HomePageLocators.EQ_CURVE_IMAGE)
+        assert self.is_element_present(*HomePageLocators.EQ_CURVE_IMAGE), "EQ curve doesn't apper on Home screen"

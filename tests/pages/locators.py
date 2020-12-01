@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
 APP_PACKAGE_NAME = ""
 # Add your locators below
 
@@ -171,3 +170,22 @@ class TutorialHomePageLocators:
     TUTORIAL_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     TUTORIAL_NEXT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_next")
     SKIP_TUTORIAL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_skip_tutorial")
+
+
+class EqPresetsPageLocators:
+    # Toolbar locators
+    PRESETS_TOOLBAR = (By.ID, f"{APP_PACKAGE_NAME}:id/toolbar")
+    LEFT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery_collapsed")
+    RIGHT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery_collapsed")
+    CASE_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery_collapsed")
+    # Expandable EQ block locators
+    EXPANDABLE_BLOCK = (By.ID, f"{APP_PACKAGE_NAME}:id/group_expandable_part")
+    CUSTOMIZE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_customize")
+    DIVIDER_LINE = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
+    PRESETS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_presets")
+    EDIT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_edit")
+    ADD_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_add")
+    PRESETS_RECYCLER_VIEW = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view_presets")
+    PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view")
+    PRESET_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
+    PRESET_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")

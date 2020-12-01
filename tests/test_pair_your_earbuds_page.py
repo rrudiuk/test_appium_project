@@ -1,5 +1,4 @@
 import pytest
-from appium.webdriver.common.touch_action import TouchAction
 
 from .pages.pair_your_earbuds_page import PairYourEarbudsPage
 from .pages.landing_page import LandingPage
@@ -68,7 +67,6 @@ class TestPairYourEarbudsPage:
         pair_your_earbuds.should_be_open_bluetooth_button()
         pair_your_earbuds.should_be_open_bluetooth_button_text()
 
-    @pytest.mark.test
     def test_pair_your_earbuds_carousel_back_swipe(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)

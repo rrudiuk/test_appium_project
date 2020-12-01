@@ -74,6 +74,7 @@ class TestMoldingPage:
         molding_page.should_be_cancel_button()
         molding_page.should_be_cancel_button_text()
         molding_page.tap_cancel_button()
+        molding_page.should_be_get_ready_page_title()
 
     def test_should_start_soon_page1(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -95,6 +96,7 @@ class TestMoldingPage:
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
         molding_page.tap_cancel_button()
+        molding_page.should_be_get_ready_page_title()
 
     def test_should_start_soon_page2(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -119,6 +121,7 @@ class TestMoldingPage:
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
         molding_page.tap_cancel_button()
+        molding_page.should_be_get_ready_page_title()
 
     def test_cancel_molding_on_count(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -144,6 +147,7 @@ class TestMoldingPage:
         molding_page.should_be_starting_soon_subtitle2()
         time.sleep(5)
         molding_page.tap_cancel_button()
+        molding_page.should_be_get_ready_page_title()
 
     @pytest.mark.first_molding
     def test_molding_complete(self, driver):
