@@ -1,7 +1,8 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import DialogPage
+from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.eq_presets_page import EqPresetsPage
 from .pages.home_page import HomePage
 from .pages.landing_page import LandingPage
 from .pages.tutorial_home_screen_page import TutorialHomeScreenPage
@@ -13,7 +14,8 @@ import time
 class TestTutorialHomeScreen:
     def test_tutorial_first_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = DialogPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
         tutorial_page = TutorialHomeScreenPage(driver)
@@ -41,13 +43,14 @@ class TestTutorialHomeScreen:
         home_page.should_be_left_earbud_image()
         home_page.should_be_right_earbud_image()
         home_page.should_be_case_image()
-        home_page.should_be_eq_name()
-        home_page.should_be_ue_signature_eq_selected()
-        home_page.should_be_eq_curve_image()
+        eq_presets_page.should_be_eq_name()
+        eq_presets_page.should_be_ue_signature_eq_selected()
+        eq_presets_page.should_be_eq_curve_image()
 
     def test_tutorial_second_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = DialogPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
         tutorial_page = TutorialHomeScreenPage(driver)
@@ -77,13 +80,14 @@ class TestTutorialHomeScreen:
         home_page.should_be_left_earbud_image()
         home_page.should_be_right_earbud_image()
         home_page.should_be_case_image()
-        home_page.should_be_eq_name()
-        home_page.should_be_ue_signature_eq_selected()
-        home_page.should_be_eq_curve_image()
+        eq_presets_page.should_be_eq_name()
+        eq_presets_page.should_be_ue_signature_eq_selected()
+        eq_presets_page.should_be_eq_curve_image()
 
     def test_tutorial_third_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = DialogPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
         tutorial_page = TutorialHomeScreenPage(driver)
@@ -116,6 +120,6 @@ class TestTutorialHomeScreen:
         home_page.should_be_left_earbud_image()
         home_page.should_be_right_earbud_image()
         home_page.should_be_case_image()
-        home_page.should_be_eq_name()
-        home_page.should_be_ue_signature_eq_selected()
-        home_page.should_be_eq_curve_image()
+        eq_presets_page.should_be_eq_name()
+        eq_presets_page.should_be_ue_signature_eq_selected()
+        eq_presets_page.should_be_eq_curve_image()

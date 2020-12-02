@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 # Add your locators below
 
 
@@ -10,6 +10,7 @@ class BasePageLocators:
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
     BUTTON_MAIN = (By.ID, f"{APP_PACKAGE_NAME}:id/button")
+    PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
 
 
 class WelcomePageLocators:
@@ -121,7 +122,6 @@ class MoldingPageLocators:
     MOLDING_CANCEL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_cancel")
     MOLDING_START_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_title")
     MOLDING_START_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_subtitle")
-    MOLDING_PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
 
 
 class PairYourEarbudsLocators:
@@ -156,9 +156,6 @@ class HomePageLocators:
     LEFT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_left_percents")
     RIGHT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_percents")
     CASE_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_case_percents")
-    EXPAND_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_expand")
-    CHOSEN_PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
-    EQ_CURVE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
 
 
 class TutorialHomePageLocators:
@@ -174,10 +171,11 @@ class TutorialHomePageLocators:
 
 class EqPresetsPageLocators:
     # Toolbar locators
-    PRESETS_TOOLBAR = (By.ID, f"{APP_PACKAGE_NAME}:id/toolbar")
+    TOOLBAR = (By.ID, f"{APP_PACKAGE_NAME}:id/toolbar")
     LEFT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery_collapsed")
     RIGHT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery_collapsed")
     CASE_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery_collapsed")
+    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/item_save")
     # Expandable EQ block locators
     EXPANDABLE_BLOCK = (By.ID, f"{APP_PACKAGE_NAME}:id/group_expandable_part")
     CUSTOMIZE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_customize")
@@ -189,3 +187,10 @@ class EqPresetsPageLocators:
     PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view")
     PRESET_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
     PRESET_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
+    EXPAND_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_expand")
+    CHOSEN_PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
+    EQ_CURVE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
+    # Edit Presets screen locators
+    REMOVE_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_remove")
+    DRAG_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_drag")
+    EDIT_PRESETS_LIST = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view")

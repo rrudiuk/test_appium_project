@@ -68,20 +68,3 @@ class HomePage(BasePage):
     def should_be_case_battery_percents(self):
         assert self.is_element_present(*HomePageLocators.CASE_BATTERY_PERCENTS), "Case battery percentage doesn't " \
                                                                                  "appear"
-
-    def should_be_eq_expand_icon(self):
-        assert self.is_element_present(*HomePageLocators.EXPAND_IMAGE), "Expand arrow doesn't appear"
-
-    def tap_eq_expand_icon(self):
-        self.click_element(*HomePageLocators.EXPAND_IMAGE)
-
-    def should_be_eq_name(self):
-        assert self.is_element_present(*HomePageLocators.CHOSEN_PRESET_NAME), "EQ name doesn't appear on Home screen"
-
-    def should_be_ue_signature_eq_selected(self):
-        expected_result = "UE Signature"
-        actual_result = self.get_text(*HomePageLocators.CHOSEN_PRESET_NAME)
-        assert actual_result == expected_result, f"Preset {actual_result} is selected, should be {expected_result}"
-
-    def should_be_eq_curve_image(self):
-        assert self.is_element_present(*HomePageLocators.EQ_CURVE_IMAGE), "EQ curve doesn't apper on Home screen"

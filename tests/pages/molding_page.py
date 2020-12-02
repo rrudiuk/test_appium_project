@@ -115,4 +115,4 @@ class MoldingPage(BasePage):
         self.click_element(*BasePageLocators.BUTTON_MAIN)
 
     def should_be_progress_bar(self):
-        self.is_element_present(*MoldingPageLocators.MOLDING_PROGRESS_BAR)
+        self.is_element_present(*BasePageLocators.PROGRESS_BAR)

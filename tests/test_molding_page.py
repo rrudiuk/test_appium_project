@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import DialogPage
+from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.landing_page import LandingPage
 from .pages.molding_page import MoldingPage
 from .pages.home_page import HomePage
@@ -152,7 +152,7 @@ class TestMoldingPage:
     @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = DialogPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
         home_page = HomePage(driver)

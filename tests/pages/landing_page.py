@@ -18,3 +18,6 @@ class LandingPage(BasePage):
 
     def tap_next_button(self):
         self.click_element(*BasePageLocators.BUTTON_MAIN)
+
+    def should_be_progress_bar(self):
+        assert self.is_element_present(*BasePageLocators.PROGRESS_BAR), "Progress bar doesn't appear"
