@@ -99,5 +99,8 @@ class BasePage:
     def swipe_right(self):
         TouchAction(self.driver).press(x=218, y=1176).move_to(x=829, y=1176).release().perform()
 
+    def scroll_down(self):
+        TouchAction(self.driver).press(x=443, y=1965).move_to(x=436, y=1470).release().perform()
+
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)

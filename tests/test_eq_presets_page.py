@@ -4,6 +4,7 @@ from .pages.analytics_page import AnalyticsPage
 from .pages.dialogs_page import EditPresetsDialogPage
 from .pages.eq_presets_page import EditPresetsPage
 from .pages.eq_presets_page import EqPresetsPage
+from .pages.eq_presets_page import EqPresetSetupPage
 from .pages.home_page import HomePage
 from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.landing_page import LandingPage
@@ -147,9 +148,13 @@ class TestEqPresetsPage:
         dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
+        eq_presets_page.scroll_down()
+        time.sleep(3)
+        eq_presets_page.should_be_initial_preset_order()
         eq_presets_page.tap_edit_button()
         edit_preset_page.move_second_preset_to_fourth_position()
         edit_preset_page.tap_back_arrow()
+        time.sleep(3)
         eq_presets_page.should_be_initial_preset_order()
 
     def test_reordering_should_be_saved_after_tapping_save_button(self, driver):
@@ -170,7 +175,7 @@ class TestEqPresetsPage:
         edit_preset_page.move_first_preset_to_fourth_position()
         edit_preset_page.tap_save_button()
         eq_presets_page.should_be_ue_signature_eq_selected()
-        eq_presets_page.should_be_preset_order_after_moving_ue_signature()
+        eq_presets_page.should_be_preset_order_after_moving_ue_signature_to_fourth()
 
     def test_reorder_and_delete_first_item(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -272,3 +277,29 @@ class TestEqPresetsPage:
         edit_preset_page.tap_save_button()
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_one_preset()
+
+    @pytest.mark.test
+    def test_access_new_preset_editor(self, driver):
+        analytics_page = AnalyticsPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        eq_presets_page = EqPresetsPage(driver)
+        eq_preset_setup_page = EqPresetSetupPage(driver)
+        home_page = HomePage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.tap_welcome_screen_get_started()
+        analytics_page.tap_share_analytics_button()
+        time.sleep(10)
+        dialog_page.should_be_welcome_dialog_title()
+        dialog_page.tap_no_thanks_button()
+        home_page.should_be_connected_state()
+        eq_presets_page.tap_eq_expand_icon()
+        eq_presets_page.tap_add_button()
+        eq_preset_setup_page.should_be_toolbar()
+        eq_preset_setup_page.should_be_new_preset_setup_title()
+        eq_preset_setup_page.should_be_eq_editor()
+        eq_preset_setup_page.should_be_history_title()
+        eq_preset_setup_page.should_be_backward_arrow()
+        eq_preset_setup_page.should_be_forward_arrow()
+        eq_preset_setup_page.should_be_history_progress_bar()
+        eq_preset_setup_page.tap_back_arrow()
+        eq_presets_page.should_be_initial_preset_order()

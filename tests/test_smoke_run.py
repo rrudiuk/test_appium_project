@@ -698,7 +698,7 @@ class TestSmokeTest:
         edit_preset_page.move_first_preset_to_fourth_position()
         edit_preset_page.tap_save_button()
         eq_presets_page.should_be_ue_signature_eq_selected()
-        eq_presets_page.should_be_preset_order_after_moving_ue_signature()
+        eq_presets_page.should_be_preset_order_after_moving_ue_signature_to_fourth()
 
     def test_reorder_and_delete_first_item(self, driver):
         analytics_page = AnalyticsPage(driver)

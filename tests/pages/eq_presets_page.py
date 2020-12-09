@@ -13,6 +13,8 @@ hi_lo_boost = "Hi / Lo Boost"
 loudness = "Loudness"
 spoken_word = "Spoken Word"
 
+"""Main screen with presets selection"""
+
 
 class EqPresetsPage(BasePage):
     # Toolbar elements
@@ -172,7 +174,7 @@ class EqPresetsPage(BasePage):
         self.check_preset_order(first_preset=ue_signature, second_preset=bass_boost, third_preset=bright,
                                 fourth_preset=hi_lo_boost, fifth_preset=loudness, sixth_preset=spoken_word)
 
-    def should_be_preset_order_after_moving_ue_signature(self):
+    def should_be_preset_order_after_moving_ue_signature_to_fourth(self):
         self.check_preset_order(first_preset=bass_boost, second_preset=bright, third_preset=hi_lo_boost,
                                 fourth_preset=ue_signature, fifth_preset=loudness, sixth_preset=spoken_word)
 
@@ -181,12 +183,12 @@ class EqPresetsPage(BasePage):
         assert presets[0].text == first_preset and presets[1].text == second_preset and \
                presets[2].text == third_preset and presets[3].text == fourth_preset and \
                presets[4].text == fifth_preset and presets[5].text == sixth_preset, \
-               f"First preset {first_preset}, should be {presets[0].text}, " \
-               f"second preset {second_preset}, should be {presets[1].text}, " \
-               f"third preset {third_preset}, should be {presets[2].text}, " \
-               f"fourth preset {fourth_preset}, should be {presets[3].text}, " \
-               f"fifth preset {fifth_preset}, should be {presets[4].text}, " \
-               f"fourth preset {sixth_preset}, should be {presets[5].text}, "
+            f"First preset {first_preset}, should be {presets[0].text}, " \
+            f"second preset {second_preset}, should be {presets[1].text}, " \
+            f"third preset {third_preset}, should be {presets[2].text}, " \
+            f"fourth preset {fourth_preset}, should be {presets[3].text}, " \
+            f"fifth preset {fifth_preset}, should be {presets[4].text}, " \
+            f"fourth preset {sixth_preset}, should be {presets[5].text}, "
 
     def select_preset(self, preset_position):
         presets = self.locate_elements(*EqPresetsPageLocators.PRESET_NAME)
@@ -212,6 +214,9 @@ class EqPresetsPage(BasePage):
 
     def select_6_preset(self):
         self.select_preset(5)
+
+
+"""Screen that allows managing presets order and delete them"""
 
 
 class EditPresetsPage(EqPresetsPage):
@@ -267,10 +272,10 @@ class EditPresetsPage(EqPresetsPage):
             f"position now {expected_preset}"
 
     def move_first_preset_to_fourth_position(self):
-        self.reorder_preset_up(0, 5)
+        self.reorder_preset_up(0, 4)
 
     def move_second_preset_to_fourth_position(self):
-        self.reorder_preset_up(1, 5)
+        self.reorder_preset_up(1, 4)
 
     def move_six_preset_to_second_position(self):
         self.reorder_preset_down(5, 0)
@@ -297,3 +302,29 @@ class EditPresetsPage(EqPresetsPage):
 
     def delete_sixth_preset(self):
         self.tap_to_delete_preset(4)
+
+
+"""Screen that allows to configure preset values"""
+
+
+class EqPresetSetupPage(EqPresetsPage):
+    def should_be_new_preset_setup_title(self):
+        self.check_screen_title("New preset")
+
+    def should_be_eq_editor(self):
+        assert self.is_element_present(*EqPresetsPageLocators.EQ_EDITOR), "EQ editor is missing"
+
+    def should_be_history_title(self):
+        expected_result = "HISTORY"
+        actual_result = self.get_text(*EqPresetsPageLocators.HISTORY_TITLE)
+        assert actual_result == expected_result, f"Title {actual_result}, should be {expected_result}"
+
+    def should_be_backward_arrow(self):
+        assert self.is_element_present(*EqPresetsPageLocators.BACKWARD_ARROW), "Backwards arrow is missing"
+
+    def should_be_forward_arrow(self):
+        assert self.is_element_present(*EqPresetsPageLocators.FORWARD_ARROW), "Forward arrow is missing"
+
+    def should_be_history_progress_bar(self):
+        assert self.is_element_present(*EqPresetsPageLocators.PROGRESS_HISTORY_BAR), "History progress bar is " \
+                                                                                     "missing"

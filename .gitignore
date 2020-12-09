@@ -101,6 +101,11 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Application folder
+.app
+app/
+/app
+
 # Environments
 .env
 .venv
@@ -127,3 +132,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/tests/
