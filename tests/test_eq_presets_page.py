@@ -278,7 +278,6 @@ class TestEqPresetsPage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_one_preset()
 
-    @pytest.mark.test
     def test_access_new_preset_editor(self, driver):
         analytics_page = AnalyticsPage(driver)
         dialog_page = HomeScreenWelcomeDialogPage(driver)

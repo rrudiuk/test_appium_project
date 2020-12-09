@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 # Add your locators below
 
 
@@ -200,3 +200,33 @@ class EqPresetsPageLocators:
     BACKWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_backward")
     FORWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_forward")
     PROGRESS_HISTORY_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/seek_bar_history")
+
+
+class MenuPageLocators:
+    HEADER_CONTAINER = (By.ID, f"{APP_PACKAGE_NAME}:id/navigation_header_container")
+    APPLICATION_LOGO = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_logo")
+    CLOSE_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")
+    HOME_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                           ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                           ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.drawerlayout"
+                           ".widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView"
+                           "/androidx.appcompat.widget.LinearLayoutCompat[1]/android.widget.CheckedTextView")
+    MOLD_NEW_TIPS_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                    ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
+                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
+                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
+                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
+                                    "2]/android.widget.CheckedTextView")
+    TEST_YOUR_FIT_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                    ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
+                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
+                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
+                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
+                                    "3]/android.widget.CheckedTextView")
+    LEARN_MORE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                 ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                 ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
+                                 ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview"
+                                 ".widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
+                                 "4]/android.widget.CheckedTextView")
+    SUPPORT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")

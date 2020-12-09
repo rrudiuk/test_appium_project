@@ -8,6 +8,7 @@ from .pages.eq_presets_page import EqPresetsPage
 from .pages.home_page import HomePage
 from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.landing_page import LandingPage
+from .pages.menu_page import MenuPage
 from .pages.molding_page import MoldingPage
 from .pages.tutorial_home_screen_page import TutorialHomeScreenPage
 from .pages.welcome_page import WelcomePage
@@ -800,6 +801,30 @@ class TestSmokeTest:
         edit_preset_page.tap_save_button()
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_one_preset()
+
+    def test_all_menu_items_appear(self, driver):
+        analytics_page = AnalyticsPage(driver)
+        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.tap_welcome_screen_get_started()
+        analytics_page.tap_share_analytics_button()
+        time.sleep(10)
+        dialog_page.should_be_welcome_dialog_title()
+        dialog_page.tap_no_thanks_button()
+        home_page.should_be_earbuds_name()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_header()
+        menu_page.should_be_app_logo()
+        menu_page.should_be_exit_x_button()
+        menu_page.should_be_home_item()
+        menu_page.should_be_mold_new_tips_item()
+        menu_page.should_be_test_your_fit_item()
+        menu_page.should_be_learn_more_item()
+        menu_page.should_be_support_item()
+        menu_page.tap_exit_x_button()
+        home_page.should_be_earbuds_name()
 
 # run with
 # pytest -v --reruns 2 --tb=line -m smoke_test --html=C:\app\test_report\report.html
