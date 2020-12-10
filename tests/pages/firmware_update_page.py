@@ -9,6 +9,16 @@ class FirmwareUpdatePage(BasePage):
     def should_be_page_title(self):
         assert self.is_element_present(*BasePageLocators.SCREEN_TITLE)
 
+    def activate_fw_update(self):
+        tries = 10
+        while tries > 0:
+            title = self.get_text(*BasePageLocators.SCREEN_TITLE)
+            if title == 'Up to Date':
+                self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
+                tries = tries - 1
+            else:
+                break
+
     def tap_page_title_10_times(self):
         self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
 
@@ -25,14 +35,15 @@ class FirmwareUpdatePage(BasePage):
         self.click_element(*FirmwareUpdatePageLocators.UPDATE_BUTTON)
 
     def check_active_update(self):
-        tries = 20
+        tries = 45
         duration = 0
+        check_period = 20
         installing_title = "Installing"
         while tries > 0:
             if self.get_text(*BasePageLocators.SCREEN_TITLE) == installing_title:
                 tries = tries - 1
-                time.sleep(45)
-                duration = duration + 45
+                time.sleep(check_period)
+                duration = duration + check_period
             else:
                 break
 
