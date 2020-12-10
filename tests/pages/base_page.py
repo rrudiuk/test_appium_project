@@ -34,7 +34,7 @@ class BasePage:
 
     def click_element_10_times(self, how, what):
         try:
-            for i in range(10):
+            for i in range(12):
                 self.driver.find_element(how, what).click()
         except NoSuchElementException:
             return False

@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = "com.logitech.uefits"
+APP_PACKAGE_NAME = ""
 # Add your locators below
 
 
@@ -230,3 +230,11 @@ class MenuPageLocators:
                                  ".widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
                                  "4]/android.widget.CheckedTextView")
     SUPPORT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
+
+
+class SupportPageLocators:
+    FIRMWARE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_firmware_clickable")
+
+
+class FirmwareUpdatePageLocators:
+    UPDATE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_update")
