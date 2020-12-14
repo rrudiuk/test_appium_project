@@ -6,6 +6,7 @@ APP_PACKAGE_NAME = ""
 
 class BasePageLocators:
     BACK_ARROW = (By.CLASS_NAME, "android.widget.ImageButton")
+    SCREEN_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
@@ -122,6 +123,8 @@ class MoldingPageLocators:
     MOLDING_CANCEL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_cancel")
     MOLDING_START_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_title")
     MOLDING_START_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_subtitle")
+    TAKE_TOUR_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_take_tour")
+    SKIP_FOR_NOW_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_skip_tour")
 
 
 class PairYourEarbudsLocators:
@@ -238,3 +241,8 @@ class SupportPageLocators:
 
 class FirmwareUpdatePageLocators:
     UPDATE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_update")
+
+
+class LearnMoreLocators:
+    SCREEN_VIDEO = (By.ID, f"{APP_PACKAGE_NAME}:id/exo_subtitles")
+    CLOSE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")

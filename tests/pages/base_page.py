@@ -17,6 +17,10 @@ class BasePage:
     def background_app_for_10_seconds(self):
         self.driver.background_app(10)
 
+    def check_screen_message(self, expected_result):
+        actual_result = self.get_text(*BasePageLocators.SCREEN_MESSAGE)
+        assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
+
     def check_screen_title(self, expected_result):
         actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"

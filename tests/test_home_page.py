@@ -1,7 +1,6 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.landing_page import LandingPage
 from .pages.home_page import HomePage
@@ -14,7 +13,6 @@ class TestHomePage:
     @pytest.mark.smoke_test_molded
     def test_home_screen_connected(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         home_page = HomePage(driver)
@@ -25,9 +23,6 @@ class TestHomePage:
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
         home_page.should_be_hamburger_menu()
@@ -47,7 +42,6 @@ class TestHomePage:
         eq_presets_page.should_be_eq_curve_image()
 
     def test_home_screen_not_connected(self, driver):
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
@@ -56,9 +50,6 @@ class TestHomePage:
         welcome_page.should_be_welcome_code_screen_title()
         welcome_page.go_to_home_screen_code()
         welcome_page.tap_screen_code_get_started()
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.should_be_scanning_state()
         home_page.should_be_hamburger_menu()
@@ -73,7 +64,6 @@ class TestHomePage:
 
     def test_home_screen_after_closing_presets_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         home_page = HomePage(driver)
@@ -84,9 +74,6 @@ class TestHomePage:
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
         home_page.should_be_hamburger_menu()

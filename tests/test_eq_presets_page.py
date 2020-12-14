@@ -6,7 +6,6 @@ from .pages.eq_presets_page import EditPresetsPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.eq_presets_page import EqPresetSetupPage
 from .pages.home_page import HomePage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.landing_page import LandingPage
 from .pages.welcome_page import WelcomePage
 
@@ -16,7 +15,6 @@ import time
 class TestEqPresetsPage:
     def test_initial_presets_screen_setup(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -27,9 +25,6 @@ class TestEqPresetsPage:
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.should_be_eq_expand_icon()
@@ -51,7 +46,6 @@ class TestEqPresetsPage:
 
     def test_switching_between_eq_presets(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -62,9 +56,6 @@ class TestEqPresetsPage:
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.should_be_eq_expand_icon()
@@ -82,7 +73,6 @@ class TestEqPresetsPage:
 
     def test_access_edit_presets_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -94,9 +84,6 @@ class TestEqPresetsPage:
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.should_be_welcome_dialog_message()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.should_be_eq_expand_icon()
@@ -117,7 +104,6 @@ class TestEqPresetsPage:
 
     def test_preset_reorder_should_be_possible(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -125,8 +111,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_edit_button()
@@ -134,9 +118,9 @@ class TestEqPresetsPage:
         edit_preset_page.move_six_preset_to_second_position()
         edit_preset_page.move_three_to_four_position()
 
+    @pytest.mark.test
     def test_reordering_should_not_be_saved_after_tapping_back_button(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -144,8 +128,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.scroll_down()
@@ -159,7 +141,6 @@ class TestEqPresetsPage:
 
     def test_reordering_should_be_saved_after_tapping_save_button(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -167,8 +148,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_edit_button()
@@ -179,7 +158,6 @@ class TestEqPresetsPage:
 
     def test_reorder_and_delete_first_item(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -188,8 +166,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_edit_button()
@@ -205,7 +181,6 @@ class TestEqPresetsPage:
 
     def test_cancel_preset_deletion(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -214,8 +189,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_edit_button()
@@ -230,7 +203,6 @@ class TestEqPresetsPage:
 
     def test_delete_all_presets(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -239,8 +211,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_edit_button()
@@ -280,7 +250,6 @@ class TestEqPresetsPage:
 
     def test_access_new_preset_editor(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         eq_preset_setup_page = EqPresetSetupPage(driver)
         home_page = HomePage(driver)
@@ -288,8 +257,6 @@ class TestEqPresetsPage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_connected_state()
         eq_presets_page.tap_eq_expand_icon()
         eq_presets_page.tap_add_button()

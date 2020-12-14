@@ -96,12 +96,20 @@ class MoldingPage(BasePage):
         actual_result = self.get_text(*MoldingPageLocators.MOLDING_START_SUBTITLE)
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
+    def should_be_progress_bar(self):
+        self.is_element_present(*BasePageLocators.PROGRESS_BAR)
+
     def should_congratulations_title(self):
         self.check_screen_title("Congratulations!")
 
     def should_congratulations_subtitle(self):
         self.check_screen_subtitle("You now have perfectly fitting earbuds. Throw on your favorite song and take them "
                                    "for a spin.")
+
+    def should_congratulations_subtitle_after_first_molding(self):
+        self.check_screen_subtitle("You now have perfectly fitting earbuds.\n\n"
+                                   "Take the tour to learn about the features "
+                                   "of the app and how to make the most of your UE FITS.")
 
     def should_finish_button(self):
         assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
@@ -114,5 +122,24 @@ class MoldingPage(BasePage):
     def tap_finish_button(self):
         self.click_element(*BasePageLocators.BUTTON_MAIN)
 
-    def should_be_progress_bar(self):
-        self.is_element_present(*BasePageLocators.PROGRESS_BAR)
+    def should_be_take_the_tour_button(self):
+        assert self.is_element_present(*MoldingPageLocators.TAKE_TOUR_BUTTON)
+
+    def should_be_take_the_tour_button_text(self):
+        expected_result = "Take the Tour"
+        actual_result = self.get_text(*MoldingPageLocators.TAKE_TOUR_BUTTON)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_take_the_tour_button(self):
+        self.click_element(*MoldingPageLocators.TAKE_TOUR_BUTTON)
+
+    def should_skip_for_now_button(self):
+        assert self.is_element_present(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON)
+
+    def should_skip_for_now_button_text(self):
+        expected_result = "Skip For Now"
+        actual_result = self.get_text(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_skip_for_now_button(self):
+        self.click_element(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON)

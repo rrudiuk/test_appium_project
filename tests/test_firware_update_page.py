@@ -2,7 +2,6 @@ import pytest
 
 from .pages.analytics_page import AnalyticsPage
 from .pages.firmware_update_page import FirmwareUpdatePage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.home_page import HomePage
 from .pages.menu_page import MenuPage
 from .pages.support_page import SupportPage
@@ -11,12 +10,10 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
 class TestFirmwareUpdatePage:
     def test_firmware_update(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -24,8 +21,6 @@ class TestFirmwareUpdatePage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
@@ -45,7 +40,6 @@ class TestFirmwareUpdatePage:
     def test_firmware_update1(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -53,8 +47,6 @@ class TestFirmwareUpdatePage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
@@ -74,7 +66,6 @@ class TestFirmwareUpdatePage:
     def test_firmware_update2(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -82,8 +73,6 @@ class TestFirmwareUpdatePage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
@@ -103,7 +92,6 @@ class TestFirmwareUpdatePage:
     def test_firmware_update3(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -111,8 +99,6 @@ class TestFirmwareUpdatePage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
@@ -132,7 +118,6 @@ class TestFirmwareUpdatePage:
     def test_firmware_update4(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -140,8 +125,6 @@ class TestFirmwareUpdatePage:
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
         time.sleep(10)
-        dialog_page.should_be_welcome_dialog_title()
-        dialog_page.tap_no_thanks_button()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
