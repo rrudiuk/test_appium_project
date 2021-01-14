@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .locators import BasePageLocators
 from .locators import LearnMoreLocators
 
 
@@ -13,7 +14,7 @@ class LearnMorePage(BasePage):
         self.is_element_present(*LearnMoreLocators.SCREEN_VIDEO), "Animation video not found"
 
     def should_be_close_button(self):
-        self.is_element_present(*LearnMoreLocators.CLOSE_BUTTON), "Close button not found"
+        self.is_element_present(*BasePageLocators.CLOSE_BUTTON), "Close button not found"
 
     def tap_close_button(self):
-        self.click_element(*LearnMoreLocators.CLOSE_BUTTON)
+        self.click_element(*BasePageLocators.CLOSE_BUTTON)

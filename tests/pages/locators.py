@@ -1,17 +1,18 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 # Add your locators below
 
 
 class BasePageLocators:
     BACK_ARROW = (By.CLASS_NAME, "android.widget.ImageButton")
+    BUTTON_MAIN = (By.ID, f"{APP_PACKAGE_NAME}:id/button")
+    CLOSE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")
+    PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
     SCREEN_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
-    BUTTON_MAIN = (By.ID, f"{APP_PACKAGE_NAME}:id/button")
-    PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
 
 
 class WelcomePageLocators:
@@ -125,6 +126,9 @@ class MoldingPageLocators:
     MOLDING_START_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_subtitle")
     TAKE_TOUR_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_take_tour")
     SKIP_FOR_NOW_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_skip_tour")
+    # Mold new tips
+    IMAGE_VIEW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
+    SCROLL_ELEMENTS = (By.XPATH, "android.widget.HorizontalScrollView/android.widget.LinearLayout")
 
 
 class PairYourEarbudsLocators:
@@ -214,7 +218,8 @@ class MenuPageLocators:
                            ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.drawerlayout"
                            ".widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView"
                            "/androidx.appcompat.widget.LinearLayoutCompat[1]/android.widget.CheckedTextView")
-    MOLD_NEW_TIPS_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+    MOLD_NEW_TIPS_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/item_mold")
+    MOLD_NEW_TIPS_TEXT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                     ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
                                     ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
                                     ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
@@ -245,4 +250,3 @@ class FirmwareUpdatePageLocators:
 
 class LearnMoreLocators:
     SCREEN_VIDEO = (By.ID, f"{APP_PACKAGE_NAME}:id/exo_subtitles")
-    CLOSE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")

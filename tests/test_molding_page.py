@@ -5,7 +5,9 @@ from .pages.eq_presets_page import EqPresetsPage
 from .pages.landing_page import LandingPage
 from .pages.learn_more_page import LearnMorePage
 from .pages.molding_page import MoldingPage
+from .pages.molding_page import MoldNewTipsPage
 from .pages.home_page import HomePage
+from .pages.menu_page import MenuPage
 from .pages.welcome_page import WelcomePage
 
 import time
@@ -264,3 +266,110 @@ class TestMoldingPage:
         eq_presets_page.should_be_eq_name()
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
+
+    @pytest.mark.test
+    def test_mold_new_tips_carousel(self, driver):
+        analytics_page = AnalyticsPage(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        mold_new_tips_page = MoldNewTipsPage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.tap_welcome_screen_get_started()
+        analytics_page.tap_share_analytics_button()
+        time.sleep(10)
+        home_page.should_be_earbuds_name()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.tap_mold_new_tips_item()
+        # Change your tips
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_not_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_change_tips_title()
+        mold_new_tips_page.should_be_change_tips_subtitle()
+        # Remove inserts
+        mold_new_tips_page.swipe_left()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_not_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_remove_inserts_title()
+        mold_new_tips_page.should_be_remove_inserts_subtitle()
+        # Match them up
+        mold_new_tips_page.swipe_left()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_not_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_match_them_up_title()
+        mold_new_tips_page.should_be_match_them_up_subtitle()
+        # Attach your tips
+        mold_new_tips_page.swipe_left()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_not_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_attach_your_tips_title()
+        mold_new_tips_page.should_be_attach_your_tips_subtitle()
+        # Check the fit
+        mold_new_tips_page.swipe_left()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_check_the_fit_title()
+        mold_new_tips_page.should_be_check_the_fit_subtitle()
+        # Attach your tips
+        mold_new_tips_page.swipe_right()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_attach_your_tips_title()
+        mold_new_tips_page.should_be_attach_your_tips_subtitle()
+        # Match them up
+        mold_new_tips_page.swipe_right()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_match_them_up_title()
+        mold_new_tips_page.should_be_match_them_up_subtitle()
+        # Remove inserts
+        mold_new_tips_page.swipe_right()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_remove_inserts_title()
+        mold_new_tips_page.should_be_remove_inserts_subtitle()
+        # Change your tips
+        mold_new_tips_page.swipe_right()
+        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_scroll_dots()
+        mold_new_tips_page.should_be_next_button()
+        mold_new_tips_page.should_be_next_button_text()
+        mold_new_tips_page.next_button_enabled()
+        mold_new_tips_page.should_be_image_item()
+        mold_new_tips_page.should_be_change_tips_title()
+        mold_new_tips_page.should_be_change_tips_subtitle()
+        # Return to Home screen
+        mold_new_tips_page.tap_close_button()
+        menu_page.tap_exit_x_button()
+        home_page.should_be_earbuds_name()

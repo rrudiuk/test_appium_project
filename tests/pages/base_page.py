@@ -58,18 +58,6 @@ class BasePage:
             return False
         return text.encode(encoding) if encoding else text
 
-    def locate_element(self, how, what):
-        try:
-            return self.driver.find_element(how, what)
-        except NoSuchElementException:
-            return False
-
-    def locate_elements(self, how, what):
-        try:
-            return self.driver.find_elements(how, what)
-        except NoSuchElementException:
-            return False
-
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.driver, timeout, 1, TimeoutException).\
@@ -93,6 +81,30 @@ class BasePage:
             return True
 
         return False
+
+    def is_element_enabled(self, how, what):
+        try:
+            return self.driver.find_element(how, what).is_enabled()
+        except NoSuchElementException:
+            return False
+
+    def is_element_selected(self, how, what):
+        try:
+            return self.driver.find_element(how, what).is_selected()
+        except NoSuchElementException:
+            return False
+
+    def locate_element(self, how, what):
+        try:
+            return self.driver.find_element(how, what)
+        except NoSuchElementException:
+            return False
+
+    def locate_elements(self, how, what):
+        try:
+            return self.driver.find_elements(how, what)
+        except NoSuchElementException:
+            return False
 
     def should_be_back_arrow(self):
         assert self.is_element_present(*BasePageLocators.BACK_ARROW)

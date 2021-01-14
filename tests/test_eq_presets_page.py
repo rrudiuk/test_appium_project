@@ -118,7 +118,6 @@ class TestEqPresetsPage:
         edit_preset_page.move_six_preset_to_second_position()
         edit_preset_page.move_three_to_four_position()
 
-    @pytest.mark.test
     def test_reordering_should_not_be_saved_after_tapping_back_button(self, driver):
         analytics_page = AnalyticsPage(driver)
         edit_preset_page = EditPresetsPage(driver)
