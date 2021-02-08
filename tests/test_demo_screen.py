@@ -10,6 +10,7 @@ import time
 @pytest.mark.demo
 class TestDemoPage:
     # only when no available earbuds
+    @pytest.mark.skip
     def test_can_access_demo_screen(self, driver):
         welcome_page = WelcomePage(driver)
         demo_page = DemoPage(driver)

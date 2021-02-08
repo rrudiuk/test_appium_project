@@ -43,6 +43,7 @@ class TestSmokeTest:
         welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button_text()
 
+    @pytest.mark.xfail
     def test_access_setup_code_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
@@ -87,8 +88,7 @@ class TestSmokeTest:
         welcome_page.should_be_welcome_code_screen_title()
         welcome_page.go_to_demo_screen_code()
         welcome_page.tap_screen_code_get_started()
-        time.sleep(7
-                   )
+        time.sleep(7)
         demo_commands_page.should_be_demo_molding_screen()
         demo_commands_page.tap_debug_button()
         demo_commands_page.activate_curring_mode()
@@ -152,7 +152,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.should_be_correct_try_them_page_subtitle()
         molding_page.should_be_main_button()
@@ -167,7 +167,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -191,7 +191,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -215,7 +215,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -237,7 +237,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -262,7 +262,7 @@ class TestSmokeTest:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        time.sleep(12)
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -274,7 +274,7 @@ class TestSmokeTest:
         time.sleep(6)
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(5)
+        time.sleep(4)
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
@@ -759,7 +759,6 @@ class TestSmokeTest:
         menu_page.tap_exit_x_button()
         home_page.should_be_earbuds_name()
 
-    @pytest.mark.test
     def test_mold_new_tips_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)
         home_page = HomePage(driver)
@@ -893,4 +892,5 @@ class TestSmokeTest:
         firmware_update_page.check_active_update()
 
 # run with
+# pytest -v --reruns 2 -m smoke_test --html=/Users/rudiuk/PyCharmProjects/test_appium_project/test_report/report.html
 # pytest -v --reruns 2 --tb=line -m smoke_test --html=/Users/rudiuk/PyCharmProjects/test_appium_project/test_report/report.html

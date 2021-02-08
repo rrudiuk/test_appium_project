@@ -126,6 +126,7 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
+    @pytest.mark.test
     def test_cancel_molding_on_count(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
@@ -148,7 +149,7 @@ class TestMoldingPage:
         time.sleep(6)
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(5)
+        time.sleep(4)
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
@@ -267,7 +268,6 @@ class TestMoldingPage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
 
-    @pytest.mark.test
     def test_mold_new_tips_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)
         home_page = HomePage(driver)

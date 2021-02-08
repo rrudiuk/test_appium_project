@@ -69,7 +69,7 @@ class MoldingPage(BasePage):
         assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
 
     def should_be_cancel_button_text(self):
-        expected_result = "CANCEL"
+        expected_result = "Cancel"
         actual_result = self.get_text(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
         assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
 

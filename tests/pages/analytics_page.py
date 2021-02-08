@@ -21,7 +21,7 @@ class AnalyticsPage(BasePage):
         self.click_element(*AnalyticsPageLocators.ANALYTICS_SHARE_BUTTON)
 
     def should_be_correct_not_share_analytics_button_text(self):
-        expected_result = "NO THANKS"
+        expected_result = "No Thanks"
         actual_result = self.get_text(*AnalyticsPageLocators.ANALYTICS_NOT_SHARE_BUTTON)
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be '{expected_result}'"
 
