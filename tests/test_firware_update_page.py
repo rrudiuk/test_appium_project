@@ -10,6 +10,7 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
+@pytest.mark.test
 class TestFirmwareUpdatePage:
     def test_firmware_update(self, driver):
         analytics_page = AnalyticsPage(driver)

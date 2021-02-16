@@ -865,6 +865,7 @@ class TestSmokeTest:
         menu_page.tap_exit_x_button()
         home_page.should_be_earbuds_name()
 
+    @pytest.mark.skip
     def test_firmware_update(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
