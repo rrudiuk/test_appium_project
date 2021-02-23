@@ -4,7 +4,7 @@ from .locators import HomePageLocators
 
 class HomePage(BasePage):
     def should_be_earbuds_name(self):
-        self.is_element_present(*HomePageLocators.EARBUDS_NAME)
+        assert self.is_element_present(*HomePageLocators.EARBUDS_NAME), 'Earbuds name not found'
 
     def should_be_connected_state(self):
         expected_result = "Connected"
@@ -25,7 +25,7 @@ class HomePage(BasePage):
     def tap_button_connect_earbuds(self):
         self.click_element(*HomePageLocators.CONNECT_EARBUDS_BUTTON)
 
-    def should_be_hamburger_menu(self):
+    def should_be_hamburger_menu_icon(self):
         assert self.is_element_present(*HomePageLocators.HOME_SCREEN_LEFT_MENU), "Left menu doesn't appear on Home " \
                                                                                  "screen"
 

@@ -14,7 +14,7 @@ def driver(request):
     path_to_current_directory = Path().absolute()
     dc['app'] = str(path_to_current_directory) + '/app/app-debug.apk'
     # appPackage and appActivity desired capability specify app details to Appium
-    # dc['appPackage'] = ''
+    dc['appPackage'] = ''
     # dc['appActivity'] = ".MainActivity"
     # platformName desired capability specify platform detail to Appium
     dc['platformName'] = 'Android'

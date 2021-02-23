@@ -22,6 +22,7 @@ class BasePage:
         assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
 
     def check_screen_title(self, expected_result):
+        assert self.is_element_present(*BasePageLocators.SCREEN_TITLE), f"Title {expected_result} not found"
         actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
@@ -49,6 +50,14 @@ class BasePage:
             return len(self.driver.find_elements(how, what))
         except NoSuchElementException:
             return 0
+
+    def get_text_no_encode(self, how, what):
+
+        try:
+            text = self.driver.find_element(how, what).text
+        except NoSuchElementException:
+            return False
+        return text
 
     def get_text(self, how, what, encoding=None):
 

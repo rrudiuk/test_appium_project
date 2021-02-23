@@ -7,7 +7,7 @@ import time
 
 class FirmwareUpdatePage(BasePage):
     def should_be_page_title(self):
-        assert self.is_element_present(*BasePageLocators.SCREEN_TITLE)
+        assert self.is_element_present(*BasePageLocators.SCREEN_TITLE), 'Screen title not found'
 
     def activate_fw_update(self):
         tries = 10
@@ -16,6 +16,7 @@ class FirmwareUpdatePage(BasePage):
             if title == 'Up to Date':
                 self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
                 tries = tries - 1
+                time.sleep(3)
             else:
                 break
 
@@ -31,31 +32,37 @@ class FirmwareUpdatePage(BasePage):
     def should_be_ready_to_update_title(self):
         self.check_screen_title("Ready to Update")
 
+    def should_be_you_all_set_title(self):
+        self.check_screen_title("You're All Set!")
+
     def tap_install_now_button(self):
         self.click_element(*FirmwareUpdatePageLocators.UPDATE_BUTTON)
 
     def check_active_update(self):
-        tries = 45
-        duration = 0
-        check_period = 20
+        print("Start checking")
+        tries = 40
+        check_period = 5
         installing_title = "Installing"
+        print(f"Start {installing_title} tries {tries} left")
         while tries > 0:
-            if self.get_text(*BasePageLocators.SCREEN_TITLE) == installing_title:
-                tries = tries - 1
-                time.sleep(check_period)
-                duration = duration + check_period
-            else:
+            print("while")
+            if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title:
+                # if self.is_installing_title(installing_title):
+                print(f"Stop {installing_title} tries {tries} left")
                 break
+            print('Continue')
+            tries = tries - 1
+            time.sleep(check_period)
+
+        print("I'm here")
 
         if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Restarting":
-            time.sleep(30)
-            duration = duration + 30
+            print("Restarting is shown")
+            time.sleep(45)
 
-        final_screen_title = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        expected_result = 'Firmware Update Available'
-        expected_result2 = 'Support'
+        self.should_be_you_all_set_title()
 
-        print(duration)
-
-        assert final_screen_title == expected_result or final_screen_title == expected_result2, \
-            f"Screen title {final_screen_title}, update failed!"
+    def is_installing_title(self, installing_title):
+        if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title:
+            return True
+        return False

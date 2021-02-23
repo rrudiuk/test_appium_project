@@ -3,6 +3,9 @@ from .locators import SupportPageLocators
 
 
 class SupportPage(BasePage):
+    def should_be_support_title(self):
+        self.check_screen_title('Support')
+
     def should_be_firmware_item(self):
         self.is_element_present(*SupportPageLocators.FIRMWARE_ITEM)
 

@@ -151,9 +151,9 @@ class HomePageLocators:
     CONNECT_EARBUDS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_connect")
     HOME_SCREEN_LEFT_MENU = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
                                        ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-                                       "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout"
-                                       "/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android"
-                                       ".view.ViewGroup[1]/android.widget.ImageButton")
+                                       "/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android"
+                                       ".widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup["
+                                       "1]/android.widget.ImageButton")
     HOME_SCREEN_SETTINGS = (By.ID, f"{APP_PACKAGE_NAME}:id/item_settings")
     LEFT_EARBUD_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_earphone")
     RIGHT_EARBUD_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_earphone")
@@ -247,6 +247,10 @@ class SupportPageLocators:
 
 class FirmwareUpdatePageLocators:
     UPDATE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_update")
+    UPDATE_PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}::id/progress_bar_updating")
+    INSTALLING_TITLE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                  '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                  '.FrameLayout/android.view.ViewGroup/android.widget.TextView[1]')
 
 
 class LearnMoreLocators:

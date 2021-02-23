@@ -126,7 +126,6 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    @pytest.mark.test
     def test_cancel_molding_on_count(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
@@ -192,7 +191,7 @@ class TestMoldingPage:
 
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()
         home_page.should_be_settings_icon()
         home_page.should_be_left_earbud_image()
         home_page.should_be_left_battery_image()
@@ -252,7 +251,7 @@ class TestMoldingPage:
 
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()
         home_page.should_be_settings_icon()
         home_page.should_be_left_earbud_image()
         home_page.should_be_left_battery_image()
