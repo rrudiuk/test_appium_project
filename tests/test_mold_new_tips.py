@@ -116,7 +116,6 @@ class TestMoldNewTips:
         menu_page.tap_home_item()
         home_page.should_be_earbuds_name()
 
-    @pytest.mark.test
     def test_mold_new_tips_molding(self, driver):
         analytics_page = AnalyticsPage(driver)
         home_page = HomePage(driver)

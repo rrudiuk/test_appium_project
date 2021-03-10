@@ -41,6 +41,9 @@ class MenuPage(BasePage):
         actual_result = self.get_text(*MenuPageLocators.LEARN_MORE_ITEM)
         assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
 
+    def tap_learn_more_item(self):
+        self.click_element(*MenuPageLocators.LEARN_MORE_ITEM)
+
     def should_be_support_item(self):
         expected_result = "Support"
         actual_result = self.get_text(*MenuPageLocators.SUPPORT_ITEM)

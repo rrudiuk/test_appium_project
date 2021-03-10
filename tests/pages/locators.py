@@ -258,4 +258,16 @@ class FirmwareUpdatePageLocators:
 
 
 class LearnMoreLocators:
+    CAROUSEL_CONTROLS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                   ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
+                                   ".widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget"
+                                   ".FrameLayout/android.view.ViewGroup/android.widget.HorizontalScrollView/android"
+                                   ".widget.LinearLayout")
+    NOTICE_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message_2")
     SCREEN_VIDEO = (By.ID, f"{APP_PACKAGE_NAME}:id/exo_subtitles")
+    SCREEN_IMAGE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                              ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                              ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout"
+                              "/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx.recyclerview"
+                              ".widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.widget"
+                              ".ImageView")
