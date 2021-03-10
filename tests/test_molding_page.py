@@ -148,7 +148,7 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    @pytest.mark.first_molding
+    # @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -203,7 +203,8 @@ class TestMoldingPage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
 
-    @pytest.mark.skip
+    # @pytest.mark.skip
+    @pytest.mark.first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -240,26 +241,87 @@ class TestMoldingPage:
         molding_page.should_be_take_the_tour_button()
         molding_page.should_be_take_the_tour_button_text()
         molding_page.tap_take_the_tour_button()
+
+        # Double tap control
+        learn_more_page.should_be_close_button()
         learn_more_page.should_be_double_tap_control_title()
         learn_more_page.should_be_double_tap_control_message()
         learn_more_page.should_be_double_tap_control_video()
+        learn_more_page.swipe_left()
+        # Custom Control
         learn_more_page.should_be_close_button()
+        learn_more_page.should_be_custom_control_title()
+        learn_more_page.should_be_custom_control_message()
+        learn_more_page.should_be_custom_control_image()
+        learn_more_page.swipe_left()
+        # Switching devices
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_switching_devices_title()
+        learn_more_page.should_be_switching_devices_message()
+        learn_more_page.should_be_switching_devices_image()
+        learn_more_page.swipe_left()
+        # EQ Customization
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_eq_customization_title()
+        learn_more_page.should_be_eq_customization_message()
+        learn_more_page.should_be_eq_customization_image()
+        learn_more_page.swipe_left()
+        # Test Your Fit
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_tyf_title()
+        learn_more_page.should_be_tyf_message()
+        learn_more_page.should_be_tyf_image()
+        learn_more_page.swipe_left()
+        # Pair a new device
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_pair_device_title()
+        learn_more_page.should_be_pair_device_message()
+        learn_more_page.should_be_pair_device_animation()
+        learn_more_page.should_be_pair_device_notice()
+        learn_more_page.swipe_left()
+        # Status indicators
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_status_indicators_title()
+        learn_more_page.should_be_status_indicators_message()
+        learn_more_page.should_be_status_indicators_animation()
+        learn_more_page.should_be_status_indicators_notice()
+        learn_more_page.swipe_right()
+        # Pair a new device
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_pair_device_title()
+        learn_more_page.should_be_pair_device_message()
+        learn_more_page.should_be_pair_device_animation()
+        learn_more_page.should_be_pair_device_notice()
+        learn_more_page.swipe_right()
+        # Test Your Fit
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_tyf_title()
+        learn_more_page.should_be_tyf_message()
+        learn_more_page.should_be_tyf_image()
+        learn_more_page.swipe_right()
+        # EQ Customization
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_eq_customization_title()
+        learn_more_page.should_be_eq_customization_message()
+        learn_more_page.should_be_eq_customization_image()
+        learn_more_page.swipe_right()
+        # Switching devices
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_switching_devices_title()
+        learn_more_page.should_be_switching_devices_message()
+        learn_more_page.should_be_switching_devices_image()
+        learn_more_page.swipe_right()
+        # Custom Control
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_custom_control_title()
+        learn_more_page.should_be_custom_control_message()
+        learn_more_page.should_be_custom_control_image()
+        learn_more_page.swipe_right()
+        # Double tap control
+        learn_more_page.should_be_close_button()
+        learn_more_page.should_be_double_tap_control_title()
+        learn_more_page.should_be_double_tap_control_message()
+        learn_more_page.should_be_double_tap_control_video()
+        # Quit
         learn_more_page.tap_close_button()
-
         home_page.should_be_earbuds_name()
-        home_page.should_be_connected_state()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.should_be_settings_icon()
-        home_page.should_be_left_earbud_image()
-        home_page.should_be_left_battery_image()
-        home_page.should_be_left_battery_percents()
-        home_page.should_be_right_earbud_image()
-        home_page.should_be_right_battery_image()
-        home_page.should_be_right_battery_percents()
-        home_page.should_be_case_image()
-        home_page.should_be_case_battery_image()
-        home_page.should_be_case_battery_percents()
-        eq_presets_page.should_be_eq_expand_icon()
-        eq_presets_page.should_be_eq_name()
-        eq_presets_page.should_be_ue_signature_eq_selected()
-        eq_presets_page.should_be_eq_curve_image()

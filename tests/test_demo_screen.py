@@ -64,6 +64,7 @@ class TestDemoPage:
         demo_commands_page.tap_second_commands_list_item()
 
     @pytest.mark.activate_curing
+    @pytest.mark.first_molding
     def test_curring_mode_activation(self, driver):
         welcome_page = WelcomePage(driver)
         demo_commands_page = DemoSendCommandsPage(driver)
