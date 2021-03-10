@@ -6,11 +6,8 @@ from .pages.landing_page import LandingPage
 from .pages.home_page import HomePage
 from .pages.welcome_page import WelcomePage
 
-import time
-
 
 class TestHomePage:
-    @pytest.mark.smoke_test_molded
     def test_home_screen_connected(self, driver):
         analytics_page = AnalyticsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -22,7 +19,7 @@ class TestHomePage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
         home_page.should_be_hamburger_menu_icon()
@@ -41,6 +38,7 @@ class TestHomePage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
 
+    @pytest.mark.skip
     def test_home_screen_not_connected(self, driver):
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -73,7 +71,7 @@ class TestHomePage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
         home_page.should_be_hamburger_menu_icon()

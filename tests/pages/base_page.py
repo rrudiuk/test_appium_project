@@ -133,4 +133,4 @@ class BasePage:
         self.click_element(*BasePageLocators.BACK_ARROW)
 
     def wait_for_connection(self):
-        time.sleep(12)
+        time.sleep(14)

@@ -5,8 +5,6 @@ from .pages.home_page import HomePage
 from .pages.menu_page import MenuPage
 from .pages.welcome_page import WelcomePage
 
-import time
-
 
 class TestMenuPage:
     def test_all_menu_items_appear(self, driver):
@@ -16,7 +14,7 @@ class TestMenuPage:
         welcome_page = WelcomePage(driver)
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
-        time.sleep(10)
+        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.should_be_header()

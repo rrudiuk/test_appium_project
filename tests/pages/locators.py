@@ -216,28 +216,26 @@ class MenuPageLocators:
     CLOSE_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")
     HOME_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                            ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
-                           ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.drawerlayout"
-                           ".widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView"
-                           "/androidx.appcompat.widget.LinearLayoutCompat[1]/android.widget.CheckedTextView")
-    MOLD_NEW_TIPS_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/item_mold")
-    MOLD_NEW_TIPS_TEXT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                           ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
+                           "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                           ".LinearLayoutCompat[1]/android.widget.CheckedTextView")
+    MOLD_NEW_TIPS_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                     ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
-                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
-                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                    "2]/android.widget.CheckedTextView")
+                                    ".widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget"
+                                    ".FrameLayout["
+                                    "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                                    ".LinearLayoutCompat[2]/android.widget.CheckedTextView")
     TEST_YOUR_FIT_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                     ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
-                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
-                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                    "3]/android.widget.CheckedTextView")
+                                    ".widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget"
+                                    ".FrameLayout["
+                                    "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                                    ".LinearLayoutCompat[3]/android.widget.CheckedTextView")
     LEARN_MORE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                  ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
-                                 ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                 ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview"
-                                 ".widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                 "4]/android.widget.CheckedTextView")
+                                 ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
+                                 "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                                 ".LinearLayoutCompat[4]/android.widget.CheckedTextView")
     SUPPORT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
 
 

@@ -13,7 +13,6 @@ import time
 
 
 class TestEqPresetsPage:
-    @pytest.mark.test
     def test_initial_presets_screen_setup(self, driver):
         analytics_page = AnalyticsPage(driver)
         eq_presets_page = EqPresetsPage(driver)

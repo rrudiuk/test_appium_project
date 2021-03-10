@@ -13,8 +13,7 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.bt_connected
-@pytest.mark.smoke_test_not_molded
+@pytest.mark.test
 class TestMoldingPage:
     def test_should_be_try_them_page(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -26,7 +25,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.should_be_correct_try_them_page_subtitle()
         molding_page.should_be_main_button()
@@ -41,7 +40,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -65,7 +64,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -89,7 +88,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -111,7 +110,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -136,7 +135,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(10)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -165,7 +164,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(12)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -207,6 +206,7 @@ class TestMoldingPage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
 
+    @pytest.mark.skip
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -220,7 +220,7 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
-        time.sleep(12)
+        molding_page.wait_for_connection()
         molding_page.should_be_try_them_page_title()
         molding_page.tap_main_button()
         molding_page.should_be_get_ready_page_title()
@@ -275,7 +275,7 @@ class TestMoldingPage:
         welcome_page = WelcomePage(driver)
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.tap_share_analytics_button()
-        time.sleep(10)
+        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
@@ -370,5 +370,5 @@ class TestMoldingPage:
         mold_new_tips_page.should_be_change_tips_subtitle()
         # Return to Home screen
         mold_new_tips_page.tap_close_button()
-        menu_page.tap_exit_x_button()
+        menu_page.tap_home_item()
         home_page.should_be_earbuds_name()
