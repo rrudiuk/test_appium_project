@@ -11,7 +11,6 @@ import time
 
 
 class TestFirmwareUpdatePage:
-    @pytest.mark.test
     def test_firmware_update(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)

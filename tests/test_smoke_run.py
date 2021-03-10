@@ -37,7 +37,7 @@ class TestSmokeTest:
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button_text()
-        welcome_page.background_app_for_10_seconds()
+        welcome_page.background_app_for_5_seconds()
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()

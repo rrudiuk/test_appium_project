@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 # Add your locators below
 
 

@@ -78,22 +78,6 @@ class TestDemoPage:
         demo_commands_page.tap_debug_button()
         demo_commands_page.activate_curring_mode()
 
-    def test_tap_feature_deactivation(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(5)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.disable_tap_feature()
-        time.sleep(2)
-        demo_commands_page.get_tap_feature_status_disabled()
-        time.sleep(2)
-
     def test_tap_feature_activation(self, driver):
         welcome_page = WelcomePage(driver)
         demo_commands_page = DemoSendCommandsPage(driver)
@@ -108,4 +92,20 @@ class TestDemoPage:
         demo_commands_page.enable_tap_feature()
         time.sleep(2)
         demo_commands_page.get_tap_feature_status_enabled()
+        time.sleep(2)
+
+    def test_tap_feature_deactivation(self, driver):
+        welcome_page = WelcomePage(driver)
+        demo_commands_page = DemoSendCommandsPage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_10_times()
+        welcome_page.should_be_welcome_code_screen_title()
+        welcome_page.go_to_demo_screen_code()
+        welcome_page.tap_screen_code_get_started()
+        time.sleep(5)
+        demo_commands_page.should_be_demo_molding_screen()
+        demo_commands_page.tap_debug_button()
+        demo_commands_page.disable_tap_feature()
+        time.sleep(2)
+        demo_commands_page.get_tap_feature_status_disabled()
         time.sleep(2)

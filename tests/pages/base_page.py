@@ -1,3 +1,5 @@
+import time
+
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
@@ -14,8 +16,8 @@ class BasePage:
         self.driver = driver
         self.driver.implicitly_wait(timeout)
 
-    def background_app_for_10_seconds(self):
-        self.driver.background_app(10)
+    def background_app_for_5_seconds(self):
+        self.driver.background_app(5)
 
     def check_screen_message(self, expected_result):
         actual_result = self.get_text(*BasePageLocators.SCREEN_MESSAGE)
@@ -129,3 +131,6 @@ class BasePage:
 
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
+
+    def wait_for_connection(self):
+        time.sleep(12)

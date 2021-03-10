@@ -221,6 +221,7 @@ class EqPresetsPage(BasePage):
 
 class EditPresetsPage(EqPresetsPage):
     def presets_list_view_length(self, number_of_preset):
+        time.sleep(2)
         expected_result = number_of_preset
         presets = len(self.locate_elements(*EqPresetsPageLocators.PRESET_NAME))
         images = len(self.locate_elements(*EqPresetsPageLocators.PRESET_IMAGE))
