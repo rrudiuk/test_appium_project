@@ -772,7 +772,7 @@ class TestSmokeTest:
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Change your tips
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -782,7 +782,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_change_tips_subtitle()
         # Remove inserts
         mold_new_tips_page.swipe_left()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -792,7 +792,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_remove_inserts_subtitle()
         # Match them up
         mold_new_tips_page.swipe_left()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -802,7 +802,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_match_them_up_subtitle()
         # Attach your tips
         mold_new_tips_page.swipe_left()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -812,7 +812,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_attach_your_tips_subtitle()
         # Check the fit
         mold_new_tips_page.swipe_left()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -822,7 +822,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_check_the_fit_subtitle()
         # Attach your tips
         mold_new_tips_page.swipe_right()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -832,7 +832,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_attach_your_tips_subtitle()
         # Match them up
         mold_new_tips_page.swipe_right()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -842,7 +842,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_match_them_up_subtitle()
         # Remove inserts
         mold_new_tips_page.swipe_right()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -852,7 +852,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_remove_inserts_subtitle()
         # Change your tips
         mold_new_tips_page.swipe_right()
-        mold_new_tips_page.should_be_close_button()
+        mold_new_tips_page.should_be_menu_icon()
         mold_new_tips_page.should_be_scroll_dots()
         mold_new_tips_page.should_be_next_button()
         mold_new_tips_page.should_be_next_button_text()
@@ -861,7 +861,7 @@ class TestSmokeTest:
         mold_new_tips_page.should_be_change_tips_title()
         mold_new_tips_page.should_be_change_tips_subtitle()
         # Return to Home screen
-        mold_new_tips_page.tap_close_button()
+        mold_new_tips_page.tap_menu_icon()
         menu_page.tap_exit_x_button()
         home_page.should_be_earbuds_name()
 

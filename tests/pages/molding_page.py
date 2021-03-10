@@ -115,15 +115,15 @@ class MoldingPage(BasePage):
                                    "of the app and how to make the most of your UE FITS.")
 
     def should_be_finish_button(self):
-        assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
+        assert self.is_element_present(*MoldingPageLocators.FINISH_BUTTON)
 
     def should_be_finish_button_text(self):
         expected_result = "Finish"
-        actual_result = self.get_text(*BasePageLocators.BUTTON_MAIN)
+        actual_result = self.get_text(*MoldingPageLocators.FINISH_BUTTON)
         assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
 
     def tap_finish_button(self):
-        self.click_element(*BasePageLocators.BUTTON_MAIN)
+        self.click_element(*MoldingPageLocators.FINISH_BUTTON)
 
     def should_be_take_the_tour_button(self):
         assert self.is_element_present(*MoldingPageLocators.TAKE_TOUR_BUTTON)
@@ -149,11 +149,11 @@ class MoldingPage(BasePage):
 
 
 class MoldNewTipsPage(MoldingPage):
-    def should_be_close_button(self):
-        self.is_element_present(*BasePageLocators.CLOSE_BUTTON), "Close button not found"
+    def should_be_menu_icon(self):
+        self.is_element_present(*BasePageLocators.MENU_ICON), "Menu icon not found"
 
-    def tap_close_button(self):
-        self.click_element(*BasePageLocators.CLOSE_BUTTON)
+    def tap_menu_icon(self):
+        self.click_element(*BasePageLocators.MENU_ICON)
 
     def should_be_scroll_dots(self):
         self.is_element_present(*MoldingPageLocators.SCROLL_ELEMENTS), "Scrolling dots do not appear"

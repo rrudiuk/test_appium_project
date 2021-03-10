@@ -8,6 +8,10 @@ class BasePageLocators:
     BACK_ARROW = (By.CLASS_NAME, "android.widget.ImageButton")
     BUTTON_MAIN = (By.ID, f"{APP_PACKAGE_NAME}:id/button")
     CLOSE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")
+    MENU_ICON = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                           ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                           ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android"
+                           ".view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton")
     PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
     SCREEN_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
@@ -130,6 +134,8 @@ class MoldingPageLocators:
     # Mold new tips
     IMAGE_VIEW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
     SCROLL_ELEMENTS = (By.XPATH, "android.widget.HorizontalScrollView/android.widget.LinearLayout")
+    # Congratulations
+    FINISH_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_finish")
 
 
 class PairYourEarbudsLocators:
