@@ -207,7 +207,6 @@ class TestMoldingPage:
     @pytest.mark.first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
-        eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)

@@ -138,6 +138,7 @@ class TestEqPresetsPage:
         time.sleep(3)
         eq_presets_page.should_be_initial_preset_order()
 
+    @pytest.mark.xfail
     def test_reordering_should_be_saved_after_tapping_save_button(self, driver):
         analytics_page = AnalyticsPage(driver)
         edit_preset_page = EditPresetsPage(driver)
@@ -152,8 +153,9 @@ class TestEqPresetsPage:
         eq_presets_page.tap_edit_button()
         edit_preset_page.move_first_preset_to_fourth_position()
         edit_preset_page.tap_save_button()
-        eq_presets_page.should_be_ue_signature_eq_selected()
+        time.sleep(2)
         eq_presets_page.background_app_for_5_seconds()
+        eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_preset_order_after_moving_ue_signature_to_fourth()
 
     def test_reorder_and_delete_first_item(self, driver):
@@ -177,6 +179,7 @@ class TestEqPresetsPage:
         edit_preset_page.should_be_five_presets()
         edit_preset_page.tap_save_button()
         eq_presets_page.should_be_ue_signature_eq_selected()
+        time.sleep(10)
         eq_presets_page.should_be_five_presets()
 
     def test_cancel_preset_deletion(self, driver):

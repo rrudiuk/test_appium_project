@@ -134,8 +134,9 @@ class EqPresetsPage(BasePage):
         images = len(self.locate_elements(*EqPresetsPageLocators.PRESET_IMAGE))
         dividers = len(self.locate_elements(*EqPresetsPageLocators.PRESET_DIVIDER))
         assert presets == expected_result and images == expected_result \
-               and dividers == expected_result, f"There are {presets} presets, {images} images and {dividers} " \
-                                                f"dividers. Should be {expected_result}"
+               and (dividers == expected_result or dividers == expected_result + 1), \
+               f"There are {presets} presets, {images} images and {dividers} " \
+               f"dividers. Should be {expected_result}"
 
     def should_be_one_preset(self):
         self.presets_list_view_length(1)
@@ -183,12 +184,12 @@ class EqPresetsPage(BasePage):
         assert presets[0].text == first_preset and presets[1].text == second_preset and \
                presets[2].text == third_preset and presets[3].text == fourth_preset and \
                presets[4].text == fifth_preset and presets[5].text == sixth_preset, \
-            f"First preset {first_preset}, should be {presets[0].text}, " \
-            f"second preset {second_preset}, should be {presets[1].text}, " \
-            f"third preset {third_preset}, should be {presets[2].text}, " \
-            f"fourth preset {fourth_preset}, should be {presets[3].text}, " \
-            f"fifth preset {fifth_preset}, should be {presets[4].text}, " \
-            f"fourth preset {sixth_preset}, should be {presets[5].text}, "
+               f"First preset {first_preset}, should be {presets[0].text}, " \
+               f"second preset {second_preset}, should be {presets[1].text}, " \
+               f"third preset {third_preset}, should be {presets[2].text}, " \
+               f"fourth preset {fourth_preset}, should be {presets[3].text}, " \
+               f"fifth preset {fifth_preset}, should be {presets[4].text}, " \
+               f"fourth preset {sixth_preset}, should be {presets[5].text}, "
 
     def select_preset(self, preset_position):
         presets = self.locate_elements(*EqPresetsPageLocators.PRESET_NAME)
