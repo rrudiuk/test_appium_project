@@ -6,6 +6,7 @@ from .pages.dialogs_page import EditPresetsDialogPage
 from .pages.eq_presets_page import EditPresetsPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.eq_presets_page import EqPresetSetupPage
+from .pages.email_entry_page import EmailEntryPage
 from .pages.firmware_update_page import FirmwareUpdatePage
 from .pages.home_page import HomePage
 from .pages.landing_page import LandingPage
@@ -56,6 +57,30 @@ class TestSmokeTest:
         welcome_page.should_be_welcome_where_is_my_code()
         welcome_page.should_be_welcome_where_is_my_code_text()
 
+    def test_should_be_email_entry_screen(self, driver):
+        email_entry_page = EmailEntryPage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_back_arrow()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.should_be_correct_email_entry_subtitle()
+        email_entry_page.should_be_email_entry_input()
+        email_entry_page.should_be_correct_sign_me_button_text()
+        email_entry_page.should_be_correct_no_thanks_button_text()
+
+    def test_return_to_welcome_screen(self, driver):
+        email_entry_page = EmailEntryPage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_back_arrow()
+        email_entry_page.tap_back_arrow()
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.should_be_correct_welcome_subtitle()
+        welcome_page.should_be_welcome_screen_button()
+        welcome_page.should_be_welcome_get_started_button_text()
+
     # Analytics page
     def test_should_be_analytics_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -67,18 +92,6 @@ class TestSmokeTest:
         analytics_page.should_be_correct_analytics_subtitle()
         analytics_page.should_be_correct_share_analytics_button_text()
         analytics_page.should_be_correct_not_share_analytics_button_text()
-
-    def test_return_to_welcome_screen(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.should_be_back_arrow()
-        analytics_page.tap_back_arrow()
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.should_be_correct_welcome_subtitle()
-        welcome_page.should_be_welcome_screen_button()
-        welcome_page.should_be_welcome_get_started_button_text()
 
     # Demo page
     def test_access_demo_molding_screen(self, driver):
@@ -318,8 +331,6 @@ class TestSmokeTest:
         home_page.should_be_right_battery_image()
         home_page.should_be_right_battery_percents()
         home_page.should_be_case_image()
-        home_page.should_be_case_battery_image()
-        home_page.should_be_case_battery_percents()
         eq_presets_page.should_be_eq_expand_icon()
         eq_presets_page.should_be_eq_name()
         eq_presets_page.should_be_ue_signature_eq_selected()
@@ -521,8 +532,6 @@ class TestSmokeTest:
         home_page.should_be_right_battery_image()
         home_page.should_be_right_battery_percents()
         home_page.should_be_case_image()
-        home_page.should_be_case_battery_image()
-        home_page.should_be_case_battery_percents()
         eq_presets_page.should_be_eq_expand_icon()
         eq_presets_page.should_be_eq_name()
         eq_presets_page.should_be_ue_signature_eq_selected()
@@ -590,8 +599,6 @@ class TestSmokeTest:
         home_page.should_be_right_battery_image()
         home_page.should_be_right_battery_percents()
         home_page.should_be_case_image()
-        home_page.should_be_case_battery_image()
-        home_page.should_be_case_battery_percents()
         eq_presets_page.should_be_eq_expand_icon()
         eq_presets_page.should_be_eq_name()
         eq_presets_page.should_be_ue_signature_eq_selected()

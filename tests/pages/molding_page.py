@@ -10,7 +10,7 @@ class MoldingPage(BasePage):
 
     def should_be_correct_try_them_page_subtitle(self):
         self.check_screen_subtitle("Pop both earbuds into your ears. Gently adjust them until they feel comfortable "
-                                   "and secure.You will mold both sides at the same time.")
+                                   "and secure. You will mold both sides at the same time.")
 
     def should_be_main_button(self):
         assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)

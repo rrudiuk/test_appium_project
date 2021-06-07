@@ -108,7 +108,16 @@ class DemoPageLocators:
                                                   ".widget.FrameLayout/android.widget.FrameLayout/android.view"
                                                   ".ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
                                                   ".ViewGroup[2]/android.widget.TextView[6]")
-    # DEMO_EL = (By.ID, "")
+
+
+class EmailEntryPageLocators:
+    SIGN_ME_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_main")
+    NO_THANKS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_secondary")
+    EMAIL_ENTRY_REASON_DESCRIPTION = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_analytics_reasons")
+    EMAIL_ENTRY_INPUT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                   ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
+                                   ".widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android"
+                                   ".widget.FrameLayout/android.widget.EditText")
 
 
 class LandingPageLocators:

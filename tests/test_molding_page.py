@@ -196,8 +196,6 @@ class TestMoldingPage:
         home_page.should_be_right_battery_image()
         home_page.should_be_right_battery_percents()
         home_page.should_be_case_image()
-        home_page.should_be_case_battery_image()
-        home_page.should_be_case_battery_percents()
         eq_presets_page.should_be_eq_expand_icon()
         eq_presets_page.should_be_eq_name()
         eq_presets_page.should_be_ue_signature_eq_selected()
