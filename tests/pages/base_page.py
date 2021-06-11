@@ -123,6 +123,9 @@ class BasePage:
     def swipe_left(self):
         TouchAction(self.driver).press(x=855, y=1215).move_to(x=268, y=1222).release().perform()
 
+    def swipe_left_modified(self):
+        TouchAction(self.driver).press(x=900, y=350).move_to(x=150, y=350).release().perform()
+
     def swipe_right(self):
         TouchAction(self.driver).press(x=218, y=1176).move_to(x=829, y=1176).release().perform()
 

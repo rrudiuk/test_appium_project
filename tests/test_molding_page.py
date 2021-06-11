@@ -2,23 +2,29 @@ import pytest
 
 from .pages.analytics_page import AnalyticsPage
 from .pages.eq_presets_page import EqPresetsPage
+from .pages.email_entry_page import EmailEntryPage
 from .pages.landing_page import LandingPage
 from .pages.learn_more_page import LearnMorePage
 from .pages.molding_page import MoldingPage
 from .pages.home_page import HomePage
+from .pages.ugc_page import UGCPage
 from .pages.welcome_page import WelcomePage
 
 import time
 
 
+@pytest.mark.test
 class TestMoldingPage:
     def test_should_be_try_them_page(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -29,11 +35,14 @@ class TestMoldingPage:
 
     def test_should_be_get_ready_page(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -53,11 +62,14 @@ class TestMoldingPage:
 
     def test_should_be_how_is_bass_page(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -77,11 +89,14 @@ class TestMoldingPage:
 
     def test_should_start_soon_page1(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -99,11 +114,14 @@ class TestMoldingPage:
 
     def test_should_start_soon_page2(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -124,11 +142,14 @@ class TestMoldingPage:
 
     def test_cancel_molding_on_count(self, driver):
         analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
+        welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -151,13 +172,17 @@ class TestMoldingPage:
     # @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
+        email_entry_page = EmailEntryPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         molding_page = MoldingPage(driver)
         home_page = HomePage(driver)
+        ugc_page = UGCPage(driver)
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -177,6 +202,12 @@ class TestMoldingPage:
         molding_page.should_be_progress_bar()
         time.sleep(40)
 
+        # UGC
+        ugc_page.should_be_ugc_title()
+        ugc_page.should_be_correct_ugc_subtitle()
+        ugc_page.tap_skip_button()
+
+        # Congratulations
         molding_page.should_congratulations_title()
         molding_page.should_congratulations_subtitle_after_first_molding()
         molding_page.should_be_take_the_tour_button()
@@ -185,6 +216,7 @@ class TestMoldingPage:
         molding_page.should_skip_for_now_button_text()
         molding_page.tap_skip_for_now_button()
 
+        # Home screen
         home_page.should_be_earbuds_name()
         home_page.should_be_connected_state()
         home_page.should_be_hamburger_menu_icon()
@@ -205,13 +237,17 @@ class TestMoldingPage:
     @pytest.mark.first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
+        email_entry_page = EmailEntryPage(driver)
         landing_page = LandingPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)
         home_page = HomePage(driver)
+        ugc_page = UGCPage(driver)
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
+        email_entry_page.should_be_email_entry_title()
+        email_entry_page.tap_no_thanks_button()
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.should_be_landing_page_title()
@@ -231,6 +267,12 @@ class TestMoldingPage:
         molding_page.should_be_progress_bar()
         time.sleep(40)
 
+        # UGC
+        ugc_page.should_be_ugc_title()
+        ugc_page.should_be_correct_ugc_subtitle()
+        ugc_page.tap_skip_button()
+
+        # Congratulations
         molding_page.should_congratulations_title()
         molding_page.should_congratulations_subtitle_after_first_molding()
         molding_page.should_skip_for_now_button()
@@ -248,14 +290,15 @@ class TestMoldingPage:
         # Custom Control
         learn_more_page.should_be_close_button()
         learn_more_page.should_be_custom_control_title()
+        time.sleep(2)
         learn_more_page.should_be_custom_control_message()
         learn_more_page.should_be_custom_control_image()
-        learn_more_page.swipe_left()
+        learn_more_page.swipe_left_modified()
         # Switching devices
         learn_more_page.should_be_close_button()
         learn_more_page.should_be_switching_devices_title()
         learn_more_page.should_be_switching_devices_message()
-        learn_more_page.should_be_switching_devices_image()
+        # learn_more_page.should_be_switching_devices_image()
         learn_more_page.swipe_left()
         # EQ Customization
         learn_more_page.should_be_close_button()
@@ -280,7 +323,7 @@ class TestMoldingPage:
         learn_more_page.should_be_close_button()
         learn_more_page.should_be_status_indicators_title()
         learn_more_page.should_be_status_indicators_message()
-        learn_more_page.should_be_status_indicators_animation()
+        # learn_more_page.should_be_status_indicators_image()
         learn_more_page.should_be_status_indicators_notice()
         learn_more_page.swipe_right()
         # Pair a new device
@@ -306,7 +349,7 @@ class TestMoldingPage:
         learn_more_page.should_be_close_button()
         learn_more_page.should_be_switching_devices_title()
         learn_more_page.should_be_switching_devices_message()
-        learn_more_page.should_be_switching_devices_image()
+        # learn_more_page.should_be_switching_devices_image()
         learn_more_page.swipe_right()
         # Custom Control
         learn_more_page.should_be_close_button()

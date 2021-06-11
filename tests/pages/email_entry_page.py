@@ -25,7 +25,7 @@ class EmailEntryPage(BasePage):
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', " \
                                                  f"should be '{expected_result}'"
 
-    def tap_not_no_thanks_button(self):
+    def tap_no_thanks_button(self):
         self.click_element(*EmailEntryPageLocators.NO_THANKS_BUTTON)
 
     def should_be_reason_description(self):

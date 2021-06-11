@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 
 APP_PACKAGE_NAME = "com.logitech.uefits"
+
+
 # Add your locators below
 
 
@@ -276,7 +278,17 @@ class LearnMoreLocators:
     SCREEN_VIDEO = (By.ID, f"{APP_PACKAGE_NAME}:id/exo_subtitles")
     SCREEN_IMAGE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                               ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
-                              ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout"
-                              "/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx.recyclerview"
-                              ".widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.widget"
-                              ".ImageView")
+                              ".FrameLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx"
+                              ".recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup"
+                              "/android.view.ViewGroup")
+
+
+class UGCPageLocators:
+    TAKE_SELFIE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_main")
+    SKIP_FOR_NOW_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_secondary")
+    IMAGE_COLLAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_collage")
+    UGC_GIF = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                         ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                         ".FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup"
+                         "/android.widget.FrameLayout/android.widget.FrameLayout["
+                         "1]/android.widget.FrameLayout/android.view.View")

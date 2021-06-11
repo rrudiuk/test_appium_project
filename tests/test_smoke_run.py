@@ -427,7 +427,7 @@ class TestSmokeTest:
         learn_more_page.should_be_close_button()
         learn_more_page.should_be_status_indicators_title()
         learn_more_page.should_be_status_indicators_message()
-        learn_more_page.should_be_status_indicators_animation()
+        learn_more_page.should_be_status_indicators_image()
         learn_more_page.should_be_status_indicators_notice()
         learn_more_page.swipe_right()
         # Pair a new device
