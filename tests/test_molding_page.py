@@ -13,7 +13,6 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
 class TestMoldingPage:
     def test_should_be_try_them_page(self, driver):
         analytics_page = AnalyticsPage(driver)
