@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .locators import BasePageLocators
 from .locators import DialogPageLocators
 
 
@@ -64,4 +65,42 @@ class EditPresetsDialogPage(BasePage):
         assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
 
     def tap_cancel_button(self):
+        self.click_element(*DialogPageLocators.DIALOG_ADDITIONAL_ACTION_BUTTON)
+
+
+class FwUpdateDialogPage(BasePage):
+    def check_dialog_and_close_it(self):
+        if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Firmware Update Available":
+            self.tap_dismiss_button()
+
+    def is_dialog_title(self):
+        assert self.locate_element(*BasePageLocators.SCREEN_TITLE), "Dialog title not found"
+
+    def should_be_dialog_title(self):
+        self.check_screen_title("Firmware Update Available")
+
+    def should_be_dialog_message(self):
+        assert self.is_element_present(*DialogPageLocators.DIALOG_MESSAGE), "Dialog message not found"
+
+    def should_be_update_earbuds_button(self):
+        assert self.is_element_present(*DialogPageLocators.DIALOG_ACTION_BUTTON), "Update earbuds button doesn't appear"
+
+    def should_be_update_earbuds_button_text(self):
+        expected_result = "Update Earbuds"
+        actual_result = self.get_text(*DialogPageLocators.DIALOG_ACTION_BUTTON)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_update_earbuds_button(self):
+        self.click_element(*DialogPageLocators.DIALOG_ACTION_BUTTON)
+
+    def should_be_dismiss_button(self):
+        assert self.is_element_present(*DialogPageLocators.DIALOG_ADDITIONAL_ACTION_BUTTON), "Dismiss button " \
+                                                                                             "doesn't appear "
+
+    def should_be_dismiss_button_text(self):
+        expected_result = "Dismiss"
+        actual_result = self.get_text(*DialogPageLocators.DIALOG_ADDITIONAL_ACTION_BUTTON)
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+
+    def tap_dismiss_button(self):
         self.click_element(*DialogPageLocators.DIALOG_ADDITIONAL_ACTION_BUTTON)

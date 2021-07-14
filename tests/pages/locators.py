@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-APP_PACKAGE_NAME = ""
+APP_PACKAGE_NAME = "com.logitech.uefits"
 
 
 # Add your locators below
@@ -261,11 +261,17 @@ class SupportPageLocators:
 
 
 class FirmwareUpdatePageLocators:
+    ALL_SET_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_completed_title")
+    ERROR_OCCURRED_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_error_title")
+    ERROR_OCCURRED_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_error_subtitle")
+    ERROR_OCCURRED_INSTALL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_install_now")
+    ERROR_OCCURRED_CANCEL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_cancel")
     UPDATE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_update")
-    UPDATE_PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}::id/progress_bar_updating")
+    UPDATE_PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar_updating")
     INSTALLING_TITLE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
                                   '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
                                   '.FrameLayout/android.view.ViewGroup/android.widget.TextView[1]')
+    ROLLBACK_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_rollback")
 
 
 class LearnMoreLocators:
