@@ -2,7 +2,6 @@ from .base_page import BasePage
 from .locators import BasePageLocators
 from .locators import DemoPageLocators
 
-from selenium.webdriver.common.by import By
 import time
 
 

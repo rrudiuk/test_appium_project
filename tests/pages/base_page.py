@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from .locators import BasePageLocators
 
+from pathlib import Path
+
 
 class BasePage:
 
@@ -131,6 +133,12 @@ class BasePage:
 
     def scroll_down(self):
         TouchAction(self.driver).press(x=443, y=1965).move_to(x=436, y=1470).release().perform()
+
+    def take_screenshot(self):
+        ts = time.strftime("%Y_%m_%d_%H%M%S")
+        path_to_current_directory = Path().absolute()
+        path_to_screenshots_folder = str(path_to_current_directory) + '/Screenshots/'
+        self.driver.save_screenshot(path_to_screenshots_folder + ts + ".png")
 
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)

@@ -2,6 +2,8 @@ from .base_page import BasePage
 from .locators import BasePageLocators
 from .locators import FirmwareUpdatePageLocators
 
+from ..utilities import logger
+
 import time
 
 
@@ -53,24 +55,22 @@ class FirmwareUpdatePage(BasePage):
 
     def check_active_update(self):
         print("Start checking")
-        tries = 30
+        tries = 90
         check_period = 30
         installing_title = "Installing"
-        print(f"Start {installing_title} tries {tries} left")
+        # logger.LOGGER.info(f"Start {installing_title} tries {tries} left")
         while tries > 0:
-            print("while")
+            # logger.LOGGER.info("while")
             if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title:
                 # if self.is_installing_title(installing_title):
-                print(f"Stop {installing_title} tries {tries} left")
+                logger.LOGGER.info(f"Stop {installing_title} tries {tries} left")
                 break
-            print('Continue')
+            # logger.LOGGER.info('Continue')
             tries = tries - 1
             time.sleep(check_period)
 
-        print("I'm here")
-
         if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Restarting":
-            print("Restarting is shown")
+            logger.LOGGER.info("Restarting is shown")
             time.sleep(45)
 
         if self.locate_element(*FirmwareUpdatePageLocators.ALL_SET_TITLE):
@@ -80,13 +80,13 @@ class FirmwareUpdatePage(BasePage):
             while tries > 0:
                 self.click_element_10_times(*FirmwareUpdatePageLocators.ERROR_OCCURRED_TITLE)
                 if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Error":
-                    pass
-                    # Take a screenshot
+                    self.take_screenshot()
+                    logger.LOGGER.info("Screenshot captured")
                     break
                 tries = tries - 1
         else:
-            # Take a screenshot
-            pass
+            self.take_screenshot()
+            logger.LOGGER.info("Screenshot captured")
 
         self.should_be_all_set_title()
 

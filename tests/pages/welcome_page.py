@@ -7,7 +7,9 @@ import time
 
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
+        time.sleep(2)
         self.check_screen_title("Welcome to Your Perfect Fit")
+        self.take_screenshot()
 
     def should_be_correct_welcome_subtitle(self):
         self.check_screen_subtitle("In just a few minutes, you'll have a pair of perfectly fitting, incredibly "
@@ -28,10 +30,6 @@ class WelcomePage(BasePage):
         self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
 
     def should_be_welcome_code_screen_title(self):
-        # self.click_element_10_times(*BasePageLocators.SCREEN_TITLE)
-        # expected_result = "WELCOME"
-        # actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
-        # assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
         self.check_screen_title("WELCOME")
 
     def should_be_welcome_edit_text_input(self):

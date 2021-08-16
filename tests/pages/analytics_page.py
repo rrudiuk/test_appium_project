@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import AnalyticsPageLocators
-from .locators import BasePageLocators
 
 
 class AnalyticsPage(BasePage):
