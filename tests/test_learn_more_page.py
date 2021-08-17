@@ -7,6 +7,7 @@ from .pages.menu_page import MenuPage
 from .pages.welcome_page import WelcomePage
 
 
+@pytest.mark.skip
 class TestMoldNewTips:
     def test_learn_more_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)

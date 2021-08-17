@@ -58,12 +58,12 @@ class FirmwareUpdatePage(BasePage):
         tries = 90
         check_period = 30
         installing_title = "Installing"
-        # logger.LOGGER.info(f"Start {installing_title} tries {tries} left")
+        logger.LOGGER.info(f"Start {installing_title} {tries} tries left")
         while tries > 0:
             # logger.LOGGER.info("while")
             if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title:
                 # if self.is_installing_title(installing_title):
-                logger.LOGGER.info(f"Stop {installing_title} tries {tries} left")
+                logger.LOGGER.info(f"Stop {installing_title} {tries} tries left")
                 break
             # logger.LOGGER.info('Continue')
             tries = tries - 1
@@ -80,6 +80,8 @@ class FirmwareUpdatePage(BasePage):
             while tries > 0:
                 self.click_element_10_times(*FirmwareUpdatePageLocators.ERROR_OCCURRED_TITLE)
                 if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Error":
+                    error_message = self.get_text(*BasePageLocators.SCREEN_MESSAGE)
+                    logger.LOGGER.info(f"Error message: {error_message}")
                     self.take_screenshot()
                     logger.LOGGER.info("Screenshot captured")
                     break

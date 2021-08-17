@@ -66,7 +66,7 @@ class MoldingPage(BasePage):
         self.check_screen_subtitle("Gently adjust both earbuds until you find the position that maximizes the bass.")
 
     def should_be_cancel_button(self):
-        assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON), "Cancel button not located"
 
     def should_be_cancel_button_text(self):
         expected_result = "Cancel"
@@ -77,10 +77,10 @@ class MoldingPage(BasePage):
         self.click_element(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
 
     def should_be_image_volume(self):
-        assert self.is_element_present(*MoldingPageLocators.MOLDING_IMAGE_VOLUME)
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_IMAGE_VOLUME), "Volume image not located"
 
     def should_be_adjust_volume_bar(self):
-        assert self.is_element_present(*MoldingPageLocators.MOLDING_BAR_ADJUST_VOLUME)
+        assert self.is_element_present(*MoldingPageLocators.MOLDING_BAR_ADJUST_VOLUME), "Adjust volume bar not located"
 
     def should_be_starting_soon_title(self):
         expected_result = "Starting Soon"

@@ -1,24 +1,39 @@
-import time
-
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
+from .pages.dialogs_page import FwUpdateDialogPage
+from .pages.email_entry_page import EmailEntryPage
 from .pages.molding_page import MoldNewTipsPage
 from .pages.home_page import HomePage
 from .pages.menu_page import MenuPage
 from .pages.welcome_page import WelcomePage
 
+import time
 
+
+def initial_setup_non_molding(driver):
+    analytics_page = AnalyticsPage(driver)
+    dialog_page = FwUpdateDialogPage(driver)
+    email_entry_page = EmailEntryPage(driver)
+    home_page = HomePage(driver)
+    welcome_page = WelcomePage(driver)
+    welcome_page.should_be_correct_welcome_title()
+    welcome_page.tap_welcome_screen_get_started()
+    email_entry_page.should_be_email_entry_title()
+    email_entry_page.tap_no_thanks_button()
+    analytics_page.tap_share_analytics_button()
+    home_page.wait_for_connection()
+    dialog_page.check_dialog_and_close_it()
+    home_page.should_be_connected_state()
+
+
+@pytest.mark.test
 class TestMoldNewTips:
     def test_mold_new_tips_carousel(self, driver):
-        analytics_page = AnalyticsPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
@@ -117,14 +132,10 @@ class TestMoldNewTips:
         home_page.should_be_earbuds_name()
 
     def test_mold_new_tips_molding(self, driver):
-        analytics_page = AnalyticsPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        home_page.wait_for_connection()
         home_page.should_be_earbuds_name()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
@@ -149,6 +160,7 @@ class TestMoldNewTips:
         mold_new_tips_page.tap_main_button()
         mold_new_tips_page.should_be_get_ready_page_title()
         mold_new_tips_page.tap_main_button()
+        time.sleep(2)
         mold_new_tips_page.should_be_how_is_bass_title()
         time.sleep(19)
         mold_new_tips_page.should_be_starting_soon_title()

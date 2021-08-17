@@ -7,9 +7,10 @@ import time
 
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
-        time.sleep(2)
+        time.sleep(3)
+        # Tap element to avoid error when screen is inactive
+        self.click_element(*BasePageLocators.SCREEN_TITLE)
         self.check_screen_title("Welcome to Your Perfect Fit")
-        self.take_screenshot()
 
     def should_be_correct_welcome_subtitle(self):
         self.check_screen_subtitle("In just a few minutes, you'll have a pair of perfectly fitting, incredibly "

@@ -5,6 +5,7 @@ from .pages.analytics_page import AnalyticsPage
 from .pages.welcome_page import WelcomePage
 
 
+@pytest.mark.skip
 class TestLandingPage:
     def test_should_be_landing_page_after_accepting_analytics(self, driver):
         analytics_page = AnalyticsPage(driver)

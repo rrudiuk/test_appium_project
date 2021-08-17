@@ -36,13 +36,13 @@ class MenuPage(BasePage):
         actual_result = self.get_text(*MenuPageLocators.TEST_YOUR_FIT_ITEM)
         assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
 
-    def should_be_learn_more_item(self):
-        expected_result = "Learn More"
-        actual_result = self.get_text(*MenuPageLocators.LEARN_MORE_ITEM)
+    def should_be_user_guide_item(self):
+        expected_result = "User Guide"
+        actual_result = self.get_text(*MenuPageLocators.USER_GUIDE_ITEM)
         assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
 
-    def tap_learn_more_item(self):
-        self.click_element(*MenuPageLocators.LEARN_MORE_ITEM)
+    def tap_user_guide__item(self):
+        self.click_element(*MenuPageLocators.USER_GUIDE_ITEM)
 
     def should_be_support_item(self):
         expected_result = "Support"
@@ -51,3 +51,19 @@ class MenuPage(BasePage):
 
     def tap_support_item(self):
         self.click_element(*MenuPageLocators.SUPPORT_ITEM)
+
+    def should_be_email_entry_item(self):
+        expected_result = "Email Entry"
+        actual_result = self.get_text(*MenuPageLocators.EMAIL_ENTRY_ITEM)
+        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+
+    def tap_email_entry_item(self):
+        self.click_element(*MenuPageLocators.EMAIL_ENTRY_ITEM)
+
+    def should_be_take_selfie_item(self):
+        expected_result = "Take a Selfie"
+        actual_result = self.get_text(*MenuPageLocators.TAKE_SELFIE_ITEM)
+        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+
+    def tap_take_selfie_item(self):
+        self.click_element(*MenuPageLocators.TAKE_SELFIE_ITEM)

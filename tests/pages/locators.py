@@ -200,7 +200,7 @@ class EqPresetsPageLocators:
     LEFT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery_collapsed")
     RIGHT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery_collapsed")
     CASE_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery_collapsed")
-    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/item_save")
+    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_save")
     # Expandable EQ block locators
     EXPANDABLE_BLOCK = (By.ID, f"{APP_PACKAGE_NAME}:id/group_expandable_part")
     CUSTOMIZE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_customize")
@@ -248,12 +248,28 @@ class MenuPageLocators:
                                     ".FrameLayout["
                                     "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
                                     ".LinearLayoutCompat[3]/android.widget.CheckedTextView")
-    LEARN_MORE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+    USER_GUIDE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                  ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
                                  ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
                                  "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
                                  ".LinearLayoutCompat[4]/android.widget.CheckedTextView")
-    SUPPORT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
+    SUPPORT_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                              ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                              ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
+                              "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                              ".LinearLayoutCompat["
+                              "5]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView")
+    EMAIL_ENTRY_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                  ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                  ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
+                                  "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                                  ".LinearLayoutCompat[6]/android.widget.CheckedTextView")
+    TAKE_SELFIE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                  ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                  ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout["
+                                  "1]/androidx.recyclerview.widget.RecyclerView/androidx.appcompat.widget"
+                                  ".LinearLayoutCompat["
+                                  "7]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView")
 
 
 class SupportPageLocators:

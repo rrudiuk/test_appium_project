@@ -25,7 +25,7 @@ class EqPresetsPage(BasePage):
         assert self.is_element_present(*EqPresetsPageLocators.SAVE_BUTTON), "Save button doesn't appear"
 
     def should_be_save_button_text(self):
-        expected_result = "SAVE"
+        expected_result = "Save"
         actual_result = self.get_text(*EqPresetsPageLocators.SAVE_BUTTON)
         assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
 
@@ -237,7 +237,7 @@ class EditPresetsPage(EqPresetsPage):
                                                   f"{expected_result - 1}"
 
     def should_be_edit_preset_title(self):
-        self.check_screen_title("EDIT PRESETS")
+        self.check_screen_title("Edit presets")
 
     def should_be_presets_list(self):
         assert self.is_element_present(*EqPresetsPageLocators.EDIT_PRESETS_LIST), "Presets recycler view doesn't " \
