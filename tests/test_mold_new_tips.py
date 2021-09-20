@@ -27,7 +27,6 @@ def initial_setup_non_molding(driver):
     home_page.should_be_connected_state()
 
 
-@pytest.mark.test
 class TestMoldNewTips:
     def test_mold_new_tips_carousel(self, driver):
         initial_setup_non_molding(driver)

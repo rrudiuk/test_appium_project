@@ -58,10 +58,13 @@ class FirmwareUpdatePage(BasePage):
         tries = 90
         check_period = 30
         installing_title = "Installing"
+        # restarting_tries = 5
+        restarting_title = "Restarting"
         logger.LOGGER.info(f"Start {installing_title} {tries} tries left")
         while tries > 0:
             # logger.LOGGER.info("while")
-            if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title:
+            if self.get_text(*FirmwareUpdatePageLocators.INSTALLING_TITLE) != installing_title or \
+                    self.get_text(*BasePageLocators.SCREEN_TITLE) == restarting_title:
                 # if self.is_installing_title(installing_title):
                 logger.LOGGER.info(f"Stop {installing_title} {tries} tries left")
                 break
@@ -69,9 +72,10 @@ class FirmwareUpdatePage(BasePage):
             tries = tries - 1
             time.sleep(check_period)
 
-        if self.get_text(*BasePageLocators.SCREEN_TITLE) == "Restarting":
-            logger.LOGGER.info("Restarting is shown")
-            time.sleep(45)
+        # while restarting_tries > 0:
+        #     if self.get_text(*BasePageLocators.SCREEN_TITLE) == restarting_title:
+        #         logger.LOGGER.info("Restarting is shown")
+        #         time.sleep(45)
 
         if self.locate_element(*FirmwareUpdatePageLocators.ALL_SET_TITLE):
             self.should_be_all_set_title()

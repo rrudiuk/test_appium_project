@@ -7,9 +7,11 @@ import time
 
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
-        time.sleep(3)
-        # Tap element to avoid error when screen is inactive
+        # Tap element to avoid error if screen is inactive
         self.click_element(*BasePageLocators.SCREEN_TITLE)
+        time.sleep(2)
+        self.click_element(*BasePageLocators.SCREEN_TITLE)
+        # Check title
         self.check_screen_title("Welcome to Your Perfect Fit")
 
     def should_be_correct_welcome_subtitle(self):
@@ -78,6 +80,10 @@ class WelcomePage(BasePage):
     def go_to_home_screen_code(self):
         text_input = self.locate_element(*WelcomePageLocators.WELCOME_SCREEN_EDIT_TEXT_CODE)
         text_input.send_keys("002")
+
+    def go_to_centurion_screen_code(self):
+        text_input = self.locate_element(*WelcomePageLocators.WELCOME_SCREEN_EDIT_TEXT_CODE)
+        text_input.send_keys("004")
 
     def tap_screen_code_get_started(self):
         self.click_element(*BasePageLocators.BUTTON_MAIN)

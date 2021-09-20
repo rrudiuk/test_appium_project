@@ -35,7 +35,50 @@ class AnalyticsPageLocators:
     ANALYTICS_REASON_DESCRIPTION = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_analytics_reasons")
 
 
-class DemoPageLocators:
+class SebulbaDemoPageLocators:
+    CONNECTION_STATUS = (By.ID, f"{APP_PACKAGE_NAME}:id/tv_connection_status")
+    SELECT_FEATURE_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/tv_select_feature")
+    SELECT_FEATURE_SPINNER = (By.ID, f"{APP_PACKAGE_NAME}:id/spinner_feature")
+    SELECT_FUNCTION_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/tv_select_function")
+    SELECT_FUNCTION_SPINNER = (By.ID, f"{APP_PACKAGE_NAME}:id/spinner_function")
+    PAYLOAD_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/tv_payload_title")
+    PAYLOAD_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/et_payload_value")
+    SEND_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/btn_send")
+    I_ROOT = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView'
+                        '/android.widget.TextView[1]')
+    I_FEATURE_SET = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                               '.ListView/android.widget.TextView[2]')
+    I_DEVICE_INFO = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                               '.ListView/android.widget.TextView[3]')
+    I_DEVICE_NAME = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                               '.ListView/android.widget.TextView[4]')
+    I_BT_HOST_INFO = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                '.ListView/android.widget.TextView[5]')
+    I_HEADSET_PARA_EQ = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                   '.ListView/android.widget.TextView[6]')
+    I_FITS_MOLDING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                '.ListView/android.widget.TextView[7]')
+    I_FITS_TAP_CONTROL = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                    '.ListView/android.widget.TextView[8]')
+    I_FITS_PROXIMITY_DETECTION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                            '.widget.ListView/android.widget.TextView[9]')
+    I_FITS_MOTION_DETECTION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                         '.widget.ListView/android.widget.TextView[10]')
+    GET_MOLDING_PREP_MODE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                       '.widget.ListView/android.widget.TextView[1]')
+    SET_MOLDING_PREP_MODE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                       '.widget.ListView/android.widget.TextView[2]')
+    START_MOLDING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                               '.ListView/android.widget.TextView[3]')
+    STOP_MOLDING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                              '.ListView/android.widget.TextView[4]')
+    COMMAND_STATE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                               '.view.ViewGroup[1]/android.widget.TextView[11]')
+
+
+class OhboyDemoPageLocators:
     DEMO_APP_VERSION = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_app_version")
     DEMO_LEFT_LABEL = (By.ID, f"{APP_PACKAGE_NAME}:id/left_label")
     DEMO_RIGHT_LABEL = (By.ID, f"{APP_PACKAGE_NAME}:id/right_label")

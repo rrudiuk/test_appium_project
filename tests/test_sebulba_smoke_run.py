@@ -1,7 +1,6 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.demo_page import DemoSendCommandsPage
 from .pages.dialogs_page import EditPresetsDialogPage
 from .pages.dialogs_page import FwUpdateDialogPage
 from .pages.eq_presets_page import EditPresetsPage
@@ -14,8 +13,9 @@ from .pages.landing_page import LandingPage
 from .pages.learn_more_page import LearnMorePage
 from .pages.menu_page import MenuPage
 from .pages.molding_page import MoldingPage, MoldNewTipsPage
-from .pages.ugc_page import UGCPage
+from .pages.sebulba_demo_page import SebulbaDemoPage
 from .pages.support_page import SupportPage
+from .pages.ugc_page import UGCPage
 from .pages.welcome_page import WelcomePage
 
 import time
@@ -55,7 +55,7 @@ def initial_setup_non_molding(driver):
 Requires connected earbuds via BT classic pulled off out of the case"""
 
 
-@pytest.mark.smoke_test
+@pytest.mark.sebulba_smoke_test
 class TestSmokeTest:
     # Welcome page
     def test_should_be_welcome_screen(self, driver):
@@ -131,58 +131,41 @@ class TestSmokeTest:
         analytics_page.should_be_correct_not_share_analytics_button_text()
 
     # Demo page
-    def test_access_demo_molding_screen(self, driver):
+    def test_should_be_sebulba_debug_screen(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        sebulba_demo_page = SebulbaDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
+        welcome_page.go_to_centurion_screen_code()
         welcome_page.tap_screen_code_get_started()
-        time.sleep(5)
-        demo_commands_page.should_be_demo_molding_screen()
+        sebulba_demo_page.wait_for_connection()
+        sebulba_demo_page.should_be_connected_state()
+        sebulba_demo_page.should_be_select_feature_title()
+        sebulba_demo_page.should_be_select_function_title()
+        sebulba_demo_page.should_be_payload_title()
+        sebulba_demo_page.should_be_payload_input()
+        sebulba_demo_page.should_be_send_button()
 
-    def test_access_demo_debug_screen(self, driver):
+    def test_activate_curing(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        sebulba_demo_page = SebulbaDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
+        welcome_page.go_to_centurion_screen_code()
         welcome_page.tap_screen_code_get_started()
-        time.sleep(5)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.should_be_demo_debug_screen()
-
-    def test_check_first_two_items_codes(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(5)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.should_be_demo_debug_screen()
-        demo_commands_page.tap_first_commands_list_item()
-        demo_commands_page.tap_second_commands_list_item()
-
-    def test_curring_mode_activation(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(6)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.activate_curring_mode()
+        sebulba_demo_page.wait_for_connection()
+        sebulba_demo_page.should_be_connected_state()
+        sebulba_demo_page.tap_feature_spinner()
+        sebulba_demo_page.select_i_fits_molding()
+        sebulba_demo_page.tap_function_spinner()
+        sebulba_demo_page.select_set_molding_prep_mode()
+        sebulba_demo_page.input_payload_to_enable_curing_on_both_earbuds()
+        sebulba_demo_page.should_be_send_button()
+        sebulba_demo_page.should_be_payload_input()
+        sebulba_demo_page.tap_send_button()
+        sebulba_demo_page.should_be_success_state_after_sending_command()
 
     # Molding page
     def test_should_be_try_them_page(self, driver):
@@ -336,19 +319,25 @@ class TestSmokeTest:
         eq_presets_page.should_be_eq_curve_image()
 
     # Activate curing for second molding
-    def test_curring_mode_activation1(self, driver):
+    def test_activate_curing1(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        sebulba_demo_page = SebulbaDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
-        welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
+        welcome_page.go_to_centurion_screen_code()
         welcome_page.tap_screen_code_get_started()
-        time.sleep(6)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.activate_curring_mode()
+        sebulba_demo_page.wait_for_connection()
+        sebulba_demo_page.should_be_connected_state()
+        sebulba_demo_page.tap_feature_spinner()
+        sebulba_demo_page.select_i_fits_molding()
+        sebulba_demo_page.tap_function_spinner()
+        sebulba_demo_page.select_set_molding_prep_mode()
+        sebulba_demo_page.input_payload_to_enable_curing_on_both_earbuds()
+        sebulba_demo_page.should_be_send_button()
+        sebulba_demo_page.should_be_payload_input()
+        sebulba_demo_page.tap_send_button()
+        sebulba_demo_page.should_be_success_state_after_sending_command()
 
     def test_molding_complete_and_open_learn_more(self, driver):
         initial_setup_molding(driver)
@@ -472,148 +461,6 @@ class TestSmokeTest:
         learn_more_page.tap_close_button()
         dialog_page.check_dialog_and_close_it()
         home_page.should_be_earbuds_name()
-
-    # Additional molding test
-    def test_curring_mode_activation2(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(6)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.activate_curring_mode()
-
-    def test_molding_complete1(self, driver):
-        initial_setup_molding(driver)
-        dialog_page = FwUpdateDialogPage(driver)
-        eq_presets_page = EqPresetsPage(driver)
-        home_page = HomePage(driver)
-        molding_page = MoldingPage(driver)
-        ugc_page = UGCPage(driver)
-        molding_page.should_be_try_them_page_title()
-        molding_page.tap_main_button()
-        molding_page.should_be_get_ready_page_title()
-        molding_page.tap_main_button()
-        time.sleep(2)
-        molding_page.should_be_how_is_bass_title()
-        time.sleep(19)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(45)
-        molding_page.should_be_progress_bar()
-        time.sleep(40)
-
-        # UGC
-        ugc_page.should_be_ugc_title()
-        ugc_page.should_be_correct_ugc_subtitle()
-        ugc_page.tap_skip_button()
-
-        # Congratulations
-        molding_page.should_congratulations_title()
-        molding_page.should_congratulations_subtitle_after_first_molding()
-        molding_page.should_be_take_the_tour_button()
-        molding_page.should_be_take_the_tour_button_text()
-        molding_page.should_skip_for_now_button()
-        molding_page.should_skip_for_now_button_text()
-        molding_page.tap_skip_for_now_button()
-        time.sleep(5)
-
-        # Home screen
-        dialog_page.check_dialog_and_close_it()
-        home_page.should_be_earbuds_name()
-        home_page.should_be_connected_state()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.should_be_settings_icon()
-        home_page.should_be_left_earbud_image()
-        home_page.should_be_left_battery_image()
-        home_page.should_be_left_battery_percents()
-        home_page.should_be_right_earbud_image()
-        home_page.should_be_right_battery_image()
-        home_page.should_be_right_battery_percents()
-        home_page.should_be_case_image()
-        eq_presets_page.should_be_eq_expand_icon()
-        eq_presets_page.should_be_eq_name()
-        eq_presets_page.should_be_ue_signature_eq_selected()
-        eq_presets_page.should_be_eq_curve_image()
-
-    # Additional molding test
-    def test_curring_mode_activation3(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_welcome_code_screen_title()
-        welcome_page.go_to_demo_screen_code()
-        welcome_page.tap_screen_code_get_started()
-        time.sleep(6)
-        demo_commands_page.should_be_demo_molding_screen()
-        demo_commands_page.tap_debug_button()
-        demo_commands_page.activate_curring_mode()
-
-    def test_molding_complete2(self, driver):
-        initial_setup_molding(driver)
-        dialog_page = FwUpdateDialogPage(driver)
-        eq_presets_page = EqPresetsPage(driver)
-        home_page = HomePage(driver)
-        molding_page = MoldingPage(driver)
-        ugc_page = UGCPage(driver)
-        molding_page.should_be_try_them_page_title()
-        molding_page.tap_main_button()
-        molding_page.should_be_get_ready_page_title()
-        molding_page.tap_main_button()
-        time.sleep(2)
-        molding_page.should_be_how_is_bass_title()
-        time.sleep(19)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(45)
-        molding_page.should_be_progress_bar()
-        time.sleep(40)
-
-        # UGC
-        ugc_page.should_be_ugc_title()
-        ugc_page.should_be_correct_ugc_subtitle()
-        ugc_page.tap_skip_button()
-
-        # Congratulations
-        molding_page.should_congratulations_title()
-        molding_page.should_congratulations_subtitle_after_first_molding()
-        molding_page.should_be_take_the_tour_button()
-        molding_page.should_be_take_the_tour_button_text()
-        molding_page.should_skip_for_now_button()
-        molding_page.should_skip_for_now_button_text()
-        molding_page.tap_skip_for_now_button()
-        time.sleep(5)
-
-        # Home screen
-        dialog_page.check_dialog_and_close_it()
-        home_page.should_be_earbuds_name()
-        home_page.should_be_connected_state()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.should_be_settings_icon()
-        home_page.should_be_left_earbud_image()
-        home_page.should_be_left_battery_image()
-        home_page.should_be_left_battery_percents()
-        home_page.should_be_right_earbud_image()
-        home_page.should_be_right_battery_image()
-        home_page.should_be_right_battery_percents()
-        home_page.should_be_case_image()
-        eq_presets_page.should_be_eq_expand_icon()
-        eq_presets_page.should_be_eq_name()
-        eq_presets_page.should_be_ue_signature_eq_selected()
-        eq_presets_page.should_be_eq_curve_image()
 
     # EQ presets page
     def test_initial_presets_screen_setup(self, driver):
@@ -1161,4 +1008,4 @@ class TestSmokeTest:
         firmware_update_page.check_active_update()
 
 # run with
-# pytest -s -v --reruns 1 -m smoke_test --html=/Users/rudiuk/PyCharmProjects/test_appium_project/test_report/report.html --capture sys
+# pytest -s -v --reruns 1 -m sebulba_smoke_test --html=/Users/rudiuk/PyCharmProjects/test_appium_project/test_report/report.html --capture sys
