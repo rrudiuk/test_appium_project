@@ -123,7 +123,7 @@ class TestMoldingPage:
         time.sleep(2)
         molding_page.should_be_get_ready_page_title()
 
-    # @pytest.mark.first_molding
+    @pytest.mark.ohboy_first_molding
     def test_molding_complete(self, driver):
         initial_setup_molding(driver)
         dialog_page = FwUpdateDialogPage(driver)
@@ -180,8 +180,8 @@ class TestMoldingPage:
         eq_presets_page.should_be_ue_signature_eq_selected()
         eq_presets_page.should_be_eq_curve_image()
 
-    # @pytest.mark.skip
-    # @pytest.mark.first_molding
+    @pytest.mark.skip
+    @pytest.mark.sebulba_first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         initial_setup_molding(driver)
         dialog_page = FwUpdateDialogPage(driver)

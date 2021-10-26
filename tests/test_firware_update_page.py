@@ -28,6 +28,7 @@ def initial_setup_non_molding(driver):
     home_page.should_be_connected_state()
 
 
+@pytest.mark.test
 class TestFirmwareUpdatePage:
     def test_firmware_update(self, driver):
         initial_setup_non_molding(driver)
@@ -138,78 +139,6 @@ class TestFirmwareUpdatePage:
         firmware_update_page.check_active_update()
 
     def test_firmware_update6(self, driver):
-        initial_setup_non_molding(driver)
-        firmware_update_page = FirmwareUpdatePage(driver)
-        home_page = HomePage(driver)
-        menu_page = MenuPage(driver)
-        support_page = SupportPage(driver)
-        home_page.should_be_earbuds_name()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.tap_hamburger_menu_icon()
-        menu_page.tap_support_item()
-        support_page.should_be_firmware_item()
-        support_page.tap_firmware_item()
-        time.sleep(5)
-        firmware_update_page.should_be_page_title()
-        firmware_update_page.activate_fw_update()
-        time.sleep(10)
-        firmware_update_page.check_active_update()
-
-    def test_firmware_update7(self, driver):
-        initial_setup_non_molding(driver)
-        firmware_update_page = FirmwareUpdatePage(driver)
-        home_page = HomePage(driver)
-        menu_page = MenuPage(driver)
-        support_page = SupportPage(driver)
-        home_page.should_be_earbuds_name()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.tap_hamburger_menu_icon()
-        menu_page.tap_support_item()
-        support_page.should_be_firmware_item()
-        support_page.tap_firmware_item()
-        time.sleep(5)
-        firmware_update_page.should_be_page_title()
-        firmware_update_page.activate_fw_update()
-        time.sleep(10)
-        firmware_update_page.check_active_update()
-
-    def test_firmware_update8(self, driver):
-        initial_setup_non_molding(driver)
-        firmware_update_page = FirmwareUpdatePage(driver)
-        home_page = HomePage(driver)
-        menu_page = MenuPage(driver)
-        support_page = SupportPage(driver)
-        home_page.should_be_earbuds_name()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.tap_hamburger_menu_icon()
-        menu_page.tap_support_item()
-        support_page.should_be_firmware_item()
-        support_page.tap_firmware_item()
-        time.sleep(5)
-        firmware_update_page.should_be_page_title()
-        firmware_update_page.activate_fw_update()
-        time.sleep(10)
-        firmware_update_page.check_active_update()
-
-    def test_firmware_update9(self, driver):
-        initial_setup_non_molding(driver)
-        firmware_update_page = FirmwareUpdatePage(driver)
-        home_page = HomePage(driver)
-        menu_page = MenuPage(driver)
-        support_page = SupportPage(driver)
-        home_page.should_be_earbuds_name()
-        home_page.should_be_hamburger_menu_icon()
-        home_page.tap_hamburger_menu_icon()
-        menu_page.tap_support_item()
-        support_page.should_be_firmware_item()
-        support_page.tap_firmware_item()
-        time.sleep(5)
-        firmware_update_page.should_be_page_title()
-        firmware_update_page.activate_fw_update()
-        time.sleep(10)
-        firmware_update_page.check_active_update()
-
-    def test_firmware_update10(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
         home_page = HomePage(driver)

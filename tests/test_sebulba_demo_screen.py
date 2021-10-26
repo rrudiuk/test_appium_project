@@ -22,6 +22,8 @@ class TestSebulbaDemoPage:
         sebulba_demo_page.should_be_payload_input()
         sebulba_demo_page.should_be_send_button()
 
+    @pytest.mark.sebulba_activate_curing
+    @pytest.mark.sebulba_first_molding
     def test_activate_curing(self, driver):
         welcome_page = WelcomePage(driver)
         sebulba_demo_page = SebulbaDemoPage(driver)
