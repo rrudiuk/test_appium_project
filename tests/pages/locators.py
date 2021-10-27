@@ -357,3 +357,519 @@ class UGCPageLocators:
                          ".FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup"
                          "/android.widget.FrameLayout/android.widget.FrameLayout["
                          "1]/android.widget.FrameLayout/android.view.View")
+
+
+class UserGuidePageLocators:
+    # Pairing
+    PAIRING_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                               '1]/android.widget.ImageView')
+    PAIRING_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                 '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                 '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                 '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                 '1]/android.view.View')
+    PAIRING_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                              '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                              '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                              '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                              '.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView')
+    PAIRING_TEXT1 = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
+    PAIRING_TEXT2 = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    PAIRING_CASE_IMAGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                    '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android'
+                                    '.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget'
+                                    '.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                    '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout'
+                                    '/android.widget.ImageView')
+    OHBOY_PAIRING_WATCH_VIDEO = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.TextView[3]')
+    OHBOY_PAIRING_VIDEO = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                     '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                     '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                     '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                     '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view'
+                                     '.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout['
+                                     '3]/android.widget.FrameLayout/android.view.View')
+    OHBOY_PAIRING_ONE_NOT_CONNECTED = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                 '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                 '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                 '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                                 '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget'
+                                                 '.TextView[2]')
+    SEBULBA_PAIRING_SELECT_UE_FITS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                                '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                                '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView')
+    SEBULBA_PAIRING_IMAGE = (By.ID, 'com.logitech.uefits:id/image_view_phone')
+    # Molding
+    MOLDING_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                               '2]/android.widget.ImageView')
+    MOLDING_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                 '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                 '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                 '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                 '2]/android.view.View')
+    MOLDING_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                              '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                              '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                              '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                              '.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView')
+    MOLDING_A_FEW_THINGS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                      '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                      '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                      '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                      '.widget.TextView[1]')
+    MOLDING_SOUND_TEST = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                    '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android'
+                                    '.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget'
+                                    '.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                    '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    MOLDING_ADJUST_BOTH_EARBUDS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                             '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                             '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                             '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                             '/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                                             '.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
+    MOLDING_APPLY_GENTLE_PRESSURE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[4]')
+    MOLDING_AFTER_SOUND_TEST = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.TextView[5]')
+    MOLDING_MIX_AMD_MATCH = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                       '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                       '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                       '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                       '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                       '.widget.TextView[6]')
+    MOLDING_SEVERAL_PAIRS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                       '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                       '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                       '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                       '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                       '.widget.TextView[7]')
+    MOLDING_CLICK_ON_APP_MENU = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.TextView[8]')
+    # Controls
+    CONTROLS_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                '3]/android.widget.ImageView')
+    CONTROLS_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                  '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                  '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                  '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                  '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                  '3]/android.view.View')
+    CONTROLS_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                               '3]/android.widget.TextView')
+    CONTROLS_DOUBLE_AND_SINGLE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                            '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                            '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                            '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                            '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                            '.widget.RecyclerView/android.widget.TextView[1]')
+    CONTROLS_EACH_FITS_EARBUD = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.TextView[2]')
+    CONTROLS_PHONE_CALL = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                     '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                     '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                     '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                     '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                     '.widget.TextView[3]')
+    CONTROLS_ENABLE_SINGLE_TAP = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                            '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                            '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                            '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                            '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                            '.widget.RecyclerView/android.widget.TextView[4]')
+    CONTROLS_TO_USE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                 '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                 '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                 '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[5]')
+    CONTROLS_HOW_TO_USE_IMAGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.FrameLayout['
+                                           '1]/android.widget.ImageView')
+    CONTROLS_CUSTOMIZATION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.TextView[6]')
+    CONTROLS_EACH_EARBUD = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                      '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                      '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                      '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                      '.widget.TextView[7]')
+    CONTROLS_ACCESS_SETTINGS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.FrameLayout[2]/android.widget.ImageView')
+    # Connectivity and switching
+    CONNECTIVITY_AND_SWITCHING_ARROW = (By.XPATH,
+                                        '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.view.ViewGroup[4]/android.widget.ImageView')
+    CONNECTIVITY_AND_SWITCHING_DIVIDER = (By.XPATH,
+                                          '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.view.ViewGroup[4]/android.view.View')
+    CONNECTIVITY_AND_SWITCHING_ITEM = (By.XPATH,
+                                       '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                       '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                       '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                       '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                       '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                       '.view.ViewGroup[4]/android.widget.TextView')
+    CONNECTIVITY_AND_SWITCHING_TITLE = (By.XPATH,
+                                        '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.TextView[1]')
+    CONNECTIVITY_AND_SWITCHING_IMAGE = (By.XPATH,
+                                        '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.FrameLayout/android.widget.ImageView')
+    CONNECTIVITY_AND_SWITCHING_FIRST_ENSURE = (By.XPATH,
+                                               '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    CONNECTIVITY_AND_SWITCHING_YOU_CAN_SWITCH = (By.XPATH,
+                                                 '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                 '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                 '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                 '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                                 '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget'
+                                                 '.TextView[3]')
+    CONNECTIVITY_AND_SWITCHING_CASE_INTERACTIONS = (By.XPATH,
+                                                    '/hierarchy/android.widget.FrameLayout/android.widget'
+                                                    '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                    '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                    '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                                    '.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                                    '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                                    '.RecyclerView/android.widget.TextView[4]')
+    CONNECTIVITY_AND_SWITCHING_IN_CASE = (By.XPATH,
+                                          '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.TextView[5]')
+    CONNECTIVITY_AND_SWITCHING_AUTO_CONNECTION = (By.XPATH,
+                                                  '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                  '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                  '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                  '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                  '/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                                  '.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                                  '.widget.TextView[5]')
+    CONNECTIVITY_AND_SWITCHING_USING_SINGLE_EARBUD = (By.XPATH,
+                                                      '/hierarchy/android.widget.FrameLayout/android.widget'
+                                                      '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                      '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                      '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                                      '.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                                      '.widget.RecyclerView/android.widget.TextView[6]')
+    CONNECTIVITY_AND_SWITCHING_TO_USE_SINGLE = (By.XPATH,
+                                                '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                                '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                                '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView['
+                                                '7]')
+    CONNECTIVITY_AND_SWITCHING_STANDBY = (By.XPATH,
+                                          '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.TextView[8]')
+    CONNECTIVITY_AND_SWITCHING_AFTER_60 = (By.XPATH,
+                                           '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.TextView[9]')
+    CONNECTIVITY_AND_SWITCHING_TO_WAKE = (By.XPATH,
+                                          '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.TextView[6]')
+    CONNECTIVITY_AND_SWITCHING_TO_APP = (By.XPATH,
+                                         '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                         '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                         '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                         '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                         '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                         '.RecyclerView/android.widget.TextView[7]')
+    CONNECTIVITY_AND_SWITCHING_WILL_CONNECT = (By.XPATH,
+                                               '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[8]')
+    CONNECTIVITY_AND_SWITCHING_SECOND_DEVICE = (By.XPATH,
+                                                '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                                '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                                '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView['
+                                                '9]')
+    CONNECTIVITY_AND_SWITCHING_APP_WILL_DISPLAY = (By.XPATH,
+                                                   '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                   '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                   '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                   '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                   '/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                                   '.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                                   '.widget.TextView[9]')
+    # Charging
+    CHARGING_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                '5]/android.widget.ImageView')
+    CHARGING_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                  '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                  '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                  '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                  '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                  '5]/android.view.View')
+    CHARGING_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                               '5]/android.widget.TextView')
+    CHARGING_YOUR_DEVICE_TITLE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                            '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                            '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                            '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                            '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                            '.widget.RecyclerView/android.widget.TextView[1]')
+    CHARGING_UE_FITS_WILL_SUPPORT = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    CHARGING_USB_C_CABLE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                      '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                      '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                      '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                      '.widget.TextView[3]')
+    CHARGING_LED_INTERACTIONS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.widget.TextView[4]')
+    CHARGING_INDICATION_TABLE = (By.ID, 'com.logitech.uefits:id/view_container')
+    # Adjusting EQ
+    ADJUSTING_EQ_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                    '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android'
+                                    '.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget'
+                                    '.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                    '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                    '6]/android.widget.ImageView')
+    ADJUSTING_EQ_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                      '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                      '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                      '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view'
+                                      '.ViewGroup[6]/android.view.View')
+    ADJUSTING_EQ_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                   '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android'
+                                   '.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget'
+                                   '.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                   '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
+                                   '6]/android.widget.TextView')
+    ADJUSTING_EQ_TO_ACCESS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
+    ADJUSTING_EQ_TO_CHANGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    ADJUSTING_EQ_TO_CREATE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
+    ADJUSTING_EQ_IMAGE = (By.ID, 'com.logitech.uefits:id/view_container')
+    # ADJUSTING_EQ_CREATE_A_PRESET = (By.XPATH, '')
+    # TYF
+    TYF_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                           '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                           '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android'
+                           '.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                           '.recyclerview.widget.RecyclerView/android.view.ViewGroup[7]/android.widget.ImageView')
+    TYF_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                             '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                             '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                             '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                             '.recyclerview.widget.RecyclerView/android.view.ViewGroup[7]/android.view.View')
+    TYF_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                          '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                          '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android'
+                          '.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                          '.recyclerview.widget.RecyclerView/android.view.ViewGroup[7]/android.widget.TextView')
+    TYF_GREAT_FIT = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                               '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                               '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                               '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
+    TYF_BY_ANSWERING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                  '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                  '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                  '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                  '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    TYF_WHEN_USING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+                                '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                '/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
+    # Updating Firmware
+    UPDATING_FIRMWARE_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                         '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                         '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                         '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                         '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                         '.RecyclerView/android.view.ViewGroup[8]/android.widget.ImageView')
+    UPDATING_FIRMWARE_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                           '.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                           '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                           '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                           '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
+                                           '.widget.RecyclerView/android.view.ViewGroup[8]/android.view.View')
+    UPDATING_FIRMWARE_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.view.ViewGroup[8]/android.widget.TextView')
+    UPDATING_FIRMWARE_IF_FW_UPDATE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                                '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                                '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView['
+                                                '1]')
+    UPDATING_FIRMWARE_UPDATES_CAN = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    UPDATING_FIRMWARE_TO_COMPLETE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                               '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                               '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                               '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                               '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                               '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
+    UPDATING_FIRMWARE_MOST_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                '.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout'
+                                                '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
+                                                '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
+                                                '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView['
+                                                '4]')
+    # Troubleshooting
+    TROUBLESHOOTING_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                       '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                       '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                       '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                       '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                       '.view.ViewGroup[9]/android.widget.ImageView')
+    TROUBLESHOOTING_DIVIDER = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                         '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                         '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                         '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                         '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                         '.RecyclerView/android.view.ViewGroup[9]/android.view.View')
+    TROUBLESHOOTING_ITEM = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                      '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                      '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android'
+                                      '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                      '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view'
+                                      '.ViewGroup[9]/android.widget.TextView')
+    TROUBLESHOOTING_FIRST_ACTION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
+    TROUBLESHOOTING_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
+    TROUBLESHOOTING_IF_YOU_HAVE_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
+    TROUBLESHOOTING_TO_RESET = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[4]')
+    TROUBLESHOOTING_CONNECTING_ISSUES_NOTE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[5]')
+    TROUBLESHOOTING_CONNECTING_ISSUES_STANDBY = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[6]')
+    TROUBLESHOOTING_CHARGING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[7]')
+    TROUBLESHOOTING_NOT_CHARGING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[7]')
+    TROUBLESHOOTING_IF_CONTINUE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[8]')
+    ADJUSTING_EQ_CREATE_A_PRESET = (By.XPATH, '')
