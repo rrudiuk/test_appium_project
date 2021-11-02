@@ -18,7 +18,8 @@ class BasePageLocators:
     SCREEN_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
-    TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
+    TOOLBAR_SEPARATOR = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_toolbar")
+    TOOLBAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
 
 
 class WelcomePageLocators:
@@ -420,7 +421,7 @@ class UserGuidePageLocators:
                                                 '.widget.DrawerLayout/android.widget.FrameLayout/android.widget'
                                                 '.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup'
                                                 '/androidx.recyclerview.widget.RecyclerView/android.widget.TextView')
-    SEBULBA_PAIRING_IMAGE = (By.ID, 'com.logitech.uefits:id/image_view_phone')
+    SEBULBA_PAIRING_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_phone")
     # Molding
     MOLDING_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
                                '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
@@ -743,7 +744,7 @@ class UserGuidePageLocators:
                                            '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
                                            '/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview'
                                            '.widget.RecyclerView/android.widget.TextView[4]')
-    CHARGING_INDICATION_TABLE = (By.ID, 'com.logitech.uefits:id/view_container')
+    CHARGING_INDICATION_TABLE = (By.ID, f"{APP_PACKAGE_NAME}:id/view_container")
     # Adjusting EQ
     ADJUSTING_EQ_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
                                     '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android'
@@ -763,11 +764,25 @@ class UserGuidePageLocators:
                                    '.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
                                    '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup['
                                    '6]/android.widget.TextView')
-    ADJUSTING_EQ_TO_ACCESS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
-    ADJUSTING_EQ_TO_CHANGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
-    ADJUSTING_EQ_TO_CREATE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
-    ADJUSTING_EQ_IMAGE = (By.ID, 'com.logitech.uefits:id/view_container')
-    # ADJUSTING_EQ_CREATE_A_PRESET = (By.XPATH, '')
+    ADJUSTING_EQ_TO_ACCESS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.TextView[1]')
+    ADJUSTING_EQ_TO_CHANGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.TextView[2]')
+    ADJUSTING_EQ_TO_CREATE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                        '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                        '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                        '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                        '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                        '.RecyclerView/android.widget.TextView[3]')
+    ADJUSTING_EQ_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/view_container")
     # TYF
     TYF_ARROW = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
                            '.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
@@ -863,13 +878,117 @@ class UserGuidePageLocators:
                                       '.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout'
                                       '/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view'
                                       '.ViewGroup[9]/android.widget.TextView')
-    TROUBLESHOOTING_FIRST_ACTION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
-    TROUBLESHOOTING_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]')
-    TROUBLESHOOTING_IF_YOU_HAVE_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[3]')
-    TROUBLESHOOTING_TO_RESET = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[4]')
-    TROUBLESHOOTING_CONNECTING_ISSUES_NOTE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[5]')
-    TROUBLESHOOTING_CONNECTING_ISSUES_STANDBY = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[6]')
-    TROUBLESHOOTING_CHARGING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[7]')
-    TROUBLESHOOTING_NOT_CHARGING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[7]')
-    TROUBLESHOOTING_IF_CONTINUE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[8]')
-    ADJUSTING_EQ_CREATE_A_PRESET = (By.XPATH, '')
+    TROUBLESHOOTING_FIRST_ACTION = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                              '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                              '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                              '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                              '/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                                              '.recyclerview.widget.RecyclerView/android.widget.TextView[1]')
+    TROUBLESHOOTING_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                   '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                   '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                   '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                   '/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                                   '.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android'
+                                                   '.widget.TextView[2]')
+    TROUBLESHOOTING_IF_YOU_HAVE_CONNECTING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget'
+                                                               '.LinearLayout/android.widget.FrameLayout/android'
+                                                               '.widget.LinearLayout/android.widget.FrameLayout'
+                                                               '/android.widget.FrameLayout/androidx.drawerlayout'
+                                                               '.widget.DrawerLayout/android.widget.FrameLayout'
+                                                               '/android.widget.FrameLayout/android.widget'
+                                                               '.FrameLayout/android.view.ViewGroup/androidx'
+                                                               '.recyclerview.widget.RecyclerView/android.widget'
+                                                               '.TextView[3]')
+    TROUBLESHOOTING_TO_RESET = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                          '.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout'
+                                          '/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                          '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget'
+                                          '.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget'
+                                          '.RecyclerView/android.widget.TextView[4]')
+    TROUBLESHOOTING_CONNECTING_ISSUES_NOTE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget'
+                                                        '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                        '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                        '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                                        '/android.widget.FrameLayout/android.widget.FrameLayout'
+                                                        '/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                                                        '.recyclerview.widget.RecyclerView/android.widget.TextView[5]')
+    TROUBLESHOOTING_CONNECTING_ISSUES_STANDBY = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget'
+                                                           '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                           '.LinearLayout/android.widget.FrameLayout/android.widget'
+                                                           '.FrameLayout/androidx.drawerlayout.widget.DrawerLayout'
+                                                           '/android.widget.FrameLayout/android.widget.FrameLayout'
+                                                           '/android.widget.FrameLayout/android.view.ViewGroup'
+                                                           '/androidx.recyclerview.widget.RecyclerView/android.widget'
+                                                           '.TextView[6]')
+    TROUBLESHOOTING_CHARGING_ISSUES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                                 '/android.widget.FrameLayout/android.widget.LinearLayout/android'
+                                                 '.widget.FrameLayout/android.widget.FrameLayout/androidx'
+                                                 '.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout'
+                                                 '/android.widget.FrameLayout/android.widget.FrameLayout/android.view'
+                                                 '.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget'
+                                                 '.TextView[7]')
+    TROUBLESHOOTING_NOT_CHARGING = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                              '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                              '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                              '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                              '/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                                              '.recyclerview.widget.RecyclerView/android.widget.TextView[7]')
+    TROUBLESHOOTING_IF_CONTINUE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'
+                                             '/android.widget.FrameLayout/android.widget.LinearLayout/android.widget'
+                                             '.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget'
+                                             '.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout'
+                                             '/android.widget.FrameLayout/android.view.ViewGroup/androidx'
+                                             '.recyclerview.widget.RecyclerView/android.widget.TextView[8]')
+
+
+class SettingsPageLocators:
+    # NAME
+    NAME_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_name_clickable")
+    NAME_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name_hint")
+    NAME_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name")
+    NAME_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_name_action")
+    NAME_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_name")
+    # SINGLE TAP
+    SINGLE_TAP_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_title")
+    SINGLE_TAP_STATUS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_status_title")
+    SINGLE_TAP_SWITCHER = (By.ID, f"{APP_PACKAGE_NAME}:id/switcher_tap")
+    SINGLE_TAP_STATUS_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_tap_status")
+    SINGLE_TAP_LEFT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_left_tap_clickable")
+    SINGLE_TAP_LEFT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_left_hint")
+    SINGLE_TAP_LEFT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_left_tap")
+    SINGLE_TAP_LEFT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_tap_action")
+    SINGLE_TAP_LEFT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_left_tap")
+    SINGLE_TAP_RIGHT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_right_tap_clickable")
+    SINGLE_TAP_RIGHT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_right_hint")
+    SINGLE_TAP_RIGHT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_tap")
+    SINGLE_TAP_RIGHT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_tap_action")
+    SINGLE_TAP_RIGHT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_right_tap")
+    # DOUBLE TAP
+    DOUBLE_TAP_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_title")
+    DOUBLE_TAP_STATUS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_status_title")
+    DOUBLE_TAP_SWITCHER = (By.ID, f"{APP_PACKAGE_NAME}:id/switcher_double_tap")
+    DOUBLE_TAP_STATUS_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_double_tap_status")
+    DOUBLE_TAP_LEFT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_left_double_tap_clickable")
+    DOUBLE_TAP_LEFT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_left_hint")
+    DOUBLE_TAP_LEFT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_left_tap")
+    DOUBLE_TAP_LEFT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_double_tap_action")
+    DOUBLE_TAP_LEFT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_left_double_tap")
+    DOUBLE_TAP_RIGHT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_right_double_tap_clickable")
+    DOUBLE_TAP_RIGHT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_right_hint")
+    DOUBLE_TAP_RIGHT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_double_tap")
+    DOUBLE_TAP_RIGHT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_double_tap_action")
+    DOUBLE_TAP_RIGHT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_right_double_tap")
+    # DARK MODE
+    DARK_MODE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_dark_mode_clickable")
+    DARK_MODE_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_dark_mode_hint")
+    DARK_MODE_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_dark_mode")
+    DARK_MODE_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_dark_mode_action")
+    DARK_MODE_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_dark_mode")
+    # LANGUAGE
+    LANGUAGE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_language_clickable")
+    LANGUAGE_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_language_hint")
+    LANGUAGE_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_language")
+    LANGUAGE_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_language_action")
+    LANGUAGE_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_language")
+
