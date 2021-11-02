@@ -45,6 +45,7 @@ class TestMenuPage:
         user_guide_page.should_be_updating_fw_item()
         user_guide_page.should_be_troubleshooting_item()
 
+    @pytest.mark.xfail
     def test_user_guide_pairing_ohboy(self, driver):
         initial_setup_non_molding(driver)
         home_page = HomePage(driver)
@@ -97,6 +98,7 @@ class TestMenuPage:
         user_guide_page.tap_controls_item()
         user_guide_page.should_be_controls_screen()
 
+    @pytest.mark.xfail
     def test_user_guide_connectivity_and_switching_ohboy(self, driver):
         initial_setup_non_molding(driver)
         home_page = HomePage(driver)
@@ -123,6 +125,7 @@ class TestMenuPage:
         user_guide_page.tap_connectivity_and_switching_item()
         user_guide_page.should_be_connectivity_and_switching_sebulba_screen()
 
+    @pytest.mark.test
     def test_user_guide_charging(self, driver):
         initial_setup_non_molding(driver)
         home_page = HomePage(driver)

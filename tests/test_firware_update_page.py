@@ -28,7 +28,6 @@ def initial_setup_non_molding(driver):
     home_page.should_be_connected_state()
 
 
-@pytest.mark.test
 class TestFirmwareUpdatePage:
     def test_firmware_update(self, driver):
         initial_setup_non_molding(driver)

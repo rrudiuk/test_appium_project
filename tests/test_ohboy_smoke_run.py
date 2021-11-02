@@ -16,6 +16,7 @@ from .pages.menu_page import MenuPage
 from .pages.molding_page import MoldingPage, MoldNewTipsPage
 from .pages.ugc_page import UGCPage
 from .pages.support_page import SupportPage
+from .pages.user_guide_page import UserGuidePage
 from .pages.welcome_page import WelcomePage
 
 import time
@@ -926,6 +927,171 @@ class TestSmokeTest:
         mold_new_tips_page.tap_finish_button()
         # Home screen
         home_page.should_be_earbuds_name()
+
+    # User guide
+    def test_all_user_guide_items_appear(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.should_be_molding_item()
+        user_guide_page.should_be_controls_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.should_be_charging_item()
+        user_guide_page.should_be_adjusting_eq_item()
+        user_guide_page.should_be_tyf_item()
+        user_guide_page.should_be_updating_fw_item()
+        user_guide_page.should_be_troubleshooting_item()
+
+    def test_user_guide_pairing_ohboy(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.tap_pairing_item()
+        user_guide_page.should_be_pairing_ohboy_screen()
+
+    @pytest.mark.xfail
+    def test_user_guide_pairing_sebulba(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.tap_pairing_item()
+        user_guide_page.should_be_pairing_sebulba_screen()
+
+    def test_user_guide_molding(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_molding_item()
+        user_guide_page.tap_molding_item()
+        user_guide_page.should_be_molding_screen()
+
+    def test_user_guide_controls(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_controls_item()
+        user_guide_page.tap_controls_item()
+        user_guide_page.should_be_controls_screen()
+
+    def test_user_guide_connectivity_and_switching_ohboy(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.tap_connectivity_and_switching_item()
+        user_guide_page.should_be_connectivity_and_switching_ohboy_screen()
+
+    @pytest.mark.xfail
+    def test_user_guide_connectivity_and_switching_sebulba(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.tap_connectivity_and_switching_item()
+        user_guide_page.should_be_connectivity_and_switching_sebulba_screen()
+
+    def test_user_guide_charging(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_charging_item()
+        user_guide_page.tap_charging_item()
+        user_guide_page.should_be_charging_screen()
+
+    def test_user_guide_adjusting_eq(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_adjusting_eq_item()
+        user_guide_page.tap_adjusting_eq_item()
+        user_guide_page.should_be_adjusting_eq_screen()
+
+    def test_user_guide_tyf(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_tyf_item()
+        user_guide_page.tap_tyf_item()
+        user_guide_page.should_be_tyf_screen()
+
+    def test_user_guide_updating_fw(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_updating_fw_item()
+        user_guide_page.tap_updating_fw_item()
+        user_guide_page.should_be_updating_fw_screen()
+
+    def test_user_guide_troubleshooting(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu_icon()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_troubleshooting_item()
+        user_guide_page.tap_troubleshooting_item()
+        user_guide_page.should_be_troubleshooting_screen()
 
     # FW update page
     def test_firmware_update1(self, driver):
