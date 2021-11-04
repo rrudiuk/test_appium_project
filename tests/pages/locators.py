@@ -15,6 +15,7 @@ class BasePageLocators:
                            ".FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android"
                            ".view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton")
     PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
+    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/item_save")
     SCREEN_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
@@ -943,27 +944,44 @@ class UserGuidePageLocators:
 
 
 class SettingsPageLocators:
+    CHECK_MARK = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_selected")
     # NAME
     NAME_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_name_clickable")
     NAME_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name_hint")
     NAME_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name")
     NAME_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_name_action")
     NAME_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_name")
+    # Edit name
+    EDIT_NAME_INPUT = (By.ID, f"{APP_PACKAGE_NAME}:id/edit_text_name")
+    EDIT_NAME_INPUT_CLEAR = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_clear")
+    EDIT_NAME_MAX = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_max_name")
+    EDIT_NAME_HINT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                ".FrameLayout/android.view.ViewGroup/android.widget.TextView[4]")
     # SINGLE TAP
     SINGLE_TAP_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_title")
     SINGLE_TAP_STATUS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_status_title")
     SINGLE_TAP_SWITCHER = (By.ID, f"{APP_PACKAGE_NAME}:id/switcher_tap")
     SINGLE_TAP_STATUS_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_tap_status")
+    # single tap left
     SINGLE_TAP_LEFT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_left_tap_clickable")
     SINGLE_TAP_LEFT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_left_hint")
     SINGLE_TAP_LEFT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_left_tap")
     SINGLE_TAP_LEFT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_tap_action")
     SINGLE_TAP_LEFT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_left_tap")
+    # single tap right
     SINGLE_TAP_RIGHT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_right_tap_clickable")
     SINGLE_TAP_RIGHT_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_tap_right_hint")
     SINGLE_TAP_RIGHT_STATE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_tap")
     SINGLE_TAP_RIGHT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_tap_action")
     SINGLE_TAP_RIGHT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_right_tap")
+    # single tap items
+    SINGLE_TAP_PLAY_PAUSE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView")
+    SINGLE_TAP_NEXT_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView")
+    SINGLE_TAP_PREVIOUS_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView")
+    SINGLE_TAP_VOLUME_UP = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[4]/android.widget.TextView")
+    SINGLE_TAP_VOLUME_DOWN = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]/android.widget.TextView")
+
     # DOUBLE TAP
     DOUBLE_TAP_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_title")
     DOUBLE_TAP_STATUS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_double_tap_status_title")
@@ -991,4 +1009,3 @@ class SettingsPageLocators:
     LANGUAGE_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_language")
     LANGUAGE_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_language_action")
     LANGUAGE_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_language")
-

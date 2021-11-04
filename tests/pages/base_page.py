@@ -72,6 +72,13 @@ class BasePage:
         except NoSuchElementException:
             return 0
 
+    def enter_text(self, how, what, text):
+
+        try:
+            self.driver.find_element(how, what).send_keys(text)
+        except NoSuchElementException:
+            return False
+
     def get_text_no_encode(self, how, what):
 
         try:
@@ -104,7 +111,7 @@ class BasePage:
             return False
         return True
 
-    def is_not_element_present(self, how, what, timeout=4):
+    def is_not_element_present(self, how, what, timeout=2):
         try:
             WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((how, what)))
         except TimeoutException:
