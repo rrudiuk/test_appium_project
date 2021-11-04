@@ -118,7 +118,7 @@ class SettingsPage(BasePage):
         self.clear_name_input_field()
         self.enter_text(*SettingsPageLocators.EDIT_NAME_INPUT, "hello world! hey hey hey!")
 
-    # Single tap switcher
+    # ------SINGLE TAP SWITCHER-------
     def should_be_single_tap_switcher(self):
         self.check_message(*SettingsPageLocators.SINGLE_TAP_TITLE, "SINGLE TAP")
         self.check_message(*SettingsPageLocators.SINGLE_TAP_STATUS_TITLE, "Off / On")
@@ -242,12 +242,32 @@ class SettingsPage(BasePage):
     def should_be_volume_down_selected_single_tap_right(self):
         self.check_button(*SettingsPageLocators.SINGLE_TAP_RIGHT_STATE, "Volume Down")
 
-    # Double tap switcher
+    # ------DOUBLE TAP SWITCHER-----
     def should_be_double_tap_switcher(self):
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_TITLE, "DOUBLE TAP")
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_STATUS_TITLE, "Off / On")
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_STATUS_DIVIDER), "Double tap divider not found"
+
+    def double_tap_enabled_check(self):
+        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        expected_state = "ON"
+        actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+
+    def double_tap_disabled_check(self):
+        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        expected_state = "OFF"
+        actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+
+    def double_single_tap_state(self):
+        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+
+    def toggle_double_tap_state(self):
+        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
 
     # Left double tap
     def should_be_left_double_tap_item(self):
@@ -256,6 +276,13 @@ class SettingsPage(BasePage):
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection not found"
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap arrow not found"
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider not found"
+
+    def should_not_be_left_double_tap_item(self):
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection not found"
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap arrow " \
+                                                                                         "not found"
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider not found"
 
     def tap_left_double_tap_item(self):
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
@@ -269,9 +296,90 @@ class SettingsPage(BasePage):
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap arrow not found"
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider not found"
 
+    def should_not_be_right_double_tap_item(self):
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE), "Right double tap selection not" \
+                                                                                   " found"
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap arrow" \
+                                                                                          " not found "
+        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider not " \
+                                                                                     "found "
+
     def tap_right_double_tap_item(self):
         self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM)
+
+    # Double tap screen
+    def should_be_double_tap_items_screen(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_GOOGLE_ASSISTANCE, "Google Assistant")
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_PLAY_PAUSE, "Play/Pause")
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_NEXT_TRACK, "Next Track")
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_PREVIOUS_TRACK, "Previous Track")
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_VOLUME_UP, "Volume Up")
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_VOLUME_DOWN, "Volume Down")
+
+    # Select each double tap item
+    def select_double_tap_google_assistant(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_GOOGLE_ASSISTANCE, "Google Assistant")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_GOOGLE_ASSISTANCE)
+
+    def select_double_tap_play_pause(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_PLAY_PAUSE, "Play/Pause")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_PLAY_PAUSE)
+
+    def select_double_tap_next_track(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_NEXT_TRACK, "Next Track")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_NEXT_TRACK)
+
+    def select_double_tap_previous_track(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_PREVIOUS_TRACK, "Previous Track")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_PREVIOUS_TRACK)
+
+    def select_double_tap_volume_up(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_VOLUME_UP, "Volume Up")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_VOLUME_UP)
+
+    def select_double_tap_volume_down(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_VOLUME_DOWN, "Volume Down")
+        self.click_element(*SettingsPageLocators.DOUBLE_TAP_VOLUME_DOWN)
+
+    # Check if double tap left was selected correctly
+    def should_be_google_assistant_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Google Assistant")
+
+    def should_be_play_pause_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Play/Pause")
+
+    def should_be_next_track_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Next Track")
+
+    def should_be_previous_track_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Previous Track")
+
+    def should_be_volume_up_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Volume Up")
+
+    def should_be_volume_down_selected_double_tap_left(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Volume Down")
+
+    # Check if single tap right was selected correctly
+    def should_be_google_assistant_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Google Assistant")
+
+    def should_be_play_pause_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Play/Pause")
+
+    def should_be_next_track_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Next Track")
+
+    def should_be_previous_track_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Previous Track")
+
+    def should_be_volume_up_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Volume Up")
+
+    def should_be_volume_down_selected_double_tap_right(self):
+        self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Volume Down")
 
     # Dark mode
     def should_be_dark_mode_item(self):
