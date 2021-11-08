@@ -476,7 +476,7 @@ class SettingsPage(BasePage):
         self.check_message(*SettingsPageLocators.DARK_MODE_HINT, "Set Dark mode to use the Light or Dark selection"
                                                                  " located in your device Display settings.")
 
-    # Language
+    # -----LANGUAGE------
     def should_be_language_item(self):
         assert self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
         self.check_message(*SettingsPageLocators.LANGUAGE_TITLE, "LANGUAGE")
@@ -487,3 +487,61 @@ class SettingsPage(BasePage):
     def tap_language_item(self):
         assert self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
         self.click_element(*SettingsPageLocators.LANGUAGE_ITEM)
+
+    # Language screen
+    def should_be_language_title(self):
+        self.check_screen_title("Language")
+
+    def should_be_language_screen(self):
+        self.should_be_language_title()
+        self.should_be_back_arrow()
+        self.check_button(*SettingsPageLocators.SYSTEM_DEFAULT, "System default")
+        self.check_button(*SettingsPageLocators.DEUTSCH, "Deutsch")
+        self.check_button(*SettingsPageLocators.ENGLISH, "English")
+        self.check_button(*SettingsPageLocators.SPANISH, "Español")
+        self.check_button(*SettingsPageLocators.FRENCH, "Français")
+        self.check_button(*SettingsPageLocators.ITALIAN, "Italiano")
+
+    # Select each language item
+    def select_system_default_language(self):
+        assert self.is_element_present(*SettingsPageLocators.SYSTEM_DEFAULT), "System default item not located"
+        self.click_element(*SettingsPageLocators.SYSTEM_DEFAULT)
+
+    def select_deutsch_language(self):
+        self.check_button(*SettingsPageLocators.DEUTSCH, "Deutsch")
+        self.click_element(*SettingsPageLocators.DEUTSCH)
+
+    def select_english_language(self):
+        self.check_button(*SettingsPageLocators.ENGLISH, "English")
+        self.click_element(*SettingsPageLocators.ENGLISH)
+
+    def select_spanish_language(self):
+        self.check_button(*SettingsPageLocators.SPANISH, "Español")
+        self.click_element(*SettingsPageLocators.SPANISH)
+
+    def select_french_language(self):
+        self.check_button(*SettingsPageLocators.FRENCH, "Français")
+        self.click_element(*SettingsPageLocators.FRENCH)
+
+    def select_italian_language(self):
+        self.check_button(*SettingsPageLocators.ITALIAN, "Italiano")
+        self.click_element(*SettingsPageLocators.ITALIAN)
+
+    # Check if language was selected correctly
+    def should_be_system_default_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "System default")
+
+    def should_be_deutsch_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "Deutsch")
+
+    def should_be_english_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "English")
+
+    def should_be_spanish_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "Español")
+
+    def should_be_french_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "Français")
+
+    def should_be_italian_language(self):
+        self.check_button(*SettingsPageLocators.LANGUAGE_VALUE, "Italiano")
