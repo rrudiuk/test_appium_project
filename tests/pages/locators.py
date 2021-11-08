@@ -1013,18 +1013,47 @@ class SettingsPageLocators:
     DOUBLE_TAP_RIGHT_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_double_tap_action")
     DOUBLE_TAP_RIGHT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_right_double_tap")
     # double tap items
-    DOUBLE_TAP_GOOGLE_ASSISTANCE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView")
-    DOUBLE_TAP_PLAY_PAUSE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView")
-    DOUBLE_TAP_NEXT_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView")
-    DOUBLE_TAP_PREVIOUS_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[4]/android.widget.TextView")
-    DOUBLE_TAP_VOLUME_UP = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]/android.widget.TextView")
-    DOUBLE_TAP_VOLUME_DOWN = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView")
+    DOUBLE_TAP_GOOGLE_ASSISTANCE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+                                              "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                              ".FrameLayout/android.widget.FrameLayout/android.view.ViewGroup"
+                                              "/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["
+                                              "1]/android.widget.TextView")
+    DOUBLE_TAP_PLAY_PAUSE = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                       ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                       "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                       ".widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView")
+    DOUBLE_TAP_NEXT_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                       ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                       "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                       ".widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView")
+    DOUBLE_TAP_PREVIOUS_TRACK = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                           ".widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                           ".FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx"
+                                           ".recyclerview.widget.RecyclerView/android.view.ViewGroup["
+                                           "4]/android.widget.TextView")
+    DOUBLE_TAP_VOLUME_UP = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                      ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                      "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                      ".widget.RecyclerView/android.view.ViewGroup[5]/android.widget.TextView")
+    DOUBLE_TAP_VOLUME_DOWN = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
+                                        ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                                        "/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview"
+                                        ".widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView")
     # DARK MODE
     DARK_MODE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_dark_mode_clickable")
     DARK_MODE_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_dark_mode_hint")
     DARK_MODE_VALUE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_dark_mode")
     DARK_MODE_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_dark_mode_action")
     DARK_MODE_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_dark_mode")
+    DARK_MODE_SWITCHER_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_dark_mode")
+    DARK_MODE_SWITCHER = (By.ID, f"{APP_PACKAGE_NAME}:id/switcher_dark_mode")
+    DARK_MODE_SWITCHER_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_dark_mode")
+    DARK_MODE_DEVICE_DEFAULT_SWITCHER_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_auto_settings")
+    DARK_MODE_DEVICE_DEFAULT_SWITCHER = (By.ID, f"{APP_PACKAGE_NAME}:id/switcher_auto_settings")
+    DARK_MODE_DEVICE_DEFAULT_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_auto_settings")
+    DARK_MODE_HINT = (By.XPATH, "hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                ".FrameLayout/android.view.ViewGroup/android.widget.TextView[4]")
     # LANGUAGE
     LANGUAGE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_language_clickable")
     LANGUAGE_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_language_hint")

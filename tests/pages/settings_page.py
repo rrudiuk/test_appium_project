@@ -14,19 +14,19 @@ class SettingsPage(BasePage):
         TouchAction(self.driver).press(el).move_to(x=493, y=413).release().perform()
 
     def save_selection(self):
-        self.is_element_present(*BasePageLocators.SAVE_BUTTON), "Save button not found"
+        assert self.is_element_present(*BasePageLocators.SAVE_BUTTON), "Save button not found"
         self.click_element(*BasePageLocators.SAVE_BUTTON)
 
     # Name
     def should_be_name_item(self):
-        self.is_element_present(*SettingsPageLocators.NAME_ITEM), "Name item not found"
+        assert self.is_element_present(*SettingsPageLocators.NAME_ITEM), "Name item not found"
         self.check_message(*SettingsPageLocators.NAME_TITLE, "NAME")
-        self.is_element_present(*SettingsPageLocators.NAME_VALUE), "Name of earbuds not found"
-        self.is_element_present(*SettingsPageLocators.NAME_ACTION_ARROW), "Name action arrow not found"
-        self.is_element_present(*SettingsPageLocators.NAME_DIVIDER), "Name divider not found"
+        assert self.is_element_present(*SettingsPageLocators.NAME_VALUE), "Name of earbuds not found"
+        assert self.is_element_present(*SettingsPageLocators.NAME_ACTION_ARROW), "Name action arrow not found"
+        assert self.is_element_present(*SettingsPageLocators.NAME_DIVIDER), "Name divider not found"
 
     def tap_name_item(self):
-        self.is_element_present(*SettingsPageLocators.NAME_ITEM), "Name item not found"
+        assert self.is_element_present(*SettingsPageLocators.NAME_ITEM), "Name item not found"
         self.click_element(*SettingsPageLocators.NAME_ITEM)
 
     # Edit name screen
@@ -122,63 +122,72 @@ class SettingsPage(BasePage):
     def should_be_single_tap_switcher(self):
         self.check_message(*SettingsPageLocators.SINGLE_TAP_TITLE, "SINGLE TAP")
         self.check_message(*SettingsPageLocators.SINGLE_TAP_STATUS_TITLE, "Off / On")
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_STATUS_DIVIDER), "Single tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_STATUS_DIVIDER), "Single tap divider not found"
 
     def single_tap_enabled_check(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
         expected_state = "ON"
         actual_state = self.get_text(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
         assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
 
     def single_tap_disabled_check(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
         expected_state = "OFF"
         actual_state = self.get_text(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
         assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
 
     def toggle_single_tap_state(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
         self.click_element(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
 
     # Left single tap
     def should_be_left_single_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
         self.check_message(*SettingsPageLocators.SINGLE_TAP_LEFT_TITLE, "LEFT")
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_STATE), "Left single tap selection not found"
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ACTION_ARROW), "Left single tap arrow not found"
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_DIVIDER), "Left single tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_STATE), "Left single tap selection " \
+                                                                                     "not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ACTION_ARROW), "Left single tap arrow " \
+                                                                                            "not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_DIVIDER), "Left single tap divider " \
+                                                                                       "not found"
 
     def should_not_be_left_single_tap_item(self):
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_STATE), "Left single tap selection not found"
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ACTION_ARROW), "Left single tap arrow " \
-                                                                                         "not found"
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_DIVIDER), "Left single tap divider not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_STATE), "Left single tap selection" \
+                                                                                         " not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ACTION_ARROW), "Left single tap " \
+                                                                                                "arrow not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_DIVIDER), "Left single tap divider" \
+                                                                                           " not found"
 
     def tap_left_single_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM), "Left single tap item not found"
         self.click_element(*SettingsPageLocators.SINGLE_TAP_LEFT_ITEM)
 
     # Right single tap
     def should_be_right_single_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item not found"
         self.check_message(*SettingsPageLocators.SINGLE_TAP_RIGHT_TITLE, "RIGHT")
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_STATE), "Right single tap selection not found"
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ACTION_ARROW), "Right single tap arrow not found"
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_DIVIDER), "Right single tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_STATE), "Right single tap selection" \
+                                                                                      " not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ACTION_ARROW), "Right single tap arrow" \
+                                                                                             " not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_DIVIDER), "Right single tap divider" \
+                                                                                        " not found"
 
     def should_not_be_right_single_tap_item(self):
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item not found"
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_STATE), "Right single tap selection not" \
-                                                                                   " found"
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ACTION_ARROW), "Right single tap arrow" \
-                                                                                          " not found "
-        self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_DIVIDER), "Right single tap divider not " \
-                                                                                     "found "
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item " \
+                                                                                         "not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_STATE), "Right single tap selection" \
+                                                                                          " not found"
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ACTION_ARROW), "Right single tap" \
+                                                                                                 " arrow not found "
+        assert self.is_not_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_DIVIDER), "Right single tap " \
+                                                                                            "divider not found "
 
     def tap_right_single_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM), "Right single tap item not found"
         self.click_element(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM)
 
     # Single tap screen
@@ -246,67 +255,76 @@ class SettingsPage(BasePage):
     def should_be_double_tap_switcher(self):
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_TITLE, "DOUBLE TAP")
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_STATUS_TITLE, "Off / On")
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_STATUS_DIVIDER), "Double tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_STATUS_DIVIDER), "Double tap divider not found"
 
     def double_tap_enabled_check(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         expected_state = "ON"
         actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
         assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
 
     def double_tap_disabled_check(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         expected_state = "OFF"
         actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
         assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
 
     def double_single_tap_state(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
 
     def toggle_double_tap_state(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
 
     # Left double tap
     def should_be_left_double_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_LEFT_TITLE, "LEFT")
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection not found"
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap arrow not found"
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection " \
+                                                                                     "not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap arrow " \
+                                                                                            "not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider " \
+                                                                                       "not found"
 
     def should_not_be_left_double_tap_item(self):
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection not found"
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap arrow " \
-                                                                                         "not found"
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider not found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE), "Left double tap selection" \
+                                                                                         " not found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ACTION_ARROW), "Left double tap " \
+                                                                                                "arrow not found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_DIVIDER), "Left double tap divider" \
+                                                                                           " not found"
 
     def tap_left_double_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM), "Left double tap item not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_LEFT_ITEM)
 
     # Right single tap
     def should_be_right_double_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
         self.check_message(*SettingsPageLocators.DOUBLE_TAP_RIGHT_TITLE, "RIGHT")
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE), "Right double tap selection not found"
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap arrow not found"
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE), "Right double tap selection " \
+                                                                                      "not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap arrow" \
+                                                                                             " not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider " \
+                                                                                        "not found"
 
     def should_not_be_right_double_tap_item(self):
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE), "Right double tap selection not" \
-                                                                                   " found"
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap arrow" \
-                                                                                          " not found "
-        self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider not " \
-                                                                                     "found "
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not" \
+                                                                                         " found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE), "Right double tap selection" \
+                                                                                          " not found"
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ACTION_ARROW), "Right double tap " \
+                                                                                                 "arrow not found "
+        assert self.is_not_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_DIVIDER), "Right double tap divider" \
+                                                                                            " not found"
 
     def tap_right_double_tap_item(self):
-        self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
+        assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM), "Right double tap item not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM)
 
     # Double tap screen
@@ -362,7 +380,7 @@ class SettingsPage(BasePage):
     def should_be_volume_down_selected_double_tap_left(self):
         self.check_button(*SettingsPageLocators.DOUBLE_TAP_LEFT_STATE, "Volume Down")
 
-    # Check if single tap right was selected correctly
+    # Check if double tap right was selected correctly
     def should_be_google_assistant_selected_double_tap_right(self):
         self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Google Assistant")
 
@@ -381,26 +399,91 @@ class SettingsPage(BasePage):
     def should_be_volume_down_selected_double_tap_right(self):
         self.check_button(*SettingsPageLocators.DOUBLE_TAP_RIGHT_STATE, "Volume Down")
 
-    # Dark mode
+    # -------DARK MODE-------
     def should_be_dark_mode_item(self):
-        self.is_element_present(*SettingsPageLocators.DARK_MODE_ITEM), "Dark mode item not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_ITEM), "Dark mode item not found"
         self.check_message(*SettingsPageLocators.DARK_MODE_TITLE, "DARK MODE")
-        self.is_element_present(*SettingsPageLocators.DARK_MODE_VALUE), "Dark mode value not found"
-        self.is_element_present(*SettingsPageLocators.DARK_MODE_ACTION_ARROW), "Dark mode action arrow not found"
-        self.is_element_present(*SettingsPageLocators.DARK_MODE_DIVIDER), "Dark mode divider not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_VALUE), "Dark mode value not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_ACTION_ARROW), "Dark mode action arrow not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_DIVIDER), "Dark mode divider not found"
+
+    def should_be_dark_mode_on(self):
+        expected_result = "On"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_VALUE)
+        assert actual_result == expected_result, f"Dark mode is set to '{actual_result}', should be '{expected_result}'"
+
+    def should_be_dark_mode_off(self):
+        expected_result = "Off"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_VALUE)
+        assert actual_result == expected_result, f"Dark mode is set to '{actual_result}', should be '{expected_result}'"
+
+    def should_be_dark_mode_use_device_settings(self):
+        expected_result = "Use device settings"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_VALUE)
+        assert actual_result == expected_result, f"Dark mode is set to '{actual_result}', should be '{expected_result}'"
 
     def tap_dark_mode_item(self):
-        self.is_element_present(*SettingsPageLocators.DARK_MODE_ITEM), "Dark mode item not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_ITEM), "Dark mode item not found"
         self.click_element(*SettingsPageLocators.DARK_MODE_ITEM)
+
+    # Dark mode screen
+    def should_be_dark_mode_screen_title(self):
+        self.check_screen_title("Dark mode")
+
+    def should_be_dark_mode_switcher_item(self):
+        self.check_title(*SettingsPageLocators.DARK_MODE_SWITCHER_TITLE, "Dark mode")
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_SWITCHER), "Dark mode switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_SWITCHER_DIVIDER), "Dark mode switcher " \
+                                                                                          "divider not found"
+
+    def should_be_dark_mode_switcher_on(self):
+        expected_result = "ON"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_SWITCHER)
+        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+
+    def should_be_dark_mode_switcher_off(self):
+        expected_result = "OFF"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_SWITCHER)
+        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+
+    def tap_dark_mode_switcher(self):
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_SWITCHER), "Dark mode switcher not found"
+        self.click_element(*SettingsPageLocators.DARK_MODE_SWITCHER)
+
+    def should_be_dark_mode_device_default_switcher_item(self):
+        self.check_title(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER_TITLE, "Use device settings")
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER), "Device default " \
+                                                                                                 "switcher not found"
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_DIVIDER), "Dark mode switcher" \
+                                                                                                " divider not found"
+
+    def should_be_dark_mode_device_default_switcher_on(self):
+        expected_result = "ON"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
+        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+
+    def should_be_dark_mode_device_default_switcher_off(self):
+        expected_result = "OFF"
+        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
+        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+
+    def tap_dark_mode_device_default_switcher(self):
+        assert self.is_element_present(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER), \
+            "Devices default switcher not found"
+        self.click_element(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
+
+    def should_be_dark_mode_hint(self):
+        self.check_message(*SettingsPageLocators.DARK_MODE_HINT, "Set Dark mode to use the Light or Dark selection"
+                                                                 " located in your device Display settings.")
 
     # Language
     def should_be_language_item(self):
-        self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
+        assert self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
         self.check_message(*SettingsPageLocators.LANGUAGE_TITLE, "LANGUAGE")
-        self.is_element_present(*SettingsPageLocators.LANGUAGE_VALUE), "Language value not found"
-        self.is_element_present(*SettingsPageLocators.LANGUAGE_ACTION_ARROW), "Language action arrow not found"
-        self.is_element_present(*SettingsPageLocators.LANGUAGE_DIVIDER), "Language divider not found"
+        assert self.is_element_present(*SettingsPageLocators.LANGUAGE_VALUE), "Language value not found"
+        assert self.is_element_present(*SettingsPageLocators.LANGUAGE_ACTION_ARROW), "Language action arrow not found"
+        assert self.is_element_present(*SettingsPageLocators.LANGUAGE_DIVIDER), "Language divider not found"
 
     def tap_language_item(self):
-        self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
+        assert self.is_element_present(*SettingsPageLocators.LANGUAGE_ITEM), "Language item not found"
         self.click_element(*SettingsPageLocators.LANGUAGE_ITEM)
