@@ -132,6 +132,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_single_tap()
         settings_page.single_tap_enabled_check()
         settings_page.should_be_single_tap_switcher()
         settings_page.should_be_left_single_tap_item()
@@ -158,9 +159,13 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_single_tap()
         settings_page.should_be_single_tap_switcher()
         settings_page.should_be_left_single_tap_item()
         settings_page.tap_left_single_tap_item()
+        settings_page.should_be_single_tap_left_title()
+        settings_page.should_be_save_button()
+        settings_page.should_be_back_arrow()
         settings_page.should_be_single_tap_items_screen()
 
     def test_single_tap_right_screen(self, driver):
@@ -172,9 +177,13 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_single_tap()
         settings_page.should_be_single_tap_switcher()
         settings_page.should_be_right_single_tap_item()
         settings_page.tap_right_single_tap_item()
+        settings_page.should_be_single_tap_right_title()
+        settings_page.should_be_save_button()
+        settings_page.should_be_back_arrow()
         settings_page.should_be_single_tap_items_screen()
 
     def test_every_selection_left_single_tap(self, driver):
@@ -186,6 +195,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_single_tap()
         settings_page.should_be_single_tap_switcher()
         settings_page.should_be_left_single_tap_item()
         # play_pause
@@ -228,6 +238,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_single_tap()
         settings_page.should_be_single_tap_switcher()
         settings_page.should_be_right_single_tap_item()
         # play_pause
@@ -270,6 +281,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_double_tap()
         settings_page.double_tap_enabled_check()
         settings_page.should_be_double_tap_switcher()
         settings_page.should_be_left_double_tap_item()
@@ -296,9 +308,13 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_double_tap()
         settings_page.should_be_double_tap_switcher()
         settings_page.should_be_left_double_tap_item()
         settings_page.tap_left_double_tap_item()
+        settings_page.should_be_double_tap_left_title()
+        settings_page.should_be_save_button()
+        settings_page.should_be_back_arrow()
         settings_page.should_be_double_tap_items_screen()
 
     def test_double_tap_right_screen(self, driver):
@@ -310,9 +326,13 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_double_tap()
         settings_page.should_be_double_tap_switcher()
         settings_page.should_be_right_double_tap_item()
         settings_page.tap_right_double_tap_item()
+        settings_page.should_be_double_tap_right_title()
+        settings_page.should_be_save_button()
+        settings_page.should_be_back_arrow()
         settings_page.should_be_double_tap_items_screen()
 
     def test_every_selection_left_double_tap(self, driver):
@@ -324,6 +344,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_double_tap()
         settings_page.should_be_double_tap_switcher()
         settings_page.should_be_left_double_tap_item()
         # google_assistant
@@ -372,6 +393,7 @@ class TestMenuPage:
         home_page.tap_settings_icon()
         time.sleep(2)
         settings_page.should_be_settings_title()
+        settings_page.toggle_on_double_tap()
         settings_page.should_be_double_tap_switcher()
         settings_page.should_be_right_double_tap_item()
         # google_assistant
@@ -505,6 +527,8 @@ class TestMenuPage:
         settings_page.scroll_down_settings_screen()
         settings_page.should_be_language_item()
         settings_page.tap_language_item()
+        settings_page.should_be_save_button()
+        settings_page.should_be_back_arrow()
         settings_page.should_be_language_screen()
 
     def test_every_selection_language(self, driver):

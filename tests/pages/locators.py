@@ -1061,9 +1061,27 @@ class SettingsPageLocators:
     LANGUAGE_ACTION_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_language_action")
     LANGUAGE_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator_language")
     # language items
-    SYSTEM_DEFAULT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView")
-    DEUTSCH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView")
-    ENGLISH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView")
-    SPANISH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[4]/android.widget.TextView")
-    FRENCH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]/android.widget.TextView")
-    ITALIAN = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView")
+    SYSTEM_DEFAULT = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                                ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                                ".FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView"
+                                "/android.view.ViewGroup[1]/android.widget.TextView")
+    DEUTSCH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                         ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                         ".FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                         ".ViewGroup[2]/android.widget.TextView")
+    ENGLISH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                         ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                         ".FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                         ".ViewGroup[3]/android.widget.TextView")
+    SPANISH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                         ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                         ".FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                         ".ViewGroup[4]/android.widget.TextView")
+    FRENCH = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+                        "/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android"
+                        ".view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup["
+                        "5]/android.widget.TextView")
+    ITALIAN = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
+                         ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
+                         ".FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view"
+                         ".ViewGroup[6]/android.widget.TextView")

@@ -1,3 +1,5 @@
+import time
+
 from appium.webdriver.common.touch_action import TouchAction
 
 from .base_page import BasePage
@@ -14,8 +16,11 @@ class SettingsPage(BasePage):
         TouchAction(self.driver).press(el).move_to(x=493, y=413).release().perform()
 
     def save_selection(self):
-        assert self.is_element_present(*BasePageLocators.SAVE_BUTTON), "Save button not found"
+        self.should_be_save_button()
         self.click_element(*BasePageLocators.SAVE_BUTTON)
+
+    def should_be_save_button(self):
+        assert self.is_element_present(*BasePageLocators.SAVE_BUTTON), "Save button not found"
 
     # Name
     def should_be_name_item(self):
@@ -59,7 +64,7 @@ class SettingsPage(BasePage):
 
     def should_be_enabled_update_button(self):
         assert self.is_element_enabled(*BasePageLocators.BUTTON_MAIN), "Update Name button is disabled, should " \
-                                                                           "be enabled"
+                                                                       "be enabled"
 
     # Test names on edit name screen
     def should_be_empty_input_field(self):
@@ -127,15 +132,28 @@ class SettingsPage(BasePage):
 
     def single_tap_enabled_check(self):
         assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
-        expected_state = "ON"
-        actual_state = self.get_text(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
-        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+        expected_state = "true"
+        actual_state = self.is_element_checked(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state checked: '{actual_state}', should be " \
+                                               f"checked: '{expected_state}'"
+        # checked_state = self.is_element_checked(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
+        # print(f"Single tap is {checked_state}")
+        # assert checked_state, f"Single tap is {checked_state} should be checked"
 
     def single_tap_disabled_check(self):
         assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
-        expected_state = "OFF"
-        actual_state = self.get_text(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
-        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+        expected_state = "false"
+        actual_state = self.is_element_checked(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state checked: '{actual_state}', should be " \
+                                               f"checked: '{expected_state}'"
+        # checked_state = self.is_element_checked(*SettingsPageLocators.SINGLE_TAP_SWITCHER)
+        # print(f"Single tap is {checked_state}")
+        # assert checked_state, f"Single tap is {checked_state} should be unchecked"
+
+    def toggle_on_single_tap(self):
+        if self.is_element_checked(*SettingsPageLocators.SINGLE_TAP_SWITCHER) == 'false':
+            self.toggle_single_tap_state()
+            time.sleep(2)
 
     def toggle_single_tap_state(self):
         assert self.is_element_present(*SettingsPageLocators.SINGLE_TAP_SWITCHER), "Single tap switcher not found"
@@ -191,6 +209,12 @@ class SettingsPage(BasePage):
         self.click_element(*SettingsPageLocators.SINGLE_TAP_RIGHT_ITEM)
 
     # Single tap screen
+    def should_be_single_tap_left_title(self):
+        self.check_screen_title("Tap Left")
+
+    def should_be_single_tap_right_title(self):
+        self.check_screen_title("Tap Right")
+
     def should_be_single_tap_items_screen(self):
         self.check_button(*SettingsPageLocators.SINGLE_TAP_PLAY_PAUSE, "Play/Pause")
         self.check_button(*SettingsPageLocators.SINGLE_TAP_NEXT_TRACK, "Next Track")
@@ -260,19 +284,26 @@ class SettingsPage(BasePage):
 
     def double_tap_enabled_check(self):
         assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
-        expected_state = "ON"
-        actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
-        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+        expected_state = "true"
+        actual_state = self.is_element_checked(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state checked: '{actual_state}', should be " \
+                                               f"checked: '{expected_state}'"
 
     def double_tap_disabled_check(self):
         assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
-        expected_state = "OFF"
-        actual_state = self.get_text(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
-        assert actual_state == expected_state, f"Incorrect state '{actual_state}', should be '{expected_state}'"
+        expected_state = "false"
+        actual_state = self.is_element_checked(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+        assert actual_state == expected_state, f"Incorrect state checked: '{actual_state}', should be " \
+                                               f"checked: '{expected_state}'"
 
     def double_single_tap_state(self):
         assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_SWITCHER)
+
+    def toggle_on_double_tap(self):
+        if self.is_element_checked(*SettingsPageLocators.DOUBLE_TAP_SWITCHER) == 'false':
+            self.toggle_double_tap_state()
+            time.sleep(2)
 
     def toggle_double_tap_state(self):
         assert self.is_element_present(*SettingsPageLocators.DOUBLE_TAP_SWITCHER), "Double tap switcher not found"
@@ -328,6 +359,12 @@ class SettingsPage(BasePage):
         self.click_element(*SettingsPageLocators.DOUBLE_TAP_RIGHT_ITEM)
 
     # Double tap screen
+    def should_be_double_tap_left_title(self):
+        self.check_screen_title("Double Tap Left")
+
+    def should_be_double_tap_right_title(self):
+        self.check_screen_title("Double Tap Right")
+
     def should_be_double_tap_items_screen(self):
         self.check_button(*SettingsPageLocators.DOUBLE_TAP_GOOGLE_ASSISTANCE, "Google Assistant")
         self.check_button(*SettingsPageLocators.DOUBLE_TAP_PLAY_PAUSE, "Play/Pause")
@@ -437,14 +474,16 @@ class SettingsPage(BasePage):
                                                                                           "divider not found"
 
     def should_be_dark_mode_switcher_on(self):
-        expected_result = "ON"
-        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_SWITCHER)
-        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+        expected_result = "true"
+        actual_result = self.is_element_checked(*SettingsPageLocators.DARK_MODE_SWITCHER)
+        assert actual_result == expected_result, f"Switcher checked state is: '{actual_result}', should be" \
+                                                 f" '{expected_result}'"
 
     def should_be_dark_mode_switcher_off(self):
-        expected_result = "OFF"
-        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_SWITCHER)
-        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+        expected_result = "false"
+        actual_result = self.is_element_checked(*SettingsPageLocators.DARK_MODE_SWITCHER)
+        assert actual_result == expected_result, f"Switcher checked state is: '{actual_result}', should be" \
+                                                 f" '{expected_result}'"
 
     def tap_dark_mode_switcher(self):
         assert self.is_element_present(*SettingsPageLocators.DARK_MODE_SWITCHER), "Dark mode switcher not found"
@@ -458,14 +497,16 @@ class SettingsPage(BasePage):
                                                                                                 " divider not found"
 
     def should_be_dark_mode_device_default_switcher_on(self):
-        expected_result = "ON"
-        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
-        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+        expected_result = "true"
+        actual_result = self.is_element_checked(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
+        assert actual_result == expected_result, f"Switcher checked state is: '{actual_result}', should be" \
+                                                 f" '{expected_result}'"
 
     def should_be_dark_mode_device_default_switcher_off(self):
-        expected_result = "OFF"
-        actual_result = self.get_text(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
-        assert actual_result == expected_result, f"Switcher is {actual_result}, should be {expected_result}"
+        expected_result = "false"
+        actual_result = self.is_element_checked(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER)
+        assert actual_result == expected_result, f"Switcher checked state is: '{actual_result}', should be" \
+                                                 f" '{expected_result}'"
 
     def tap_dark_mode_device_default_switcher(self):
         assert self.is_element_present(*SettingsPageLocators.DARK_MODE_DEVICE_DEFAULT_SWITCHER), \
@@ -494,7 +535,6 @@ class SettingsPage(BasePage):
 
     def should_be_language_screen(self):
         self.should_be_language_title()
-        self.should_be_back_arrow()
         self.check_button(*SettingsPageLocators.SYSTEM_DEFAULT, "System default")
         self.check_button(*SettingsPageLocators.DEUTSCH, "Deutsch")
         self.check_button(*SettingsPageLocators.ENGLISH, "English")
