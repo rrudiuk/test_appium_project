@@ -1,3 +1,5 @@
+import base64
+import os
 import time
 
 from appium.webdriver.common.touch_action import TouchAction
@@ -175,3 +177,13 @@ class BasePage:
 
     def wait_for_connection(self):
         time.sleep(14)
+
+    def compare_image_with_screenshot(self, image_name: str):
+        path_to_current_directory = Path().absolute()
+        os.chdir(str(path_to_current_directory) + '/Screenshots/Testing/')
+
+        with open(f'{image_name}.png', 'rb') as img:
+            first_image = base64.b64encode(img.read()).decode('ascii')
+        second_image = base64.b64encode(self.driver.get_screenshot_as_png()).decode('ascii')
+
+        return self.driver.get_images_similarity(first_image, second_image)

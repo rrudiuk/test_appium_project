@@ -11,6 +11,7 @@ class TestWelcomePage:
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.compare_gui_with_expected()
 
     @pytest.mark.xfail
     def test_should_be_welcome_screen_after_background(self, driver):

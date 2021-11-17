@@ -88,3 +88,24 @@ class WelcomePage(BasePage):
     def tap_screen_code_get_started(self):
         self.click_element(*BasePageLocators.BUTTON_MAIN)
         time.sleep(5)
+
+    # @allure.step('Compare screenshot with template')
+    def get_image_comparison_percents(self):
+        """
+        This method gets screenshot on device with template in repo. Comparison result is percentage of similarity. Test is OK if comparison more than 90%
+        """
+        result = self.compare_image_with_screenshot('welcome')
+        print(result.get('score'))
+        return result.get('score')
+
+    def compare_gui_with_expected(self):
+        result = self.get_image_comparison_percents()
+        assert result > 0.9, "Screen is less then 90% comparable"
+
+    # def test_offline_stub(self):
+    #
+    #     TourActions(appdriver).skip_tour()
+    #     Navigation(appdriver).open_my_offline_page()
+    #
+    #     assert Offline(appdriver).get_page_title_text() == 'Offline'
+    #     assert Offline(appdriver).get_image_comparison_percents() > 0.9
